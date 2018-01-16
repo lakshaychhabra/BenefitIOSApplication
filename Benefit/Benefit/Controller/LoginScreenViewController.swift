@@ -23,13 +23,32 @@ class LoginScreenViewController: UIViewController
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
     var enteredPassword: String?
-    var activeField: UITextField?
+    //var activeField: UITextField?
     var forwardArrowIsOnScreen = false
     var backwardArrowIsOnScreen = false
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let label = UILabel()
+        label.text = "LOG IN OR SIGN UP"
+        label.font = UIFont(name: "Oswald-Medium", size: 25)
+        label.textAlignment = .left
+        self.navigationItem.titleView = label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
+        
+        //To Remove The Horizontal Line In The Navigation Bar
+        
+        let img = UIImage()
+        self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
+       
+        
         registerForKeyboardNotifications()
         invalidUsernameLabel.text = ""
         incorrectPasswordLabel.text = ""
@@ -59,7 +78,7 @@ class LoginScreenViewController: UIViewController
         
         var aRect : CGRect = self.view.frame
         aRect.size.height -= keyboardSize!.height
-        if let activeField = self.activeField
+        if let activeField = self.currentTextField
         {
             if (!aRect.contains(activeField.frame.origin))
             {
@@ -169,7 +188,7 @@ extension LoginScreenViewController: UITextFieldDelegate
 {
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        activeField = textField
+        //activeField = textField
         currentTextField = textField
         textField.textAlignment = .justified
         let border = CALayer()
@@ -191,7 +210,7 @@ extension LoginScreenViewController: UITextFieldDelegate
     
     func textFieldDidEndEditing(_ textField: UITextField)
     {
-        activeField = nil
+        //activeField = nil
         if currentTextField == passwordTextField
         {
             currentTextField.rightView = nil
@@ -199,6 +218,7 @@ extension LoginScreenViewController: UITextFieldDelegate
         let border = CALayer()
         addInitial(border, to: textField)
         runTransition(on: border, with: kCATransitionFade, to: initialColourOfBorder )
+        currentTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

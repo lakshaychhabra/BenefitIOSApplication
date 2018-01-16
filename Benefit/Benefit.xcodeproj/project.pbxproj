@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
 		59647049200A26CF00F9357F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59647047200A26CF00F9357F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
 		59647040200A26CF00F9357F /* Benefit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benefit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59647043200A26CF00F9357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59647045200A26CF00F9357F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				59647045200A26CF00F9357F /* LoginScreenViewController.swift */,
+				59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
 				59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */,
 				59647044200A26CF00F9357F /* AppDelegate.swift in Sources */,
 			);
@@ -319,7 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7RY94XSR4N;
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -335,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7RY94XSR4N;
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
