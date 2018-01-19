@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42A2E75E12D395F234A724B4 /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
 		59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
@@ -16,9 +17,16 @@
 		59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647063200A97BA00F9357F /* Oswald-Medium.ttf */; };
 		59647066200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */; };
 		59647068200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */; };
+		5978612D2011C32B00C2B5D4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */; };
+		5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */; };
+		5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */; };
+		5978613920127C7E00C2B5D4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */; };
+		5978613A20127C7E00C2B5D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613720127C7D00C2B5D4 /* Bolts.framework */; };
+		5978613B20127C7E00C2B5D4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
 		59647040200A26CF00F9357F /* Benefit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benefit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59647043200A26CF00F9357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +38,14 @@
 		59647063200A97BA00F9357F /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Semibold-webfont.ttf"; sourceTree = "<group>"; };
 		59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular-webfont.ttf"; sourceTree = "<group>"; };
+		5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGoalScreenViewController.swift; sourceTree = "<group>"; };
+		5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileScreenViewController.swift; sourceTree = "<group>"; };
+		5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5978613720127C7D00C2B5D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.debug.xcconfig"; sourceTree = "<group>"; };
+		DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5978613A20127C7E00C2B5D4 /* Bolts.framework in Frameworks */,
+				42A2E75E12D395F234A724B4 /* Pods_Benefit.framework in Frameworks */,
+				5978613B20127C7E00C2B5D4 /* FBSDKLoginKit.framework in Frameworks */,
+				5978613920127C7E00C2B5D4 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +68,8 @@
 			children = (
 				59647042200A26CF00F9357F /* Benefit */,
 				59647041200A26CF00F9357F /* Products */,
+				D9E08EA3B20C67446B716F17 /* Pods */,
+				D804225604BCA14F0787571D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +106,9 @@
 			children = (
 				59647045200A26CF00F9357F /* LoginScreenViewController.swift */,
 				59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */,
+				5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */,
+				5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */,
+				5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +133,26 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D804225604BCA14F0787571D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5978613720127C7D00C2B5D4 /* Bolts.framework */,
+				5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */,
+				5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */,
+				322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9E08EA3B20C67446B716F17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */,
+				DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59647052200A26CF00F9357F /* Build configuration list for PBXNativeTarget "Benefit" */;
 			buildPhases = (
+				9B75A419F1E6AD23B63A96C1 /* [CP] Check Pods Manifest.lock */,
 				5964703C200A26CF00F9357F /* Sources */,
 				5964703D200A26CF00F9357F /* Frameworks */,
 				5964703E200A26CF00F9357F /* Resources */,
+				F9A625D50FEDFAAEB9514002 /* [CP] Embed Pods Frameworks */,
+				72BFA4391CB146AD3069607A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +188,7 @@
 				TargetAttributes = {
 					5964703F200A26CF00F9357F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -178,12 +227,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72BFA4391CB146AD3069607A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B75A419F1E6AD23B63A96C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Benefit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A625D50FEDFAAEB9514002 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5964703C200A26CF00F9357F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */,
 				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
+				5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */,
+				5978612D2011C32B00C2B5D4 /* HomeScreenViewController.swift in Sources */,
 				59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */,
 				59647044200A26CF00F9357F /* AppDelegate.swift in Sources */,
 			);
@@ -320,15 +434,23 @@
 		};
 		59647053200A26CF00F9357F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -336,15 +458,22 @@
 		};
 		59647054200A26CF00F9357F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

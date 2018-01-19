@@ -30,6 +30,22 @@ class RegistrationScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setupNavigationBar()
+        registerForKeyboardNotifications()
+        invalidEmailAddressLabel.text = ""
+        incorrectPasswordLabel.text = ""
+        initialize(usernameTextField)
+        initialize(passwordTextField)
+        initialize(emailAddressTextField)
+        hideKeyboard()
+        
+    }
+    
+    func setupNavigationBar()
+    {
+        let img = UIImage()
+        self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
         let label = UILabel()
         label.text = "CREATE A NEW ACCOUNT"
         label.font = UIFont(name: "Oswald-Medium", size: 25)
@@ -40,17 +56,8 @@ class RegistrationScreenViewController: UIViewController
         label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
         label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
         label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
-        
-        registerForKeyboardNotifications()
-        invalidEmailAddressLabel.text = ""
-        incorrectPasswordLabel.text = ""
-        initialize(usernameTextField)
-        initialize(passwordTextField)
-        initialize(emailAddressTextField)
-        hideKeyboard()
-        
     }
-
+    
     @IBAction func nextButtonPressed(_ sender: UIButton)
     {
        next()
@@ -133,6 +140,7 @@ class RegistrationScreenViewController: UIViewController
         }
     }
     
+    
     //Add Initial Bottom Border To Text Fields
     
     func addInitial(_ border: CALayer, to textField: UITextField)
@@ -159,8 +167,7 @@ class RegistrationScreenViewController: UIViewController
         
         transitioningLayer.borderColor = colour
     }
-    
-    
+   
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

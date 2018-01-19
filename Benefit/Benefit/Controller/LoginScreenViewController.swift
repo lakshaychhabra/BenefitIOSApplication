@@ -30,18 +30,7 @@ class LoginScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        let label = UILabel()
-        label.text = "LOG IN OR SIGN UP"
-        label.font = UIFont(name: "Oswald-Medium", size: 25)
-        label.textAlignment = .left
-        self.navigationItem.titleView = label
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
-        
+        setupNavigationBar()
         //To Remove The Horizontal Line In The Navigation Bar
         
         let img = UIImage()
@@ -56,6 +45,23 @@ class LoginScreenViewController: UIViewController
         initialize(passwordTextField)
         
         hideKeyboard()
+    }
+    
+    func setupNavigationBar()
+    {
+        let img = UIImage()
+        self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
+        let label = UILabel()
+        label.text = "LOG IN OR SIGN UP"
+        label.font = UIFont(name: "Oswald-Medium", size: 25)
+        label.textAlignment = .left
+        self.navigationItem.titleView = label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
+        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
     }
     
     //MARK: - Manage Content Hidden Under Keyboard
