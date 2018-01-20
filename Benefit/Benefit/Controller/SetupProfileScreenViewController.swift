@@ -15,8 +15,11 @@ class SetupProfileScreenViewController: UIViewController
     @IBOutlet weak var genderDisplay: UIButton!
     @IBOutlet weak var selectFemaleButton: UIButton!
     @IBOutlet weak var selectMaleButton: UIButton!
+    
+    @IBOutlet weak var feetToggleButton: UIButton!
     @IBOutlet weak var inchesToggleButton: UIButton!
     @IBOutlet weak var cmToggleButton: UIButton!
+    
     @IBOutlet weak var kgToggleButton: UIButton!
     @IBOutlet weak var lbsToggleButton: UIButton!
     @IBOutlet weak var ageTextField: UITextField!
@@ -26,9 +29,7 @@ class SetupProfileScreenViewController: UIViewController
     @IBOutlet weak var nextButton: UIButton!
     
     var currentlySetGender = "female"
-    //colour of bottom border of the text field before the animation starts
     let initialColourOfBorder = UIColor.init(ciColor: CIColor(red: 240, green: 240, blue: 240)).cgColor
-    //colour of bottom border of the text field after the animation has finished
     let finalColourOfBorder = UIColor.darkGray.cgColor
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
@@ -37,11 +38,13 @@ class SetupProfileScreenViewController: UIViewController
     var currentlySetWeightUnit = "kg"
     var currentlySelectedLifestyleIndex = 0
     let lifestyleIndices = [0: "Sedentary", 1: "Moderate", 2: "Active", 3: "Very Active"]
+    var units: [String: UIButton]!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setupNavigationBar()
+        units = ["cm": cmToggleButton, "ft": feetToggleButton, "in": inchesToggleButton, "kg": kgToggleButton, "lbs": lbsToggleButton]
+        setupNavigationBar(with: "SET UP YOUR PROFILE")
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
         setupRounded(button: genderDisplay)
@@ -53,7 +56,6 @@ class SetupProfileScreenViewController: UIViewController
             if radioButton.tag == 0
             {
                 radioButton.setImage(#imageLiteral(resourceName: "ic_radio_on_24dp"), for: .normal)
-                //radioButton.is = false
             }
             else
             {
@@ -66,23 +68,6 @@ class SetupProfileScreenViewController: UIViewController
         initialize(weightTextField)
         hideKeyboard()
 
-    }
-    
-    func setupNavigationBar()
-    {
-        let img = UIImage()
-        self.navigationController?.navigationBar.shadowImage = img
-        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
-        let label = UILabel()
-        label.text = "SET UP YOUR PROFILE"
-        label.font = UIFont(name: "Oswald-Medium", size: 25)
-        label.textAlignment = .left
-        self.navigationItem.titleView = label
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
     }
     
     func setupRounded(button: UIButton)
@@ -126,50 +111,54 @@ class SetupProfileScreenViewController: UIViewController
     
     @IBAction func cmSelected(_ sender: UIButton)
     {
-        if currentlySetHeightUnit == "in"
+        if currentlySetHeightUnit != "cm"
         {
+            changeButtonStatesTo(on: "cm", off: currentlySetHeightUnit)
             currentlySetHeightUnit = "cm"
-            sender.backgroundColor = UIColor(hex: "5FC0E5")
-            sender.setTitleColor(UIColor.white, for: .normal)
-            inchesToggleButton.backgroundColor = UIColor(hex: "F0F0F0")
-            inchesToggleButton.setTitleColor(UIColor.black, for: .normal)
         }
     }
     
     @IBAction func inchesSelected(_ sender: UIButton)
     {
-        if currentlySetHeightUnit == "cm"
+        if currentlySetHeightUnit != "in"
         {
+            changeButtonStatesTo(on: "in", off: currentlySetHeightUnit)
             currentlySetHeightUnit = "in"
-            sender.backgroundColor = UIColor(hex: "5FC0E5")
-            sender.setTitleColor(UIColor.white, for: .normal)
-            cmToggleButton.backgroundColor = UIColor(hex: "F0F0F0")
-            cmToggleButton.setTitleColor(UIColor.black, for: .normal)
+        }
+    }
+    @IBAction func feetSelected(_ sender: UIButton)
+    {
+        if currentlySetHeightUnit != "ft"
+        {
+            changeButtonStatesTo(on: "ft", off: currentlySetHeightUnit)
+            currentlySetHeightUnit = "ft"
         }
     }
     
     @IBAction func kgSelected(_ sender: UIButton)
     {
-        if currentlySetWeightUnit == "lbs"
+        if currentlySetWeightUnit != "kg"
         {
+            changeButtonStatesTo(on: "kg", off: currentlySetWeightUnit)
             currentlySetWeightUnit = "kg"
-            sender.backgroundColor = UIColor(hex: "5FC0E5")
-            sender.setTitleColor(UIColor.white, for: .normal)
-            lbsToggleButton.backgroundColor = UIColor(hex: "F0F0F0")
-            lbsToggleButton.setTitleColor(UIColor.black, for: .normal)
         }
     }
     
     @IBAction func lbsSelected(_ sender: UIButton)
     {
-        if currentlySetWeightUnit == "kg"
+        if currentlySetWeightUnit != "lbs"
         {
+            changeButtonStatesTo(on: "lbs", off: currentlySetWeightUnit)
             currentlySetWeightUnit = "lbs"
-            sender.backgroundColor = UIColor(hex: "5FC0E5")
-            sender.setTitleColor(UIColor.white, for: .normal)
-            kgToggleButton.backgroundColor = UIColor(hex: "F0F0F0")
-            kgToggleButton.setTitleColor(UIColor.black, for: .normal)
         }
+    }
+    
+    func changeButtonStatesTo(on buttonName1: String, off buttonName2: String)
+    {
+        units[buttonName1]!.backgroundColor = UIColor(hex: "5FC0E5")
+        units[buttonName1]!.setTitleColor(UIColor.white, for: .normal)
+        units[buttonName2]!.backgroundColor = UIColor(hex: "F0F0F0")
+        units[buttonName2]!.setTitleColor(UIColor.black, for: .normal)
     }
     
     override func didReceiveMemoryWarning()
@@ -182,11 +171,9 @@ class SetupProfileScreenViewController: UIViewController
     {
         if currentlySelectedLifestyleIndex != sender.tag
         {
-            
             radioButtons[currentlySelectedLifestyleIndex].setImage(#imageLiteral(resourceName: "ic_radio_off_24dp"), for: .normal)
             radioButtons[currentlySelectedLifestyleIndex].isEnabled = true
             radioButtons[sender.tag].setImage(#imageLiteral(resourceName: "ic_radio_on_24dp"), for: .normal)
-            //radioButtons[sender.tag].isEnabled = false
             currentlySelectedLifestyleIndex = sender.tag
         }
        
@@ -233,7 +220,6 @@ class SetupProfileScreenViewController: UIViewController
     
     @objc func keyboardWasShown(notification: NSNotification)
     {
-        //self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
@@ -258,7 +244,6 @@ class SetupProfileScreenViewController: UIViewController
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
-        //self.scrollView.isScrollEnabled = false
     }
     
     //MARK: - Initialize Text Fields
@@ -282,35 +267,6 @@ class SetupProfileScreenViewController: UIViewController
             textField.textContentType = UITextContentType("")
         }
     }
-    
-    
-    //Add Initial Bottom Border To Text Fields
-    
-    func addInitial(_ border: CALayer, to textField: UITextField)
-    {
-        let width = CGFloat(2.0)
-        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width:  textField.frame.size.width, height: textField.frame.size.height)
-        border.borderColor = initialColourOfBorder
-        border.borderWidth = width
-        
-        textField.layer.addSublayer(border)
-        textField.layer.masksToBounds = true
-    }
-    
-    //MARK: - Transition For The Bottom Border In Text Fields
-    
-    func runTransition(on transitioningLayer: CALayer, with transitionType: String, to colour: CGColor?)
-    {
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = transitionType
-        
-        transitioningLayer.add(transition,
-                               forKey: "transition")
-        
-        transitioningLayer.borderColor = colour
-    }
-
 }
 
 extension SetupProfileScreenViewController: UITextFieldDelegate

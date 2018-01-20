@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42A2E75E12D395F234A724B4 /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
 		59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
@@ -20,9 +19,6 @@
 		5978612D2011C32B00C2B5D4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */; };
 		5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */; };
 		5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */; };
-		5978613920127C7E00C2B5D4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */; };
-		5978613A20127C7E00C2B5D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613720127C7D00C2B5D4 /* Bolts.framework */; };
-		5978613B20127C7E00C2B5D4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +37,6 @@
 		5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGoalScreenViewController.swift; sourceTree = "<group>"; };
 		5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileScreenViewController.swift; sourceTree = "<group>"; };
-		5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		5978613720127C7D00C2B5D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,10 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5978613A20127C7E00C2B5D4 /* Bolts.framework in Frameworks */,
-				42A2E75E12D395F234A724B4 /* Pods_Benefit.framework in Frameworks */,
-				5978613B20127C7E00C2B5D4 /* FBSDKLoginKit.framework in Frameworks */,
-				5978613920127C7E00C2B5D4 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,9 +125,6 @@
 		D804225604BCA14F0787571D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5978613720127C7D00C2B5D4 /* Bolts.framework */,
-				5978613620127C7C00C2B5D4 /* FBSDKCoreKit.framework */,
-				5978613820127C7E00C2B5D4 /* FBSDKLoginKit.framework */,
 				322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */,
 			);
 			name = Frameworks;
@@ -449,7 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -473,7 +459,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -64,10 +64,6 @@ class HomeScreenViewController: UIViewController
 //        layerView.layer.mask = mask
 //
 //    }
-    
-    func runAnimation()
-    {
-       
-    }
+
     
 }

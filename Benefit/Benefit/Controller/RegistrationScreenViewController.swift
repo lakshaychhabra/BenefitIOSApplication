@@ -15,14 +15,9 @@ class RegistrationScreenViewController: UIViewController
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-   
     @IBOutlet weak var invalidEmailAddressLabel: UILabel!
     @IBOutlet weak var incorrectPasswordLabel: UILabel!
-    
-    //colour of bottom border of the text field before the animation starts
-    let initialColourOfBorder = UIColor.init(ciColor: CIColor(red: 240, green: 240, blue: 240)).cgColor
-    //colour of bottom border of the text field after the animation has finished
-    let finalColourOfBorder = UIColor.darkGray.cgColor
+
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
     var activeField: UITextField?
@@ -30,7 +25,7 @@ class RegistrationScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setupNavigationBar()
+        setupNavigationBar(with: "CREATE A NEW ACCOUNT")
         registerForKeyboardNotifications()
         invalidEmailAddressLabel.text = ""
         incorrectPasswordLabel.text = ""
@@ -41,22 +36,7 @@ class RegistrationScreenViewController: UIViewController
         
     }
     
-    func setupNavigationBar()
-    {
-        let img = UIImage()
-        self.navigationController?.navigationBar.shadowImage = img
-        self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
-        let label = UILabel()
-        label.text = "CREATE A NEW ACCOUNT"
-        label.font = UIFont(name: "Oswald-Medium", size: 25)
-        label.textAlignment = .left
-        self.navigationItem.titleView = label
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
-    }
+   
     
     @IBAction func nextButtonPressed(_ sender: UIButton)
     {
@@ -140,34 +120,6 @@ class RegistrationScreenViewController: UIViewController
         }
     }
     
-    
-    //Add Initial Bottom Border To Text Fields
-    
-    func addInitial(_ border: CALayer, to textField: UITextField)
-    {
-        let width = CGFloat(2.0)
-        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width:  textField.frame.size.width, height: textField.frame.size.height)
-        border.borderColor = initialColourOfBorder
-        border.borderWidth = width
-        
-        textField.layer.addSublayer(border)
-        textField.layer.masksToBounds = true
-    }
-    
-    //MARK: - Transition For The Bottom Border In Text Fields
-    
-    func runTransition(on transitioningLayer: CALayer, with transitionType: String, to colour: CGColor?)
-    {
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = transitionType
-        
-        transitioningLayer.add(transition,
-                               forKey: "transition")
-        
-        transitioningLayer.borderColor = colour
-    }
-   
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
