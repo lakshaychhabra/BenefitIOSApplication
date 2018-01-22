@@ -16,9 +16,11 @@
 		59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647063200A97BA00F9357F /* Oswald-Medium.ttf */; };
 		59647066200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */; };
 		59647068200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */; };
-		5978612D2011C32B00C2B5D4 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */; };
+		5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */; };
 		5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */; };
 		5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */; };
+		598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A78D620135031009D6B9A /* BMIScreenViewController.swift */; };
+		59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +36,11 @@
 		59647063200A97BA00F9357F /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Semibold-webfont.ttf"; sourceTree = "<group>"; };
 		59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular-webfont.ttf"; sourceTree = "<group>"; };
-		5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenViewController.swift; sourceTree = "<group>"; };
 		5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGoalScreenViewController.swift; sourceTree = "<group>"; };
 		5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileScreenViewController.swift; sourceTree = "<group>"; };
+		598A78D620135031009D6B9A /* BMIScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScreenViewController.swift; sourceTree = "<group>"; };
+		59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,9 +99,11 @@
 			children = (
 				59647045200A26CF00F9357F /* LoginScreenViewController.swift */,
 				59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */,
-				5978612C2011C32A00C2B5D4 /* HomeScreenViewController.swift */,
+				5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */,
 				5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */,
 				5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */,
+				598A78D620135031009D6B9A /* BMIScreenViewController.swift */,
+				59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */,
+				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
 				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
+				598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */,
 				5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */,
-				5978612D2011C32B00C2B5D4 /* HomeScreenViewController.swift in Sources */,
+				5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */,
 				59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */,
 				59647044200A26CF00F9357F /* AppDelegate.swift in Sources */,
 			);
@@ -438,7 +446,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -461,7 +469,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

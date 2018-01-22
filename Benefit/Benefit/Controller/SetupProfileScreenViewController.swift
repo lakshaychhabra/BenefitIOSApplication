@@ -70,17 +70,18 @@ class SetupProfileScreenViewController: UIViewController
 
     }
     
-    func setupRounded(button: UIButton)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        // Shadow and Radius for Circle Button
-        button.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
-        //button.layer.shadowColor = UIColor.black.cgColor
-        //button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        button.layer.masksToBounds = false
-        //button.layer.shadowRadius = 1.0
-        //button.layer.shadowOpacity = 0.5
-        button.layer.cornerRadius = button.frame.width / 2
-        
+        if segue.identifier == "goToBMIScreen"
+        {
+            let destinationVC = segue.destination as! BMIScreenViewController
+            destinationVC.delegate = self
+            destinationVC.height = Double(heightTextField.text!)!
+            destinationVC.weight = Double(weightTextField.text!)!
+            destinationVC.heightUnit = currentlySetHeightUnit
+            destinationVC.weightUnit = currentlySetWeightUnit
+            print(destinationVC.height, destinationVC.weight)
+        }
     }
     
     @IBAction func femaleSelected(_ sender: UIButton)
@@ -298,9 +299,22 @@ extension SetupProfileScreenViewController: UITextFieldDelegate
             nextButton.alpha = 1.0
         }
     }
-    
+}
 
-
+extension UIViewController
+{
+    func setupRounded(button: UIButton)
+    {
+        // Shadow and Radius for Circle Button
+        button.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+        //button.layer.shadowColor = UIColor.black.cgColor
+        //button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.masksToBounds = false
+        //button.layer.shadowRadius = 1.0
+        //button.layer.shadowOpacity = 0.5
+        button.layer.cornerRadius = button.frame.width / 2
+        
+    }
 }
 
 
