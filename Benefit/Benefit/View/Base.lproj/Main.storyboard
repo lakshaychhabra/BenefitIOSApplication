@@ -860,7 +860,7 @@
                                                             <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="30"/>
                                                         </variation>
                                                         <connections>
-                                                            <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SsV-av-Bet"/>
+                                                            <action selector="forgotPasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3x6-5t-lxW"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWD-HI-aIR">
@@ -916,7 +916,7 @@
                                                     <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cq0-oO-T6R"/>
+                                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xhr-de-ti1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
