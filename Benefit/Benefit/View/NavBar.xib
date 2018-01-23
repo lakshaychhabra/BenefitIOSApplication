@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavBar" customModule="Benefit" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="30S-Bk-G7G" id="wqU-nW-JQH"/>
+                <outlet property="notificationsButton" destination="39X-rH-20g" id="MMZ-dr-2n0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="30S-Bk-G7G">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-q9-GBK">
+                    <rect key="frame" x="310" y="5.5" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LCQ-q9-GBK" secondAttribute="height" multiplier="1:1" id="0Pb-Us-9PE"/>
+                        <constraint firstAttribute="height" constant="33" id="ld5-OY-Hca"/>
+                        <constraint firstAttribute="width" constant="33" id="u0s-vx-eo4"/>
+                    </constraints>
+                    <state key="normal" image="ic_coach_24dp"/>
+                </button>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39X-rH-20g">
+                    <rect key="frame" x="257" y="5.5" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="Di8-xh-Tg8"/>
+                        <constraint firstAttribute="width" secondItem="39X-rH-20g" secondAttribute="height" multiplier="1:1" id="G5k-Qj-Pkl"/>
+                        <constraint firstAttribute="height" constant="33" id="fF8-Hw-an9"/>
+                    </constraints>
+                    <state key="normal" image="ic_notif_24dp"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="benefit_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-p9-Db0">
+                    <rect key="frame" x="80" y="8" width="147" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="147" id="ElT-U9-UYg"/>
+                        <constraint firstAttribute="height" constant="33" id="Ksa-8g-CuY"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ksi-p9-Db0" firstAttribute="centerY" secondItem="30S-Bk-G7G" secondAttribute="centerY" constant="2.5" id="AtY-xW-JqZ"/>
+                <constraint firstItem="39X-rH-20g" firstAttribute="leading" secondItem="ksi-p9-Db0" secondAttribute="trailing" constant="30" id="GP3-3Z-iW0"/>
+                <constraint firstItem="ksi-p9-Db0" firstAttribute="leading" secondItem="dNk-3f-wzx" secondAttribute="leading" constant="80" id="Ijb-yd-b2t"/>
+                <constraint firstItem="LCQ-q9-GBK" firstAttribute="centerY" secondItem="30S-Bk-G7G" secondAttribute="centerY" id="P5m-tf-gCx"/>
+                <constraint firstItem="39X-rH-20g" firstAttribute="centerY" secondItem="30S-Bk-G7G" secondAttribute="centerY" id="maY-s6-eia"/>
+                <constraint firstItem="LCQ-q9-GBK" firstAttribute="leading" secondItem="39X-rH-20g" secondAttribute="trailing" constant="20" id="pR8-rF-I4h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="dNk-3f-wzx"/>
+            <point key="canvasLocation" x="9.5" y="-137"/>
+        </view>
+        <navigationBar contentMode="scaleToFill" id="XJo-HA-9NR">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <items>
+                <navigationItem title="Title" id="KpU-zz-fbX"/>
+            </items>
+            <point key="canvasLocation" x="21.5" y="-408"/>
+        </navigationBar>
+    </objects>
+    <resources>
+        <image name="benefit_logo" width="1328" height="298"/>
+        <image name="ic_coach_24dp" width="128" height="128"/>
+        <image name="ic_notif_24dp" width="128" height="128"/>
+    </resources>
+</document>

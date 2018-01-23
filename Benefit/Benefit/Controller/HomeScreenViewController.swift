@@ -22,24 +22,19 @@ class HomeScreenViewController: UIViewController
     
     func setupNavigationBarItems()
     {
-        let benefitImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 250, height: 100))
-        benefitImageView.contentMode = .scaleAspectFit
-        benefitImageView.image = #imageLiteral(resourceName: "benefit_logo")
-//        //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: benefitImageView)
-//
-//        navigationController?.view.addSubview(benefitImageView)
-        navigationItem.titleView = benefitImageView
+        navigationController?.navigationBar.isHidden = true
         
-        let notificationsButton = UIButton(type: .system)
-        notificationsButton.setImage(#imageLiteral(resourceName: "ic_notif_24dp"), for: .normal)
-        notificationsButton.imageView?.contentMode = .scaleAspectFit
-       
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationsButton)
+        let customNavigationBar = UIView()
+        customNavigationBar.frame = navigationController!.navigationBar.frame
+        view.addSubview(customNavigationBar)
         
-        let coachButton = UIButton(type: .system)
-        coachButton.setImage(#imageLiteral(resourceName: "ic_coach_24dp"), for: .normal)
-        coachButton.imageView?.contentMode = .scaleAspectFit
-        navigationItem.rightBarButtonItems?.append(UIBarButtonItem(customView: coachButton))
+        let colorView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
+        colorView.backgroundColor = UIColor.red
+        customNavigationBar.addSubview(colorView)
+        
+        colorView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: colorView, attribute: .top, relatedBy: .equal, toItem: customNavigationBar, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
+        
         
     }
     

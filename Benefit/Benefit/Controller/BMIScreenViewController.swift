@@ -42,7 +42,7 @@ class BMIScreenViewController: UIViewController
         self.navigationController?.navigationBar.shadowImage = img
         self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
         
-        let gradient = createGradient(from: horizontalSeparator.bounds)
+        let gradient = createGradient(from: horizontalSeparator.frame)
         self.horizontalSeparator.layer.insertSublayer(gradient, at: 0)
     }
     
