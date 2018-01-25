@@ -11,5 +11,6 @@ target 'Benefit' do
   pod 'Firebase/Core'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod 'ImageSlideshow', '~> 1.4'
+  pod "MIBadgeButton-Swift", :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
 
 end

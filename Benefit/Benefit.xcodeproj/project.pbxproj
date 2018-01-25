@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
 		59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */; };
 		594BF99E2016393000E7C103 /* NavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594BF99D2016393000E7C103 /* NavBar.xib */; };
 		5957ED7A20178A1600870A02 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7920178A1600870A02 /* NavBar.swift */; };
 		5957ED7C20179E0500870A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7B20179E0500870A02 /* ViewController.swift */; };
+		5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
 		59647049200A26CF00F9357F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59647047200A26CF00F9357F /* Main.storyboard */; };
@@ -31,6 +33,7 @@
 		594BF99D2016393000E7C103 /* NavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBar.xib; sourceTree = "<group>"; };
 		5957ED7920178A1600870A02 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		5957ED7B20179E0500870A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsSectionViewController.swift; sourceTree = "<group>"; };
 		59647040200A26CF00F9357F /* Benefit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benefit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59647043200A26CF00F9357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59647045200A26CF00F9357F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +114,7 @@
 				598A78D620135031009D6B9A /* BMIScreenViewController.swift */,
 				59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */,
 				5957ED7B20179E0500870A02 /* ViewController.swift */,
+				5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -277,6 +283,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -293,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5957ED7C20179E0500870A02 /* ViewController.swift in Sources */,
+				5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */,
 				5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */,
 				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
 				5957ED7A20178A1600870A02 /* NavBar.swift in Sources */,

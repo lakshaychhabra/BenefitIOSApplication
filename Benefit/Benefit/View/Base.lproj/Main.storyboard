@@ -689,6 +689,21 @@
             </objects>
             <point key="canvasLocation" x="179.6875" y="92.578125"/>
         </scene>
+        <!--Workouts Section View Controller-->
+        <scene sceneID="Pcb-6N-PUP">
+            <objects>
+                <viewController id="5oT-IY-mEj" customClass="WorkoutsSectionViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yed-aL-44n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="2Nk-Ag-029"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akb-51-JZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="824"/>
+        </scene>
         <!--Login Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

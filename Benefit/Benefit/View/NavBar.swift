@@ -26,9 +26,11 @@ class NavBar: UIView
     
     private func setUpNavBar()
     {
+        
         Bundle.main.loadNibNamed("NavBar", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
 }
