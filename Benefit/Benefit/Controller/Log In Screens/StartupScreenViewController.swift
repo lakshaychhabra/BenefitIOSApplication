@@ -41,8 +41,7 @@ class StartupScreenViewController: UIViewController
         let height = self.triangularView.layer.frame.size.height
         print("Top: \(topView.frame.size.width)")
         print("Triangle: \(width)")
-        //print(height)
-        
+//
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: height))
         path.addLine(to: CGPoint(x: width, y: 0))

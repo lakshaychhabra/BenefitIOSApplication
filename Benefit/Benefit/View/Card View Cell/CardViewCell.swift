@@ -1,21 +1,25 @@
 //
-//  WorkoutCell.swift
+//  CardViewCell.swift
 //  Benefit
 //
-//  Created by Delta One on 26/01/18.
+//  Created by Delta One on 01/02/18.
 //  Copyright © 2018 IOSD. All rights reserved.
 //
 
 import UIKit
 
-class WorkoutCell: UITableViewCell {
+class CardViewCell: UITableViewCell
+{
 
-    override func awakeFromNib() {
+    @IBOutlet weak var cardViewImage: UIImageView!
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

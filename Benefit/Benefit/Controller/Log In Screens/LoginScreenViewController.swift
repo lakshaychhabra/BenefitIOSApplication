@@ -209,16 +209,7 @@ extension UIViewController
         let img = UIImage()
         self.navigationController?.navigationBar.shadowImage = img
         self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
-        let label = UILabel()
-        label.text = text
-        label.font = UIFont(name: "Oswald-Medium", size: 25)
-        label.textAlignment = .left
-        self.navigationItem.titleView = label
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: label.superview, attribute: .centerX, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: label.superview, attribute: .width, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: label.superview, attribute: .centerY, multiplier: 1, constant: 0))
-        label.superview?.addConstraint(NSLayoutConstraint(item: label, attribute: .height, relatedBy: .equal, toItem: label.superview, attribute: .height, multiplier: 1, constant: 0))
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font : UIFont(name: "Oswald-Medium", size: 25)!]
     }
     
     //Add Initial Bottom Border To Text Fields

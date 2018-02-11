@@ -15,27 +15,13 @@ class HomeScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setupNavigationBarItems()
+        //setNav()
+        let navBar = NavBar()
+        navBar.frame = (self.navigationController?.navigationBar.frame)!
+        UIApplication.shared.keyWindow?.addSubview(navBar)
+//        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "FAFAFA")
         setupRounded(button: chatButton)
 
-    }
-    
-    func setupNavigationBarItems()
-    {
-        navigationController?.navigationBar.isHidden = true
-        
-        let customNavigationBar = UIView()
-        customNavigationBar.frame = navigationController!.navigationBar.frame
-        view.addSubview(customNavigationBar)
-        
-        let colorView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
-        colorView.backgroundColor = UIColor.red
-        customNavigationBar.addSubview(colorView)
-        
-        colorView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: colorView, attribute: .top, relatedBy: .equal, toItem: customNavigationBar, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        
-        
     }
     
     @IBAction func workoutsButtonPressed(_ sender: UIButton)
@@ -71,3 +57,73 @@ class HomeScreenViewController: UIViewController
     }
 
 }
+
+extension UIViewController
+{
+//    func setupCustomNavBar()
+//    {
+//        let customNavigationBar = NavBar()
+//        customNavigationBar.frame = navigationController!.navigationBar.frame
+//        navigationController?.navigationBar.addSubview(customNavigationBar)
+//        customNavigationBar.coachButton.addTarget(self, action: #selector(coachButtonPressed), for: .touchUpInside)
+//        customNavigationBar.hamButton.addTarget(self, action: #selector(hamburgerMenuButtonPressed), for: .touchUpInside)
+//
+//    }
+    
+    func setNav()
+    {
+        
+        let containerTitleView = UIView(frame: CGRect(x: 0, y: 0, width: 155, height: 34))
+        let titleView = UIImageView(image: #imageLiteral(resourceName: "benefit_logo"))
+        titleView.contentMode = .scaleAspectFit
+        titleView.frame = CGRect(x: 0, y: 0, width: 155, height: 34)
+        containerTitleView.addSubview(titleView)
+        
+        self.navigationItem.titleView = containerTitleView
+        
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        button.setImage(#imageLiteral(resourceName: "ic_coach_24dp-1"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        let button2 = UIButton(type: .custom)
+        button2.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        button2.setImage(#imageLiteral(resourceName: "ic_notif_24dp-1"), for: .normal)
+        button2.imageView?.contentMode = .scaleAspectFit
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button), UIBarButtonItem(customView: button2)]
+    }
+    
+    @objc func hamburgerMenuButtonPressed(sender: UIButton)
+    {
+        print("Hamburger Menu Button Pressed")
+        
+        //        if !isHamburgerMenuToggled
+        //        {
+        //            isHamburgerMenuToggled = true
+        //            mainViewLeadingConstraint.constant = 150
+        //            mainViewTrailingConstraint.constant = -150
+        //        }
+        //        else
+        //        {
+        //            isHamburgerMenuToggled = false
+        //            mainViewTrailingConstraint.constant = 0
+        //            mainViewLeadingConstraint.constant = 0
+        //        }
+        //
+        //        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()})
+        //        {
+        //            (animationComplete) in
+        //            print("animation complete!")
+        //        }
+        
+        
+    }
+    
+    @objc func coachButtonPressed(sender: UIButton)
+    {
+        print("Coach Button Pressed")
+    }
+    
+}
+

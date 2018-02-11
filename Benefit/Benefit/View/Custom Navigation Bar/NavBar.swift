@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import MIBadgeButton_Swift
 
 class NavBar: UIView
 {
+    @IBOutlet weak var hamButton: UIButton!
     @IBOutlet var contentView: NavBar!
+    @IBOutlet weak var coachButton: UIButton!
+    @IBOutlet weak var notificationsButton: MIBadgeButton!
     override init(frame: CGRect)
     {
         super.init(frame: frame)

@@ -122,13 +122,12 @@ class BMIScreenViewController: UIViewController
         let bottomColor = UIColor(hex: "#f27701").cgColor
         let gradientColors = [topColor, bottomColor]
         
-        let gradientLocations: [NSNumber] = [0.0, 1.0]
+        let gradientLocations: [NSNumber] = [0.0, 0.5]
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.locations = gradientLocations
-        //Set startPoint and endPoint property also
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientLayer.frame = bounds
         return gradientLayer
     }

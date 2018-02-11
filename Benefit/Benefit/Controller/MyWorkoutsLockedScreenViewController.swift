@@ -1,14 +1,14 @@
 //
-//  WorkoutsSectionViewController.swift
+//  MyWorkoutsLockedScreenViewController.swift
 //  Benefit
 //
-//  Created by Delta One on 24/01/18.
+//  Created by Delta One on 28/01/18.
 //  Copyright © 2018 IOSD. All rights reserved.
 //
 
 import UIKit
 
-class WorkoutsSectionViewController: UIViewController {
+class MyWorkoutsLockedScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
