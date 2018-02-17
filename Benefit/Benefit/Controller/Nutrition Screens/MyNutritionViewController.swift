@@ -33,8 +33,20 @@ class MyNutritionViewController: UIViewController
     }
 }
 
-extension MyNutritionViewController: UITableViewDataSource, NutritionDietDelegate, CommentMealDelegate
+extension MyNutritionViewController: UITableViewDataSource, CommentMealDelegate
 {
+    func commentMealTextViewDidBeginEditing(on row: Int) {
+        
+    }
+    
+    func saveButtonPressed(with comment: String, on row: Int) {
+        
+    }
+    
+    func saveButtonPressed(with comment: String) {
+        
+    }
+    
     func commentMealTextViewDidBeginEditing()
     {
         if currentSection < 6
@@ -42,11 +54,6 @@ extension MyNutritionViewController: UITableViewDataSource, NutritionDietDelegat
             let indexPath = IndexPath(row: 1, section: currentSection)
             tableView.scrollToRow(at: indexPath, at: .none, animated: true)
         }
-    }
-    
-    func saveButtonPressed()
-    {
-        saveMeal()
     }
     
     func saveMeal()
@@ -139,7 +146,7 @@ extension MyNutritionViewController: UITableViewDataSource, NutritionDietDelegat
                 cell.mealPlanBackgroundView.backgroundColor = mealBackgroundColors[indexPath.section - 2]
                 cell.selectionStyle = .none
                 currentSection = indexPath.section
-                cell.delegate = self
+        
                 return cell
             }
             else

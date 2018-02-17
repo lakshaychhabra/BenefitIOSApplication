@@ -12,10 +12,11 @@ class TempViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     
-    let rows = ["PremiumFeatureCell", "CalendarCell", "TodaysNutritionPlan", "NutritionDiet", "CommentCell"]
+    let rows = ["PremiumFeatureCell", "CalendarCell", "TodaysNutritionPlan", "NutritionDiet", "CommentCell", "SavedMealCell"]
     let mealBackgroundColors = [UIColor(hex: "E0A662"), UIColor(hex: "73C997"), UIColor(hex: "457B97"), UIColor(hex: "C64A4D"), UIColor(hex: "2A373E")]
     let meals = ["Breakfast", "Mid-morning", "Lunch", "Snacks", "Dinner"]
-    
+    var isMealSaved = [false, false, false, false, false]
+    var currentSection = 0
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -32,8 +33,8 @@ class TempViewController: UIViewController
             {
                 registerCellNib(named: row, with: tableView)
             }
-            
         }
+        hideKeyboard()
     }
 }
 
@@ -45,31 +46,37 @@ extension TempViewController: CalendarViewControllerDelegate
     }
 }
 
-extension TempViewController: UITableViewDataSource, NutritionDietDelegate, CommentMealDelegate
+extension TempViewController: UITableViewDataSource, CommentMealDelegate
 {
-    func saveButtonPressed()
+    func commentMealTextViewDidBeginEditing(on row: Int)
     {
-        saveMeal()
+        tableView.scrollToRow(at: IndexPath(row: 1, section: row + 3), at: .middle, animated: true)
     }
     
-    func saveMeal()
+    func saveButtonPressed(with comment: String, on row: Int)
     {
-        updateSaveSectionUI()
+        saveMeal(with: comment, for: row)
     }
     
-    func updateSaveSectionUI()
+    func saveMeal(with commment: String, for row: Int)
     {
-        
+        updateSaveSectionUI(for: row)
     }
     
-    func commentMealTextViewDidBeginEditing()
+    func updateSaveSectionUI(for row: Int)
     {
-        
+        isMealSaved[row] = true
+        //let contentOffset = tableView.contentOffset
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: 1, section: row + 3), at: .middle, animated: false)
+        //tableView.setContentOffset(contentOffset, animated: true)
+       // tableView.contentOffset = contentOffset
+      
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
     {
-        return rows.count + meals.count - 2
+        return rows.count + meals.count - 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -112,19 +119,30 @@ extension TempViewController: UITableViewDataSource, NutritionDietDelegate, Comm
             if indexPath.row == 0
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionDiet", for: indexPath) as! NutritionDiet
-                cell.mealName.text = meals[indexPath.section - 2]
-                cell.mealPlanBackgroundView.backgroundColor = mealBackgroundColors[indexPath.section - 2]
+                cell.mealName.text = meals[indexPath.section - 3]
+                cell.mealPlanBackgroundView.backgroundColor = mealBackgroundColors[indexPath.section - 3]
                 cell.selectionStyle = .none
                 //currentSection = indexPath.section
-                cell.delegate = self
                 return cell
             }
             else
             {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-                cell.delegate = self
-                return cell
+                if isMealSaved[indexPath.section - 3]
+                {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "SavedMealCell", for: indexPath)
+                
+                    return cell
+                }
+                else
+                {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+                    cell.delegate = self
+                    cell.row = indexPath.section - 3
+                    return cell
+                }
+                
             }
         }
     }
 }
+

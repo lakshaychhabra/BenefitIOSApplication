@@ -10,14 +10,15 @@ import UIKit
 
 protocol CommentMealDelegate
 {
-    func commentMealTextViewDidBeginEditing()
+    func commentMealTextViewDidBeginEditing(on row: Int)
+    func saveButtonPressed(with comment: String, on row: Int)
 }
 
 class CommentCell: UITableViewCell, UITextViewDelegate
 {
     @IBOutlet weak var commentMealTextView: UITextView!
     var delegate: CommentMealDelegate?
-    
+    var row: Int?
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -28,8 +29,7 @@ class CommentCell: UITableViewCell, UITextViewDelegate
     
     func textViewDidBeginEditing(_ textView: UITextView)
     {
-        print("HEL")
-        delegate?.commentMealTextViewDidBeginEditing()
+        delegate?.commentMealTextViewDidBeginEditing(on: row!)
         if textView.textColor == .lightGray
         {
             textView.text = nil
@@ -51,5 +51,14 @@ class CommentCell: UITableViewCell, UITextViewDelegate
         super.setSelected(selected, animated: animated)
 
     }
-
+    @IBAction func saveButtonPressed(_ sender: UIButton)
+    {
+        if let comment = commentMealTextView.text
+        {
+            commentMealTextView.text = "Comment on this meal"
+            commentMealTextView.textColor = UIColor.lightGray
+            delegate?.saveButtonPressed(with: comment, on: row!)
+        }
+    }
+    
 }
