@@ -25,6 +25,9 @@ class TempViewController: UIViewController
     
     func setupTableView()
     {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
         for row in rows
@@ -36,6 +39,24 @@ class TempViewController: UIViewController
         }
         hideKeyboard()
     }
+    
+    @objc func keyboardWillShow(_ notification:Notification)
+    {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        {
+            tableView.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification:Notification)
+    {
+        
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil
+        {
+            tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        }
+    }
 }
 
 extension TempViewController: CalendarViewControllerDelegate
@@ -43,6 +64,16 @@ extension TempViewController: CalendarViewControllerDelegate
     func respondToChangeInSelectedDate(for dayNumber: Int, _ month: String, _ year: Int)
     {
         print(dayNumber, month, year)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
+    {
+        let indexPath = IndexPath(row: 0, section: 1)
+        if tableView.rectForRow(at: indexPath).contains(touch.location(in: tableView.cellForRow(at: indexPath)))
+        {
+            return false
+        }
+        return true
     }
 }
 

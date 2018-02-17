@@ -202,7 +202,7 @@ extension UITextField
     }
 }
 
-extension UIViewController
+extension UIViewController: UIGestureRecognizerDelegate
 {
     func setupNavigationBar(with text: String)
     {
@@ -244,6 +244,7 @@ extension UIViewController
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
             action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        tap.delegate = self
     }
 
     @objc func dismissKeyboard()
