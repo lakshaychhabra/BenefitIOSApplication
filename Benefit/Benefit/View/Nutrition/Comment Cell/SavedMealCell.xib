@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,8 +27,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="506" height="56.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This meal has been saved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og3-2X-o9o">
-                                <rect key="frame" x="30" y="19.5" width="197" height="19"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="17"/>
+                                <rect key="frame" x="30" y="15" width="266.5" height="28"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="23"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,8 +36,8 @@
                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="og3-2X-o9o" firstAttribute="leading" secondItem="tuT-Kb-t0x" secondAttribute="leading" constant="30" id="CZa-8e-MRD"/>
+                            <constraint firstItem="og3-2X-o9o" firstAttribute="top" secondItem="tuT-Kb-t0x" secondAttribute="top" constant="15" id="iyZ-Uc-APe"/>
                             <constraint firstItem="og3-2X-o9o" firstAttribute="centerY" secondItem="tuT-Kb-t0x" secondAttribute="centerY" id="soj-Et-4qh"/>
-                            <constraint firstAttribute="height" constant="56.5" id="vUH-WS-m4s"/>
                         </constraints>
                     </view>
                 </subviews>

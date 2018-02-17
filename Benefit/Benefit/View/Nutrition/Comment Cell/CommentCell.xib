@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,33 +16,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="57" id="zmn-Zg-ipe" userLabel="CommentCell" customClass="CommentCell" customModule="Benefit" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="506" height="57"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="86" id="zmn-Zg-ipe" userLabel="CommentCell" customClass="CommentCell" customModule="Benefit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="506" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zmn-Zg-ipe" id="jec-8a-0Gz">
-                <rect key="frame" x="0.0" y="0.0" width="506" height="56.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="506" height="85.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzU-B8-UPm">
-                        <rect key="frame" x="0.0" y="0.0" width="506" height="56.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="506" height="85.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_comment_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="wxb-hP-JLt">
-                                <rect key="frame" x="15" y="7.5" width="42" height="42"/>
+                                <rect key="frame" x="15" y="15" width="56" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="DPY-Uj-r6j"/>
-                                    <constraint firstAttribute="width" constant="42" id="KxT-Qq-kFg"/>
+                                    <constraint firstAttribute="height" constant="42" id="DPY-Uj-r6j">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="42" id="KxT-Qq-kFg">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-cc-R2i">
-                                <rect key="frame" x="77" y="7.5" width="2" height="42"/>
+                                <rect key="frame" x="91" y="22" width="0.5" height="42"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Om9-v0-pdQ"/>
-                                    <constraint firstAttribute="width" constant="2" id="mSw-3Z-elR"/>
+                                    <constraint firstAttribute="width" constant="0.5" id="mSw-3Z-elR"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comment on this meal" translatesAutoresizingMaskIntoConstraints="NO" id="pkr-Mi-JjE">
-                                <rect key="frame" x="99" y="7.5" width="331" height="42"/>
+                                <rect key="frame" x="111.5" y="22" width="303.5" height="42"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="XpT-1V-ZxI"/>
@@ -50,17 +54,27 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="23"/>
+                                </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57W-y1-6GZ">
-                                <rect key="frame" x="450" y="7.5" width="41" height="42"/>
+                                <rect key="frame" x="435" y="15" width="56" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="4uh-Xo-Nf0"/>
-                                    <constraint firstAttribute="width" constant="41" id="pYO-Sn-o2N"/>
+                                    <constraint firstAttribute="height" constant="42" id="4uh-Xo-Nf0">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="41" id="pYO-Sn-o2N">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="17"/>
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="22"/>
+                                </variation>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="zmn-Zg-ipe" eventType="touchUpInside" id="J38-Ji-Ye9"/>
                                 </connections>
@@ -73,11 +87,12 @@
                             <constraint firstItem="bQb-cc-R2i" firstAttribute="leading" secondItem="wxb-hP-JLt" secondAttribute="trailing" constant="20" id="KPo-k2-ww5"/>
                             <constraint firstItem="bQb-cc-R2i" firstAttribute="centerY" secondItem="ZzU-B8-UPm" secondAttribute="centerY" id="Lks-ph-13o"/>
                             <constraint firstItem="57W-y1-6GZ" firstAttribute="leading" secondItem="pkr-Mi-JjE" secondAttribute="trailing" constant="20" id="Mum-tf-3sN"/>
-                            <constraint firstAttribute="height" constant="56.5" id="V51-PL-Lfu"/>
                             <constraint firstAttribute="trailing" secondItem="57W-y1-6GZ" secondAttribute="trailing" constant="15" id="a5j-YB-u3J"/>
+                            <constraint firstItem="57W-y1-6GZ" firstAttribute="top" secondItem="ZzU-B8-UPm" secondAttribute="top" constant="15" id="bn5-Si-rct"/>
                             <constraint firstItem="57W-y1-6GZ" firstAttribute="centerY" secondItem="ZzU-B8-UPm" secondAttribute="centerY" id="fSp-1w-KxL"/>
                             <constraint firstItem="pkr-Mi-JjE" firstAttribute="leading" secondItem="bQb-cc-R2i" secondAttribute="trailing" constant="20" id="ngp-0y-qDP"/>
                             <constraint firstItem="wxb-hP-JLt" firstAttribute="centerY" secondItem="ZzU-B8-UPm" secondAttribute="centerY" id="sAP-vk-M3N"/>
+                            <constraint firstItem="wxb-hP-JLt" firstAttribute="top" secondItem="ZzU-B8-UPm" secondAttribute="top" constant="15" id="tng-ye-QcF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -91,7 +106,7 @@
             <connections>
                 <outlet property="commentMealTextView" destination="pkr-Mi-JjE" id="h3E-yi-fZg"/>
             </connections>
-            <point key="canvasLocation" x="-272" y="-144.5"/>
+            <point key="canvasLocation" x="-272" y="-159"/>
         </tableViewCell>
     </objects>
     <resources>
