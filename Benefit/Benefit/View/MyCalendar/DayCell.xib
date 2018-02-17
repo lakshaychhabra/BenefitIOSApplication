@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Alt Regular-webfont.ttf">
+            <string>ProximaNovaA-Regular</string>
+        </array>
+        <array key="Mark Simonson - Proxima Nova Semibold-webfont.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="XvC-2N-TL1" userLabel="DayCell" customClass="DayCell" customModule="Playground" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="38" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="38" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-Kh-xvL">
+                        <rect key="frame" x="14" y="10" width="10" height="19"/>
+                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="17"/>
+                        <color key="textColor" red="0.5450980392" green="0.5450980392" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJE-m2-cLE">
+                        <rect key="frame" x="14" y="49" width="10.5" height="21"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                        <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.88235294119999996" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fJE-m2-cLE" firstAttribute="top" secondItem="eCx-Kh-xvL" secondAttribute="bottom" constant="20" id="2H2-wZ-saV"/>
+                <constraint firstItem="eCx-Kh-xvL" firstAttribute="centerX" secondItem="XvC-2N-TL1" secondAttribute="centerX" id="4ng-RB-GwF"/>
+                <constraint firstItem="eCx-Kh-xvL" firstAttribute="top" secondItem="XvC-2N-TL1" secondAttribute="top" constant="10" id="bIs-S3-8Qd"/>
+                <constraint firstItem="fJE-m2-cLE" firstAttribute="centerX" secondItem="eCx-Kh-xvL" secondAttribute="centerX" id="nGK-83-zwb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="1wx-kF-cLi"/>
+            <connections>
+                <outlet property="dateLabel" destination="fJE-m2-cLE" id="cIY-jY-ZIH"/>
+                <outlet property="dayLabel" destination="eCx-Kh-xvL" id="BiL-Ty-tE9"/>
+            </connections>
+            <point key="canvasLocation" x="-200" y="10"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -162,12 +162,6 @@ class SetupProfileScreenViewController: UIViewController
         units[buttonName2]!.setTitleColor(UIColor.black, for: .normal)
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-  
-    }
-    
     @IBAction func radioButtonSelected(_ sender: UIButton)
     {
         if currentlySelectedLifestyleIndex != sender.tag
@@ -179,37 +173,7 @@ class SetupProfileScreenViewController: UIViewController
         }
        
     }
-    
-    func addDoneButtonOnKeyboard(for textField: UITextField, with text: String)
-    {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-        doneToolbar.barStyle = UIBarStyle.default
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: text, style: UIBarButtonItemStyle.done, target: self, action: #selector(self.nextButtonAction))
-        
-        var items = [UIBarButtonItem]()
-        items.append(flexSpace)
-        items.append(done)
-        
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-        
-        textField.inputAccessoryView = doneToolbar
-    }
-    
-    @objc func nextButtonAction()
-    {
-        let superview = activeField?.superview
-        
-        if let nextField = superview?.superview?.viewWithTag((activeField?.tag)! + 1) as? UITextField
-        {
-            nextField.becomeFirstResponder()
-        }
-        else
-        {
-            activeField?.resignFirstResponder()
-        }
-    }
+
     
     //MARK: - Manage Content Hidden Under Keyboard
     
@@ -246,6 +210,40 @@ class SetupProfileScreenViewController: UIViewController
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
     }
+    
+
+
+    func addDoneButtonOnKeyboard(for textField: UITextField, with text: String)
+    {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: text, style: UIBarButtonItemStyle.done, target: self, action: #selector(self.nextButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        textField.inputAccessoryView = doneToolbar
+    }
+
+    @objc func nextButtonAction()
+    {
+        let superview = activeField?.superview
+        
+        if let nextField = superview?.superview?.viewWithTag((activeField?.tag)! + 1) as? UITextField
+        {
+            nextField.becomeFirstResponder()
+        }
+        else
+        {
+            activeField?.resignFirstResponder()
+        }
+    }
+    
     
     //MARK: - Initialize Text Fields
     

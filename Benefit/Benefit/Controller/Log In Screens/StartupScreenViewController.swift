@@ -15,10 +15,10 @@ class StartupScreenViewController: UIViewController
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var runnerImage: UIImageView!
     @IBOutlet weak var triangularView: UIView!
+    @IBOutlet weak var topHalfView: UIView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        addTriangularMask()
         
     }
 
@@ -31,25 +31,5 @@ class StartupScreenViewController: UIViewController
     @IBAction func getStartedButtonPressed(_ sender: SpringButton)
     {
         //performSegue(withIdentifier: "goToChooseGoalScreen", sender: self)
-    }
-    
-    func addTriangularMask()
-    {
-        let mask = CAShapeLayer()
-        mask.frame = self.triangularView.layer.bounds
-        let width = self.triangularView.layer.frame.size.width
-        let height = self.triangularView.layer.frame.size.height
-        print("Top: \(topView.frame.size.width)")
-        print("Triangle: \(width)")
-//
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: height))
-        path.addLine(to: CGPoint(x: width, y: 0))
-        path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0, y: height))
-        
-        mask.path = path.cgPath
-        //mask.fillColor = UIColor.white.cgColor
-        triangularView.layer.mask = mask
     }
 }

@@ -15,8 +15,8 @@ class HIITViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setNav()
-        self.navigationItem.hidesBackButton = true
+        //setNav()
+        //self.navigationItem.hidesBackButton = true
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
         registerCellNib(named: "FullSizedImageViewCell", with: tableView)

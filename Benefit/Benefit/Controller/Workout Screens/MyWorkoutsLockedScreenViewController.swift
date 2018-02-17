@@ -14,8 +14,8 @@ class MyWorkoutsLockedScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setNav()
-        navigationItem.hidesBackButton = true
+        //setNav()
+        //navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning()

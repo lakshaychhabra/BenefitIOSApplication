@@ -81,7 +81,7 @@ class BMIScreenViewController: UIViewController
         case "ft":
             return length * 0.3048
         default:
-            return length
+            return length * 0.01
         }
     }
     

@@ -1,10 +1,99 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Alt Regular-webfont.ttf">
+            <string>ProximaNovaA-Regular</string>
+        </array>
+        <array key="Mark Simonson - Proxima Nova Semibold-webfont.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Exercise" rowHeight="134" id="Kj0-mb-hZ4">
+            <rect key="frame" x="0.0" y="0.0" width="499" height="95"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kj0-mb-hZ4" id="wKI-19-vWY">
+                <rect key="frame" x="0.0" y="0.0" width="499" height="94.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-fi-3fs">
+                        <rect key="frame" x="0.0" y="0.0" width="499" height="94.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exercise_img" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-Vz-Ayv">
+                                <rect key="frame" x="15" y="12" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0IB-gV-tqo"/>
+                                    <constraint firstAttribute="height" constant="70" id="28s-pe-SMF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_24dp" translatesAutoresizingMaskIntoConstraints="NO" id="YSm-r4-XgE">
+                                <rect key="frame" x="28.5" y="26" width="43" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="LUd-EG-pPZ"/>
+                                    <constraint firstAttribute="width" constant="43" id="b6O-0d-zZH"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spg-Yi-kra">
+                                <rect key="frame" x="110" y="12" width="224" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incline Bench Press" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chw-oI-Et0">
+                                        <rect key="frame" x="0.0" y="5" width="184" height="26"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="21"/>
+                                        <color key="textColor" red="0.37254901960784315" green="0.43529411764705883" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 sets, 6-8 reps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0N-9Q-CEP">
+                                        <rect key="frame" x="0.0" y="43" width="129" height="22"/>
+                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="19"/>
+                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="25D-C1-ROr"/>
+                                    <constraint firstAttribute="bottom" secondItem="G0N-9Q-CEP" secondAttribute="bottom" constant="5" id="4Gw-2o-fkS"/>
+                                    <constraint firstItem="chw-oI-Et0" firstAttribute="top" secondItem="spg-Yi-kra" secondAttribute="top" constant="5" id="GF5-bE-QGF"/>
+                                    <constraint firstItem="chw-oI-Et0" firstAttribute="leading" secondItem="spg-Yi-kra" secondAttribute="leading" id="IPe-6L-4q4"/>
+                                    <constraint firstItem="G0N-9Q-CEP" firstAttribute="leading" secondItem="chw-oI-Et0" secondAttribute="leading" id="Uzj-yI-d1Z"/>
+                                    <constraint firstAttribute="width" constant="224" id="q07-tq-fcH"/>
+                                    <constraint firstItem="G0N-9Q-CEP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="chw-oI-Et0" secondAttribute="bottom" id="ryD-4P-tN8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YSm-r4-XgE" firstAttribute="centerY" secondItem="nb7-Vz-Ayv" secondAttribute="centerY" id="GfY-Wu-FlP"/>
+                            <constraint firstItem="spg-Yi-kra" firstAttribute="leading" secondItem="nb7-Vz-Ayv" secondAttribute="trailing" constant="25" id="S3A-RE-AIZ"/>
+                            <constraint firstItem="spg-Yi-kra" firstAttribute="centerY" secondItem="KWG-fi-3fs" secondAttribute="centerY" id="SnF-SR-7Q4"/>
+                            <constraint firstItem="YSm-r4-XgE" firstAttribute="centerX" secondItem="nb7-Vz-Ayv" secondAttribute="centerX" id="pVS-rb-zJh"/>
+                            <constraint firstAttribute="height" constant="94.5" id="pbS-af-0ag"/>
+                            <constraint firstItem="nb7-Vz-Ayv" firstAttribute="leading" secondItem="KWG-fi-3fs" secondAttribute="leading" constant="15" id="thW-ac-IHT"/>
+                            <constraint firstItem="nb7-Vz-Ayv" firstAttribute="centerY" secondItem="KWG-fi-3fs" secondAttribute="centerY" id="xFU-id-saj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KWG-fi-3fs" firstAttribute="leading" secondItem="wKI-19-vWY" secondAttribute="leading" id="EeP-9C-wav"/>
+                    <constraint firstAttribute="bottom" secondItem="KWG-fi-3fs" secondAttribute="bottom" id="ZS9-dv-ncY"/>
+                    <constraint firstAttribute="trailing" secondItem="KWG-fi-3fs" secondAttribute="trailing" id="nAx-tk-Oct"/>
+                    <constraint firstItem="KWG-fi-3fs" firstAttribute="top" secondItem="wKI-19-vWY" secondAttribute="top" id="yFV-EE-VSZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="40.5" y="-2.5"/>
+        </tableViewCell>
     </objects>
+    <resources>
+        <image name="exercise_img" width="144" height="144"/>
+        <image name="ic_play_24dp" width="128" height="128"/>
+    </resources>
 </document>

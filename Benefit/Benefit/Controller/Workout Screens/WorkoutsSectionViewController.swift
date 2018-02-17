@@ -17,7 +17,7 @@ class WorkoutsSectionViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setNav()
+        //setNav()
         for workout in workoutList
         {
             registerCellNib(named: workout, with: tableView)
@@ -27,14 +27,6 @@ class WorkoutsSectionViewController: UIViewController
         tableView.estimatedRowHeight = 80
         tableView.backgroundColor = UIColor.clear
     }
-    
-   
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-       
-    }
-
 }
 
 extension WorkoutsSectionViewController: UITableViewDelegate
@@ -57,7 +49,6 @@ extension WorkoutsSectionViewController: UITableViewDelegate
         {
             performSegue(withIdentifier: "goToHIIT", sender: self)
         }
-        
     }  
 }
 
