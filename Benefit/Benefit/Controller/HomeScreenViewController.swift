@@ -16,12 +16,17 @@ class HomeScreenViewController: UIViewController
     {
         super.viewDidLoad()
         //setNav()
-        let navBar = NavBar()
-        navBar.frame = (self.navigationController?.navigationBar.frame)!
-        UIApplication.shared.keyWindow?.addSubview(navBar)
+        setupCustomNavigationBar()
 //        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "FAFAFA")
         setupRounded(button: chatButton)
 
+    }
+    
+    func setupCustomNavigationBar()
+    {
+        let navBar = NavBar()
+        navBar.frame = (self.navigationController?.navigationBar.frame)!
+        UIApplication.shared.keyWindow?.addSubview(navBar)
     }
     
     @IBAction func workoutsButtonPressed(_ sender: UIButton)

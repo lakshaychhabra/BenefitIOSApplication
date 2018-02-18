@@ -13,7 +13,6 @@ class BMIScreenViewController: UIViewController
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var healthStatusLabel: UILabel!
-    @IBOutlet weak var horizontalSeparator: UIView!
     @IBOutlet weak var expertCoachOptionButton: UIButton!
     @IBOutlet weak var selfOptionButton: UIButton!
     var height: Double!
@@ -42,8 +41,8 @@ class BMIScreenViewController: UIViewController
         self.navigationController?.navigationBar.shadowImage = img
         self.navigationController?.navigationBar.setBackgroundImage(img, for: UIBarMetrics.default)
         
-        let gradient = createGradient(from: horizontalSeparator.frame)
-        self.horizontalSeparator.layer.insertSublayer(gradient, at: 0)
+//        let gradient = createGradient(from: horizontalSeparator.frame)
+//        self.horizontalSeparator.layer.insertSublayer(gradient, at: 0)
     }
     
     func calculateBMI() -> Double
@@ -115,25 +114,22 @@ class BMIScreenViewController: UIViewController
             return
         }
     }
+//    
+//    func createGradient(from bounds: CGRect) -> CAGradientLayer
+//    {
+//        let topColor = UIColor(hex: "#fe0a02").cgColor
+//        let bottomColor = UIColor(hex: "#f27701").cgColor
+//        let gradientColors = [topColor, bottomColor]
+//        
+//        let gradientLocations: [NSNumber] = [0.0, 0.5]
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = gradientColors
+//        gradientLayer.locations = gradientLocations
+//        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+//        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+//        gradientLayer.frame = bounds
+//        return gradientLayer
+//    }
     
-    func createGradient(from bounds: CGRect) -> CAGradientLayer
-    {
-        let topColor = UIColor(hex: "#fe0a02").cgColor
-        let bottomColor = UIColor(hex: "#f27701").cgColor
-        let gradientColors = [topColor, bottomColor]
-        
-        let gradientLocations: [NSNumber] = [0.0, 0.5]
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradientLayer.frame = bounds
-        return gradientLayer
-    }
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
+   
 }

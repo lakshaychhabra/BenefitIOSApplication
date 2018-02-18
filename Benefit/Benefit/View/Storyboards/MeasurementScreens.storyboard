@@ -468,7 +468,7 @@
             </objects>
             <point key="canvasLocation" x="-85.9375" y="147.65625"/>
         </scene>
-        <!--SET UP YOUR PROFILE-->
+        <!--Update Profile View Controller-->
         <scene sceneID="I5S-hv-Ldu">
             <objects>
                 <viewController id="Bka-hg-Ufm" customClass="UpdateProfileViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
@@ -1203,9 +1203,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9YN-ye-afl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="SET UP YOUR PROFILE" id="5cL-jX-wEe">
-                        <barButtonItem key="backBarButtonItem" title=" " id="1mv-A7-ex7"/>
-                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1200"/>
                     <connections>

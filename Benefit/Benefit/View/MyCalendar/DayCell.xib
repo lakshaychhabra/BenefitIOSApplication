@@ -21,32 +21,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="XvC-2N-TL1" userLabel="DayCell" customClass="DayCell" customModule="Benefit" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="38" height="85"/>
+            <rect key="frame" x="0.0" y="0.0" width="38" height="165"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="38" height="85"/>
+                <rect key="frame" x="0.0" y="0.0" width="38" height="165"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-Kh-xvL">
-                        <rect key="frame" x="14" y="10" width="10" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-Kh-xvL">
+                        <rect key="frame" x="9" y="15" width="19" height="38"/>
                         <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="17"/>
                         <color key="textColor" red="0.5450980392" green="0.5450980392" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="34"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJE-m2-cLE">
-                        <rect key="frame" x="14" y="49" width="10.5" height="21"/>
+                        <rect key="frame" x="8" y="108" width="21" height="42"/>
                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                         <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="34"/>
+                        </variation>
                     </label>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.96078431369999995" green="0.88235294119999996" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fJE-m2-cLE" firstAttribute="top" secondItem="eCx-Kh-xvL" secondAttribute="bottom" constant="20" id="2H2-wZ-saV"/>
-                <constraint firstItem="eCx-Kh-xvL" firstAttribute="centerX" secondItem="XvC-2N-TL1" secondAttribute="centerX" id="4ng-RB-GwF"/>
-                <constraint firstItem="eCx-Kh-xvL" firstAttribute="top" secondItem="XvC-2N-TL1" secondAttribute="top" constant="10" id="bIs-S3-8Qd"/>
-                <constraint firstItem="fJE-m2-cLE" firstAttribute="centerX" secondItem="eCx-Kh-xvL" secondAttribute="centerX" id="nGK-83-zwb"/>
+                <constraint firstItem="fJE-m2-cLE" firstAttribute="centerX" secondItem="XvC-2N-TL1" secondAttribute="centerX" id="1HK-7M-9IV"/>
+                <constraint firstItem="eCx-Kh-xvL" firstAttribute="top" secondItem="XvC-2N-TL1" secondAttribute="top" constant="15" id="bRc-Ga-yIl"/>
+                <constraint firstAttribute="bottom" secondItem="fJE-m2-cLE" secondAttribute="bottom" constant="15" id="ibc-Jq-JCZ"/>
+                <constraint firstItem="fJE-m2-cLE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eCx-Kh-xvL" secondAttribute="bottom" constant="5" id="rVP-G9-XPd"/>
+                <constraint firstItem="eCx-Kh-xvL" firstAttribute="centerX" secondItem="XvC-2N-TL1" secondAttribute="centerX" id="yWZ-5r-9rj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="1wx-kF-cLi"/>
             <connections>
