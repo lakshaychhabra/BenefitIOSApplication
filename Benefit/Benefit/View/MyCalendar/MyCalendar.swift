@@ -138,12 +138,11 @@ class MyCalendar: UIView, UICollectionViewDataSource, UICollectionViewDelegateFl
             
             if cell.dateLabel.text! == String(selectedDayNumber) && selectedMonth == monthCorrespondingToSelectedDate
             {
-                cell.backgroundColor = UIColor(red: 245/255, green: 225/255, blue: 114/255, alpha: 1.0)
+                cell.viewWithTag(13)?.backgroundColor = UIColor(red: 245/255, green: 225/255, blue: 114/255, alpha: 1.0)
             }
             else
             {
-                print(indexPath)
-                cell.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                cell.viewWithTag(13)?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
             }
             
             return cell
@@ -188,10 +187,10 @@ class MyCalendar: UIView, UICollectionViewDataSource, UICollectionViewDelegateFl
         {
             if let cell = collectionView.cellForItem(at: selectedDateIndexPath) as? DayCell
             {
-                cell.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                cell.viewWithTag(13)?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
             }
             let cell = collectionView.cellForItem(at: indexPath) as! DayCell
-            cell.backgroundColor = UIColor(red: 245/255, green: 225/255, blue: 114/255, alpha: 1.0)
+            cell.viewWithTag(13)?.backgroundColor = UIColor(red: 245/255, green: 225/255, blue: 114/255, alpha: 1.0)
             selectedDateIndexPath = indexPath
             selectedDayNumber = Int(cell.dateLabel.text!)!
             monthCorrespondingToSelectedDate = selectedMonth

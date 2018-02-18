@@ -344,7 +344,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-vo-QJh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6S6-vo-QJh">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -357,7 +357,7 @@
                                             <subviews>
                                                 <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neo-Z8-mHu" customClass="MyCalendar" customModule="Benefit" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -417,83 +417,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRP-Gm-wun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5921" y="913"/>
-        </scene>
-        <!--Temp View Controller-->
-        <scene sceneID="abm-TG-t6W">
-            <objects>
-                <viewController id="gSB-1J-4Ll" customClass="TempViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B0Q-NQ-9nb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YH2-vd-ebR">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="240" id="8JT-hw-dci">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="240"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8JT-hw-dci" id="U8J-y1-0Ag">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJX-Go-x32" customClass="MyCalendar" customModule="Benefit" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LJX-Go-x32" firstAttribute="top" secondItem="U8J-y1-0Ag" secondAttribute="top" id="5uL-uu-NUD"/>
-                                                <constraint firstAttribute="bottom" secondItem="LJX-Go-x32" secondAttribute="bottom" id="GEX-uP-hGI"/>
-                                                <constraint firstItem="LJX-Go-x32" firstAttribute="leading" secondItem="U8J-y1-0Ag" secondAttribute="leading" id="XEu-Yo-Guq"/>
-                                                <constraint firstAttribute="trailing" secondItem="LJX-Go-x32" secondAttribute="trailing" id="ZcQ-WL-joK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodaysNutritionPlan" id="EcW-ir-HgM">
-                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EcW-ir-HgM" id="nOz-qF-PjM">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's nutrition plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioF-TW-YgE">
-                                                    <rect key="frame" x="30" y="11" width="162" height="21"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                                    <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ioF-TW-YgE" firstAttribute="leading" secondItem="nOz-qF-PjM" secondAttribute="leadingMargin" constant="15" id="W4c-6t-R6k"/>
-                                                <constraint firstItem="ioF-TW-YgE" firstAttribute="centerY" secondItem="nOz-qF-PjM" secondAttribute="centerY" id="rfI-AM-dmo"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="gSB-1J-4Ll" id="luP-qZ-5x2"/>
-                                    <outlet property="delegate" destination="gSB-1J-4Ll" id="SVZ-Jj-Y8B"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="YH2-vd-ebR" firstAttribute="top" secondItem="JWE-WR-BCH" secondAttribute="top" id="FSh-yp-dUw"/>
-                            <constraint firstItem="YH2-vd-ebR" firstAttribute="leading" secondItem="JWE-WR-BCH" secondAttribute="leading" id="KBz-ch-ZXO"/>
-                            <constraint firstItem="JWE-WR-BCH" firstAttribute="bottom" secondItem="YH2-vd-ebR" secondAttribute="bottom" id="qQz-X0-UmT"/>
-                            <constraint firstItem="JWE-WR-BCH" firstAttribute="trailing" secondItem="YH2-vd-ebR" secondAttribute="trailing" id="qoR-5d-sqB"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="JWE-WR-BCH"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="YH2-vd-ebR" id="fWP-at-5g2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S35-Ua-O09" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6922" y="901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NU3-9c-pFf">
