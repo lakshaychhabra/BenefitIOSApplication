@@ -11,6 +11,7 @@
 		591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */; };
 		591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A299E20380696009454D4 /* UpdateProfileViewController.swift */; };
 		591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A29A0203806A9009454D4 /* MeasurementViewController.swift */; };
+		591E18AD20394C7D00FD167F /* SecondaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E18AC20394C7D00FD167F /* SecondaryCell.swift */; };
 		592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF70120353E6600B8AF53 /* MyCalendar.xib */; };
 		592AF70820353E6800B8AF53 /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF70220353E6600B8AF53 /* MyCalendar.swift */; };
 		592AF70920353E6800B8AF53 /* MonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF70320353E6700B8AF53 /* MonthCell.xib */; };
@@ -73,6 +74,7 @@
 		591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeasurementScreens.storyboard; sourceTree = "<group>"; };
 		591A299E20380696009454D4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		591A29A0203806A9009454D4 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
+		591E18AC20394C7D00FD167F /* SecondaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCell.swift; sourceTree = "<group>"; };
 		592AF70120353E6600B8AF53 /* MyCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCalendar.xib; sourceTree = "<group>"; };
 		592AF70220353E6600B8AF53 /* MyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
 		592AF70320353E6700B8AF53 /* MonthCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
@@ -153,6 +155,15 @@
 				591A29A0203806A9009454D4 /* MeasurementViewController.swift */,
 			);
 			path = "Measurement Screens";
+			sourceTree = "<group>";
+		};
+		591E18AB20394C5E00FD167F /* Secondary Cell */ = {
+			isa = PBXGroup;
+			children = (
+				594B5CD5201AF61B0042F1BF /* SecondaryCell.xib */,
+				591E18AC20394C7D00FD167F /* SecondaryCell.swift */,
+			);
+			path = "Secondary Cell";
 			sourceTree = "<group>";
 		};
 		592AF70D20353E6C00B8AF53 /* MyCalendar */ = {
@@ -249,7 +260,7 @@
 				592E1B5B2030B9BF006FFBF9 /* Nutrition */,
 				592AF70D20353E6C00B8AF53 /* MyCalendar */,
 				59C4088F2025D44C004569C5 /* Custom Navigation Bar */,
-				594B5CD5201AF61B0042F1BF /* SecondaryCell.xib */,
+				591E18AB20394C5E00FD167F /* Secondary Cell */,
 				59B24602201B99D500A096CD /* WorkoutRoutine.xib */,
 				59477741201C2CE30003FD7F /* FullSizedImageViewCell.xib */,
 				597DC8222024ABE200468960 /* FullSizedImageViewCell.swift */,
@@ -565,6 +576,7 @@
 				597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */,
 				597DC8232024ABE200468960 /* FullSizedImageViewCell.swift in Sources */,
 				592AF70F203548B100B8AF53 /* NutritionDiet.swift in Sources */,
+				591E18AD20394C7D00FD167F /* SecondaryCell.swift in Sources */,
 				5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */,
 				59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */,
 				59477746201C58E80003FD7F /* HIITSingleWorkoutViewController.swift in Sources */,

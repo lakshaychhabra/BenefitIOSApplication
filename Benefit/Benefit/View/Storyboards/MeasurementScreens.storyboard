@@ -26,14 +26,14 @@
             <objects>
                 <viewController storyboardIdentifier="Measurements" id="iE1-hP-bdX" customClass="MeasurementViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eP6-sj-849">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1796"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-7f-crp">
-                                <rect key="frame" x="0.0" y="20" width="320" height="1980"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="1776"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryc-rF-YMi">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1676"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1796"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-fy-llY">
                                                 <rect key="frame" x="0.0" y="8" width="320" height="607.5"/>
@@ -57,7 +57,7 @@
                                                         </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fpd-wN-JWK">
-                                                        <rect key="frame" x="98" y="150" width="124.5" height="36.5"/>
+                                                        <rect key="frame" x="98.5" y="150" width="124.5" height="36.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
                                                         <color key="textColor" red="0.74901960779999999" green="0.91764705879999997" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -424,9 +424,6 @@
                                             <constraint firstItem="PIE-HG-M3c" firstAttribute="leading" secondItem="Ryc-rF-YMi" secondAttribute="leading" id="IsH-Sm-AuF"/>
                                             <constraint firstAttribute="trailing" secondItem="Zrj-fD-J9z" secondAttribute="trailing" id="Vv2-v6-Ecc"/>
                                             <constraint firstItem="YjL-fy-llY" firstAttribute="leading" secondItem="Ryc-rF-YMi" secondAttribute="leading" id="YDf-pf-Ktq"/>
-                                            <constraint firstAttribute="height" constant="1676" id="ZHS-Rt-wd4">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="4200"/>
-                                            </constraint>
                                             <constraint firstItem="YjL-fy-llY" firstAttribute="top" secondItem="Ryc-rF-YMi" secondAttribute="top" constant="8" id="dTD-8N-Lv0"/>
                                             <constraint firstAttribute="trailing" secondItem="PIE-HG-M3c" secondAttribute="trailing" id="gIZ-22-3fD"/>
                                             <constraint firstItem="PIE-HG-M3c" firstAttribute="top" secondItem="YjL-fy-llY" secondAttribute="bottom" constant="8" id="hHP-u4-cDe">
@@ -435,13 +432,14 @@
                                             <constraint firstItem="Zrj-fD-J9z" firstAttribute="top" secondItem="PIE-HG-M3c" secondAttribute="bottom" constant="8" id="vJY-XB-8Uo">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="24"/>
                                             </constraint>
+                                            <constraint firstAttribute="bottom" secondItem="o3l-Oc-ENO" secondAttribute="bottom" constant="35" id="w4c-wU-URr"/>
                                             <constraint firstItem="o3l-Oc-ENO" firstAttribute="centerX" secondItem="Ryc-rF-YMi" secondAttribute="centerX" id="wG6-oT-azM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ryc-rF-YMi" firstAttribute="width" secondItem="1Qg-7f-crp" secondAttribute="width" id="8jA-eZ-tgN"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ryc-rF-YMi" secondAttribute="bottom" id="Idj-dl-OPv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ryc-rF-YMi" secondAttribute="bottom" constant="184" id="Idj-dl-OPv"/>
                                     <constraint firstItem="Ryc-rF-YMi" firstAttribute="top" secondItem="1Qg-7f-crp" secondAttribute="top" id="K1I-Ty-Oe0"/>
                                     <constraint firstItem="Ryc-rF-YMi" firstAttribute="leading" secondItem="1Qg-7f-crp" secondAttribute="leading" id="MwN-4f-frb"/>
                                     <constraint firstAttribute="trailing" secondItem="Ryc-rF-YMi" secondAttribute="trailing" id="Tbq-qJ-O4i"/>
@@ -457,7 +455,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Cb-Xl-xjv"/>
                     </view>
-                    <size key="freeformSize" width="320" height="2000"/>
+                    <size key="freeformSize" width="320" height="1796"/>
                     <connections>
                         <outlet property="BMIChart" destination="F4j-MX-wdD" id="KrT-Op-Wzu"/>
                         <outlet property="BMRChart" destination="jqa-fz-SoN" id="Uud-gy-EOc"/>
@@ -466,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyG-gw-yYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-85.9375" y="147.65625"/>
+            <point key="canvasLocation" x="-83" y="38"/>
         </scene>
         <!--Update Profile View Controller-->
         <scene sceneID="I5S-hv-Ldu">

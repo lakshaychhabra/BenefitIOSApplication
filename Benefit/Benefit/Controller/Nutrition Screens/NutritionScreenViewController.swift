@@ -18,7 +18,7 @@ class NutritionScreenViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setNav()
+        
         for nutrition in nutritionList
         {
             registerCellNib(named: nutrition, with: tableView)
@@ -29,13 +29,6 @@ class NutritionScreenViewController: UIViewController
         tableView.backgroundColor = UIColor.clear
 
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-
-    }
-
 }
 
 extension NutritionScreenViewController: UITableViewDelegate
@@ -47,13 +40,15 @@ extension NutritionScreenViewController: UITableViewDelegate
         {
             performSegue(withIdentifier: "goToMyNutritionLocked", sender: self)
         }
+        else if indexPath.section == 1
+        {
+            performSegue(withIdentifier: "goToMyNutrition", sender: self)
+        }
         else if indexPath.section == 2
         {
             performSegue(withIdentifier: "goToProteinFactsAndSources", sender: self)
         }
     }
-    
-    
 }
 
 extension NutritionScreenViewController: UITableViewDataSource
@@ -94,7 +89,8 @@ extension NutritionScreenViewController: UITableViewDataSource
         }
         else if indexPath.section == 1
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SecondaryCell", for: indexPath) as! SecondaryCell
+            cell.secondaryLabel.text = "NUTRITION INSIGHTS"
             return cell
         }
         else

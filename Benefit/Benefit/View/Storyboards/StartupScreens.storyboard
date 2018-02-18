@@ -687,7 +687,7 @@
             </objects>
             <point key="canvasLocation" x="179.6875" y="92.578125"/>
         </scene>
-        <!--Screen View Controller-->
+        <!--YOUR BODY MASS INDEX-->
         <scene sceneID="h8r-do-P5C">
             <objects>
                 <viewController id="c9P-HR-1g7" customClass="BMIScreenViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
@@ -702,7 +702,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make healthy food choices and participate in regular physical activities to be more fit and in shape" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wOV-I3-vnX">
-                                                <rect key="frame" x="15" y="158" width="290" height="84.5"/>
+                                                <rect key="frame" x="15" y="138" width="290" height="84.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -710,16 +710,8 @@
                                                     <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="40"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR BODY MASS INDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u9x-fB-A7o">
-                                                <rect key="frame" x="64.5" y="-0.5" width="191" height="30"/>
-                                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
-                                                </variation>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-Wo-liJ">
-                                                <rect key="frame" x="98.5" y="116.5" width="124.5" height="36.5"/>
+                                                <rect key="frame" x="98.5" y="96.5" width="124.5" height="36.5"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
                                                 <color key="textColor" red="0.74901960784313726" green="0.91764705882352937" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -728,7 +720,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.69" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9ey-lD-bVy">
-                                                <rect key="frame" x="104" y="49.5" width="112" height="52"/>
+                                                <rect key="frame" x="104" y="29.5" width="112" height="52"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="43"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
@@ -736,7 +728,7 @@
                                                 </variation>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="3Sp-Dl-Gf2" userLabel="Separator">
-                                                <rect key="frame" x="25" y="39.5" width="270" height="0.5"/>
+                                                <rect key="frame" x="25" y="5" width="270" height="0.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="JFt-7c-ZwS">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
@@ -746,10 +738,8 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="3Sp-Dl-Gf2" firstAttribute="top" secondItem="u9x-fB-A7o" secondAttribute="bottom" constant="10" id="0uy-3d-hE3"/>
                                             <constraint firstItem="MTt-Wo-liJ" firstAttribute="centerX" secondItem="sEO-vr-jdB" secondAttribute="centerX" id="2wZ-MT-Hle"/>
-                                            <constraint firstItem="u9x-fB-A7o" firstAttribute="centerX" secondItem="sEO-vr-jdB" secondAttribute="centerX" id="4gd-ni-cls"/>
-                                            <constraint firstItem="MTt-Wo-liJ" firstAttribute="centerY" secondItem="sEO-vr-jdB" secondAttribute="centerY" constant="10" id="7Qc-o1-hH8">
+                                            <constraint firstItem="MTt-Wo-liJ" firstAttribute="centerY" secondItem="sEO-vr-jdB" secondAttribute="centerY" constant="-10" id="7Qc-o1-hH8">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                                             </constraint>
                                             <constraint firstItem="wOV-I3-vnX" firstAttribute="top" secondItem="MTt-Wo-liJ" secondAttribute="bottom" constant="5" id="JMj-gb-oQa">
@@ -763,13 +753,11 @@
                                             <constraint firstItem="MTt-Wo-liJ" firstAttribute="top" secondItem="9ey-lD-bVy" secondAttribute="bottom" constant="10" id="WaV-hs-Iba">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                             </constraint>
+                                            <constraint firstItem="3Sp-Dl-Gf2" firstAttribute="top" secondItem="sEO-vr-jdB" secondAttribute="top" constant="5" id="cmt-Vw-Eq3"/>
                                             <constraint firstAttribute="trailing" secondItem="wOV-I3-vnX" secondAttribute="trailing" constant="15" id="j7x-Dt-0vi">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                                             </constraint>
                                             <constraint firstItem="3Sp-Dl-Gf2" firstAttribute="leading" secondItem="sEO-vr-jdB" secondAttribute="leading" constant="25" id="rXs-Zv-5pT"/>
-                                            <constraint firstItem="9ey-lD-bVy" firstAttribute="top" secondItem="u9x-fB-A7o" secondAttribute="bottom" constant="10" id="x64-fG-08U">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                                            </constraint>
                                             <constraint firstAttribute="trailing" secondItem="3Sp-Dl-Gf2" secondAttribute="trailing" constant="25" id="zEy-bn-3UZ"/>
                                         </constraints>
                                     </view>
@@ -860,7 +848,7 @@ REACH MY GOAL</string>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C1f-6i-IuM" firstAttribute="top" secondItem="QjT-Jo-ySU" secondAttribute="top" id="5v0-4v-fNn"/>
                             <constraint firstItem="QjT-Jo-ySU" firstAttribute="trailing" secondItem="C1f-6i-IuM" secondAttribute="trailing" id="J4p-Un-c5i"/>
@@ -869,7 +857,7 @@ REACH MY GOAL</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QjT-Jo-ySU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EiB-Hg-2Cj">
+                    <navigationItem key="navigationItem" title="YOUR BODY MASS INDEX" id="EiB-Hg-2Cj">
                         <barButtonItem key="backBarButtonItem" title=" " id="0jt-Xi-ZkU"/>
                     </navigationItem>
                     <connections>

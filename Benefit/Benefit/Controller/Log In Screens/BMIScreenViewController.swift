@@ -23,7 +23,7 @@ class BMIScreenViewController: UIViewController
     var delegate: SetupProfileScreenViewController?
     var messages =
     [
-        "OBESE": "Shed down some weight, limit your calorie intake, exerices regularly and improve your metabolism",
+        "OBESE": "Shed down some weight, limit your calorie intake, exercise regularly and improve your metabolism",
         "NORMAL": "Make healthy food choices and participate in regular physical activities to be more fit and in shape",
         "OVERWEIGHT": "Increase physical activity and improve your diet",
         "UNDERWEIGHT": "Eat nutrient rich food and strengthen your muscles"

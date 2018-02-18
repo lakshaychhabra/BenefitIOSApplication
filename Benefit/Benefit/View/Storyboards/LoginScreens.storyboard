@@ -625,10 +625,10 @@
             </objects>
             <point key="canvasLocation" x="2272.5" y="91.901408450704224"/>
         </scene>
-        <!--DashboardNavigationController-->
+        <!--MyDashboard-->
         <scene sceneID="2Iw-qG-zpX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" referencedIdentifier="DashboardNavigationController" id="WPg-fi-vQl" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Dashboard" referencedIdentifier="MyDashboard" id="WPg-fi-vQl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nw-Fv-5Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3065" y="64"/>

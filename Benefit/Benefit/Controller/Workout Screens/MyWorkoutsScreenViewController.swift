@@ -81,8 +81,9 @@ extension MyWorkoutsScreenViewController: UITableViewDataSource
             cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath)
             let calendarView = cell.contentView.viewWithTag(13) as! MyCalendar
             calendarView.delegateForHandlingDates = self
+            cell.selectionStyle = .none
         }
-        else if indexPath.section <= 6
+        else if indexPath.section <= 5
         {
             if isRestDay
             {
@@ -122,7 +123,7 @@ extension MyWorkoutsScreenViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
-        if section == itemsList.count - 1
+        if section == 6
         {
             return 15
         }

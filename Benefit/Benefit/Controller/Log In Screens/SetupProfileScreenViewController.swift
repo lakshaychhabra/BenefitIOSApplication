@@ -44,7 +44,7 @@ class SetupProfileScreenViewController: UIViewController
     {
         super.viewDidLoad()
         units = ["cm": cmToggleButton, "ft": feetToggleButton, "in": inchesToggleButton, "kg": kgToggleButton, "lbs": lbsToggleButton]
-        setupNavigationBar(with: "SET UP YOUR PROFILE")
+        //setupNavigationBar(with: "SET UP YOUR PROFILE")
         nextButton.isEnabled = false
         nextButton.alpha = 0.5
         setupRounded(button: genderDisplay)
