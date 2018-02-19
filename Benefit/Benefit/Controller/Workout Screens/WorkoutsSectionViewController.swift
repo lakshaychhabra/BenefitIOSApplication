@@ -27,6 +27,8 @@ class WorkoutsSectionViewController: UIViewController
         tableView.estimatedRowHeight = 80
         tableView.backgroundColor = UIColor.clear
     }
+    
+
 }
 
 extension WorkoutsSectionViewController: UITableViewDelegate

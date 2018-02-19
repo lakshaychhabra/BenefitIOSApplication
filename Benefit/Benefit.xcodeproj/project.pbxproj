@@ -33,7 +33,8 @@
 		594BF99E2016393000E7C103 /* NavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594BF99D2016393000E7C103 /* NavBar.xib */; };
 		5957ED7A20178A1600870A02 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7920178A1600870A02 /* NavBar.swift */; };
 		5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */; };
-		595CE3AC20382F250086CE39 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595CE3AB20382F250086CE39 /* TempViewController.swift */; };
+		5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962D39D203A7F410081D4B2 /* SideBarViewController.swift */; };
+		5962D3A0203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */; };
 		59631B892038384B002653B9 /* SavedMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59631B882038384B002653B9 /* SavedMealCell.xib */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
@@ -75,6 +76,7 @@
 		591A299E20380696009454D4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		591A29A0203806A9009454D4 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
 		591E18AC20394C7D00FD167F /* SecondaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCell.swift; sourceTree = "<group>"; };
+		591E18B6203983A700FD167F /* Benefit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Benefit-Bridging-Header.h"; sourceTree = "<group>"; };
 		592AF70120353E6600B8AF53 /* MyCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCalendar.xib; sourceTree = "<group>"; };
 		592AF70220353E6600B8AF53 /* MyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
 		592AF70320353E6700B8AF53 /* MonthCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
@@ -96,7 +98,8 @@
 		594BF99D2016393000E7C103 /* NavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBar.xib; sourceTree = "<group>"; };
 		5957ED7920178A1600870A02 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsSectionViewController.swift; sourceTree = "<group>"; };
-		595CE3AB20382F250086CE39 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		5962D39D203A7F410081D4B2 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNutritionScreenLockedViewController.swift; sourceTree = "<group>"; };
 		59631B882038384B002653B9 /* SavedMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedMealCell.xib; sourceTree = "<group>"; };
 		59647040200A26CF00F9357F /* Benefit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benefit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59647043200A26CF00F9357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +284,7 @@
 				59C4088B2025D3E3004569C5 /* Workout Screens */,
 				59C4088C2025D3F3004569C5 /* Nutrition Screens */,
 				591A299D20380509009454D4 /* Measurement Screens */,
+				5962D39D203A7F410081D4B2 /* SideBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +295,7 @@
 				59647043200A26CF00F9357F /* AppDelegate.swift */,
 				5964705A200A355000F9357F /* Assets.xcassets */,
 				59647069200AA03300F9357F /* Fonts */,
+				591E18B6203983A700FD167F /* Benefit-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -336,7 +341,7 @@
 				59F24B2420239BE4009DA20F /* NutritionScreenViewController.swift */,
 				597DC8202024A7B400468960 /* NutritionArticleScreenViewController.swift */,
 				59E9EA4C2034884A0005B2B0 /* MyNutritionViewController.swift */,
-				595CE3AB20382F250086CE39 /* TempViewController.swift */,
+				5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */,
 			);
 			path = "Nutrition Screens";
 			sourceTree = "<group>";
@@ -532,14 +537,18 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/JTHamburgerButton/JTHamburgerButton.framework",
 				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTHamburgerButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,16 +572,17 @@
 				5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */,
 				592AF70820353E6800B8AF53 /* MyCalendar.swift in Sources */,
 				597DC8212024A7B400468960 /* NutritionArticleScreenViewController.swift in Sources */,
+				5962D3A0203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift in Sources */,
 				59E9EA4D2034884A0005B2B0 /* MyNutritionViewController.swift in Sources */,
 				59F24B232023956B009DA20F /* PremiumFeatureCell.swift in Sources */,
 				591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */,
 				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
 				59AC648D2026D97700C139CE /* Triangle.swift in Sources */,
 				5957ED7A20178A1600870A02 /* NavBar.swift in Sources */,
+				5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */,
 				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
 				598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */,
 				5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */,
-				595CE3AC20382F250086CE39 /* TempViewController.swift in Sources */,
 				597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */,
 				597DC8232024ABE200468960 /* FullSizedImageViewCell.swift in Sources */,
 				592AF70F203548B100B8AF53 /* NutritionDiet.swift in Sources */,
@@ -727,7 +737,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -751,7 +761,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

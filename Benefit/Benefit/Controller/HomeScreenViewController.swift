@@ -7,35 +7,27 @@
 //
 
 import UIKit
+import SideMenu
+import JTHamburgerButton
 
 class HomeScreenViewController: UIViewController
 {
-
+    var leftMenuNavController: UISideMenuNavigationController!
     @IBOutlet weak var chatButton: UIButton!
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setupCustomNavigationBar()
         setupRounded(button: chatButton)
 
     }
     
-    func setupCustomNavigationBar()
+    override func viewWillAppear(_ animated: Bool)
     {
-        self.navigationItem.hidesBackButton = true
-        let navBar = NavBar()
-        navBar.frame = (self.navigationController?.navigationBar.frame)!
-        let height = (self.navigationController?.navigationBar.frame.height)!
-        let width = (self.navigationController?.navigationBar.frame.width)!
-        let heightConstraint = NSLayoutConstraint(item: navBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
-        let widthConstraint = NSLayoutConstraint(item: navBar, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width)
-        
-        navBar.addConstraints([heightConstraint, widthConstraint])
-        UIApplication.shared.keyWindow?.addSubview(navBar)
-
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor(hex: "FAFAFA")
+        setupCustomNavigationBar()
     }
-    
+
+ 
     @IBAction func workoutsButtonPressed(_ sender: UIButton)
     {
         print("Workout")
@@ -63,84 +55,56 @@ class HomeScreenViewController: UIViewController
         print("Challenges")
     }
     
-    override func didReceiveMemoryWarning()
+    override func viewWillDisappear(_ animated: Bool)
     {
-        super.didReceiveMemoryWarning()
+        print("Dash Disappearing")
     }
-
 }
-extension UIApplication {
-    var statusBarView: UIView? {
+
+extension UIApplication
+{
+    var statusBarView: UIView?
+    {
         return value(forKey: "statusBar") as? UIView
     }
 }
 
-extension UIViewController
+extension UIViewController: MyNavigationBarDelegate, UISideMenuNavigationControllerDelegate
 {
-//    func setupCustomNavBar()
-//    {
-//        let customNavigationBar = NavBar()
-//        customNavigationBar.frame = navigationController!.navigationBar.frame
-//        navigationController?.navigationBar.addSubview(customNavigationBar)
-//        customNavigationBar.coachButton.addTarget(self, action: #selector(coachButtonPressed), for: .touchUpInside)
-//        customNavigationBar.hamButton.addTarget(self, action: #selector(hamburgerMenuButtonPressed), for: .touchUpInside)
-//
-//    }
+    func setupCustomNavigationBar()
+    {
+        let navBar = NavBar()
+        //self.navigationItem.hidesBackButton = true
+        navBar.frame = (self.navigationController?.navigationBar.frame)!
+        let height = (self.navigationController?.navigationBar.frame.height)!
+        let width = (self.navigationController?.navigationBar.frame.width)!
+        
+        UIApplication.shared.keyWindow?.addSubview(navBar)
+        
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(hex: "FAFAFA")
+        
+        let heightConstraint = NSLayoutConstraint(item: navBar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
+        let widthConstraint = NSLayoutConstraint(item: navBar, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: width)
+        navBar.addConstraints([heightConstraint, widthConstraint])
+        navBar.delegate = self
+        setupSideBarMenu()
+    }
+   
+    func setupSideBarMenu()
+    {
+        SideMenuManager.default.menuPresentMode = .menuSlideIn
+    }
     
-//    func setNav()
-//    {
-//
-//        let containerTitleView = UIView(frame: CGRect(x: 0, y: 0, width: 155, height: 34))
-//        let titleView = UIImageView(image: #imageLiteral(resourceName: "benefit_logo"))
-//        titleView.contentMode = .scaleAspectFit
-//        titleView.frame = CGRect(x: 0, y: 0, width: 155, height: 34)
-//        containerTitleView.addSubview(titleView)
-//
-//        self.navigationItem.titleView = containerTitleView
-//
-//        let button = UIButton(type: .custom)
-//        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-//        button.setImage(#imageLiteral(resourceName: "ic_coach_24dp-1"), for: .normal)
-//        button.imageView?.contentMode = .scaleAspectFit
-//
-//        let button2 = UIButton(type: .custom)
-//        button2.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
-//        button2.setImage(#imageLiteral(resourceName: "ic_notif_24dp-1"), for: .normal)
-//        button2.imageView?.contentMode = .scaleAspectFit
-//
-//        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: button), UIBarButtonItem(customView: button2)]
-//    }
+    func hamButtonWasTriggered()
+    {
+        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let VC = storyboard.instantiateViewController(withIdentifier: "LeftSideBar")
+        parent?.present(VC, animated: true, completion: nil)
+    }
     
-//    @objc func hamburgerMenuButtonPressed(sender: UIButton)
-//    {
-//        print("Hamburger Menu Button Pressed")
-//
-//        //        if !isHamburgerMenuToggled
-//        //        {
-//        //            isHamburgerMenuToggled = true
-//        //            mainViewLeadingConstraint.constant = 150
-//        //            mainViewTrailingConstraint.constant = -150
-//        //        }
-//        //        else
-//        //        {
-//        //            isHamburgerMenuToggled = false
-//        //            mainViewTrailingConstraint.constant = 0
-//        //            mainViewLeadingConstraint.constant = 0
-//        //        }
-//        //
-//        //        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()})
-//        //        {
-//        //            (animationComplete) in
-//        //            print("animation complete!")
-//        //        }
-//
-//
-//    }
-//
-//    @objc func coachButtonPressed(sender: UIButton)
-//    {
-//        print("Coach Button Pressed")
-//    }
-    
+    func hamButtonWasDismissed()
+    {
+       
+    }
 }
 

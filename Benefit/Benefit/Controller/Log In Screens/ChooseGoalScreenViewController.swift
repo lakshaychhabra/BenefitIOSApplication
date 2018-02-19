@@ -23,7 +23,7 @@ class ChooseGoalScreenViewController: UIViewController
         setupImageSlider()
 
     }
-    
+
     func setupImageSlider()
     {
         imageSlider.setImageInputs(imageSource)
@@ -33,11 +33,6 @@ class ChooseGoalScreenViewController: UIViewController
         imageSlider.pageControl.pageIndicatorTintColor = UIColor.black
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        
-    }
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {

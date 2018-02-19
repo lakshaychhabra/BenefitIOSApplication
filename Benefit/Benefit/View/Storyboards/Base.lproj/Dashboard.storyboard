@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mD5-t4-IWR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6UE-N1-bKP">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="mKz-Jd-mpf">
             <objects>
-                <viewController storyboardIdentifier="MyDashboard" id="mD5-t4-IWR" customClass="HomeScreenViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyDashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mD5-t4-IWR" customClass="HomeScreenViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jac-0x-dBS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,6 +354,54 @@
             </objects>
             <point key="canvasLocation" x="3718.125" y="71.83098591549296"/>
         </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="nNy-FY-wjK">
+            <objects>
+                <navigationController storyboardIdentifier="LeftSideBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B9d-e8-Wfy" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zML-U8-plV">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="uKM-sK-Ncj" kind="relationship" relationship="rootViewController" id="dge-Mq-idx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyS-uY-yby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779" y="868"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wWI-jA-13R">
+            <objects>
+                <viewController storyboardIdentifier="SideBarMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uKM-sK-Ncj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JfW-Jd-fKq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BENEFIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-Sh-MUH">
+                                <rect key="frame" x="25" y="64" width="87" height="42"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GeA-Sh-MUH" firstAttribute="leading" secondItem="Y9X-nQ-a85" secondAttribute="leading" constant="25" id="ElH-64-bMf"/>
+                            <constraint firstItem="GeA-Sh-MUH" firstAttribute="top" secondItem="Y9X-nQ-a85" secondAttribute="top" id="KhH-zm-H1H"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GeA-Sh-MUH" secondAttribute="trailing" constant="20" symbolic="YES" id="aac-hI-Laj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y9X-nQ-a85"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gh0-7G-hXY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQt-O6-io5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3555" y="868"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WN4-il-Bk3">
             <objects>
@@ -370,7 +418,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lF4-aP-8q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="42"/>
+            <point key="canvasLocation" x="2919" y="72"/>
         </scene>
         <!--WorkoutScreens-->
         <scene sceneID="KnF-8g-MNi">

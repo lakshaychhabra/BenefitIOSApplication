@@ -22,7 +22,7 @@ class MeasurementViewController: UIViewController
         setupViews()
 
     }
-    
+
     func setupViews()
     {
         setUp(BMIChart)

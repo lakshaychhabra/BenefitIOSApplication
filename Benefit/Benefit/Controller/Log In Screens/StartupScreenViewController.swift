@@ -27,6 +27,8 @@ class StartupScreenViewController: UIViewController
         super.didReceiveMemoryWarning()
        
     }
+    
+   
 
     @IBAction func getStartedButtonPressed(_ sender: SpringButton)
     {

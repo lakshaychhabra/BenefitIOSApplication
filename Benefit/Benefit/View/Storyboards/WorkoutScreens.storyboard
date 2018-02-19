@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6X0-5d-oIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5526" y="-1048"/>
+            <point key="canvasLocation" x="5526" y="-720"/>
         </scene>
         <!--Single Workout View Controller-->
         <scene sceneID="HIm-rG-fJL">
@@ -298,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3x-Hp-c68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6346" y="-1048"/>
+            <point key="canvasLocation" x="6323" y="-720"/>
         </scene>
         <!--My Workouts Locked Screen View Controller-->
         <scene sceneID="Ab2-UM-NRy">
@@ -463,107 +463,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-Jd-s9O">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-Hb-rNG">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-Hb-rNG">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="240" id="RjE-xv-qj7">
-                                                <rect key="frame" x="0.0" y="28" width="320" height="240"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RjE-xv-qj7" id="q5f-7d-zFw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tj0-RC-oKC" customClass="MyCalendar" customModule="Benefit" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="tj0-RC-oKC" firstAttribute="top" secondItem="q5f-7d-zFw" secondAttribute="top" id="67S-oJ-SvO"/>
-                                                        <constraint firstAttribute="trailing" secondItem="tj0-RC-oKC" secondAttribute="trailing" id="NbS-lX-AKW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="tj0-RC-oKC" secondAttribute="bottom" id="fd0-KZ-ILw"/>
-                                                        <constraint firstItem="tj0-RC-oKC" firstAttribute="leading" secondItem="q5f-7d-zFw" secondAttribute="leading" id="wlL-1K-Kyv"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodaysWorkout" id="u5R-lm-uzA">
-                                                <rect key="frame" x="0.0" y="268" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5R-lm-uzA" id="rjE-WB-Kjt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXq-1f-6Sx">
-                                                            <rect key="frame" x="30" y="15" width="125" height="14"/>
-                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="34"/>
-                                                            <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact">
-                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="tXq-1f-6Sx" firstAttribute="leading" secondItem="rjE-WB-Kjt" secondAttribute="leadingMargin" constant="15" id="3bb-Fy-OMD"/>
-                                                        <constraint firstAttribute="bottom" secondItem="tXq-1f-6Sx" secondAttribute="bottom" constant="15" id="JeW-1L-5be"/>
-                                                        <constraint firstItem="tXq-1f-6Sx" firstAttribute="top" secondItem="rjE-WB-Kjt" secondAttribute="top" constant="15" id="NxC-N5-phf"/>
-                                                        <constraint firstItem="tXq-1f-6Sx" firstAttribute="centerY" secondItem="rjE-WB-Kjt" secondAttribute="centerY" id="k5v-UP-cSA"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalWorkout" id="dhg-lL-Rpd">
-                                                <rect key="frame" x="0.0" y="312" width="320" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhg-lL-Rpd" id="yxT-fg-e8i">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Body Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVY-OF-4jP">
-                                                            <rect key="frame" x="30" y="15" width="148.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                                            <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=regular">
-                                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="34"/>
-                                                            </variation>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="rVY-OF-4jP" secondAttribute="bottom" constant="15" id="7wz-jZ-fy6"/>
-                                                        <constraint firstItem="rVY-OF-4jP" firstAttribute="centerY" secondItem="yxT-fg-e8i" secondAttribute="centerY" id="DCN-xs-g6X"/>
-                                                        <constraint firstItem="rVY-OF-4jP" firstAttribute="leading" secondItem="yxT-fg-e8i" secondAttribute="leadingMargin" constant="15" id="LV8-WD-ddC"/>
-                                                        <constraint firstItem="rVY-OF-4jP" firstAttribute="top" secondItem="yxT-fg-e8i" secondAttribute="top" constant="15" id="QTu-Qj-lTT"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="U4d-A5-0NS" id="GOO-Xi-wmr"/>
-                                            <outlet property="delegate" destination="U4d-A5-0NS" id="Um2-dI-ANJ"/>
-                                        </connections>
-                                    </tableView>
-                                </subviews>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="6Rd-Hb-rNG" firstAttribute="leading" secondItem="ZUh-Jd-s9O" secondAttribute="leading" id="80p-Nm-8uK"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Rd-Hb-rNG" secondAttribute="bottom" id="AvR-0o-M50"/>
-                                    <constraint firstItem="6Rd-Hb-rNG" firstAttribute="top" secondItem="ZUh-Jd-s9O" secondAttribute="top" id="Ubj-aA-Zfk"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Rd-Hb-rNG" secondAttribute="trailing" id="XQn-vG-q5I"/>
-                                </constraints>
-                            </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="240" id="RjE-xv-qj7">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RjE-xv-qj7" id="q5f-7d-zFw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tj0-RC-oKC" customClass="MyCalendar" customModule="Benefit" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="239.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tj0-RC-oKC" firstAttribute="top" secondItem="q5f-7d-zFw" secondAttribute="top" id="67S-oJ-SvO"/>
+                                                <constraint firstAttribute="trailing" secondItem="tj0-RC-oKC" secondAttribute="trailing" id="NbS-lX-AKW"/>
+                                                <constraint firstAttribute="bottom" secondItem="tj0-RC-oKC" secondAttribute="bottom" id="fd0-KZ-ILw"/>
+                                                <constraint firstItem="tj0-RC-oKC" firstAttribute="leading" secondItem="q5f-7d-zFw" secondAttribute="leading" id="wlL-1K-Kyv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodaysWorkout" id="u5R-lm-uzA">
+                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5R-lm-uzA" id="rjE-WB-Kjt">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXq-1f-6Sx">
+                                                    <rect key="frame" x="30" y="15" width="125" height="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="34"/>
+                                                    <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tXq-1f-6Sx" firstAttribute="leading" secondItem="rjE-WB-Kjt" secondAttribute="leadingMargin" constant="15" id="3bb-Fy-OMD"/>
+                                                <constraint firstAttribute="bottom" secondItem="tXq-1f-6Sx" secondAttribute="bottom" constant="15" id="JeW-1L-5be"/>
+                                                <constraint firstItem="tXq-1f-6Sx" firstAttribute="top" secondItem="rjE-WB-Kjt" secondAttribute="top" constant="15" id="NxC-N5-phf"/>
+                                                <constraint firstItem="tXq-1f-6Sx" firstAttribute="centerY" secondItem="rjE-WB-Kjt" secondAttribute="centerY" id="k5v-UP-cSA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalWorkout" id="dhg-lL-Rpd">
+                                        <rect key="frame" x="0.0" y="312" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhg-lL-Rpd" id="yxT-fg-e8i">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Body Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVY-OF-4jP">
+                                                    <rect key="frame" x="30" y="15" width="148.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="34"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rVY-OF-4jP" secondAttribute="bottom" constant="15" id="7wz-jZ-fy6"/>
+                                                <constraint firstItem="rVY-OF-4jP" firstAttribute="centerY" secondItem="yxT-fg-e8i" secondAttribute="centerY" id="DCN-xs-g6X"/>
+                                                <constraint firstItem="rVY-OF-4jP" firstAttribute="leading" secondItem="yxT-fg-e8i" secondAttribute="leadingMargin" constant="15" id="LV8-WD-ddC"/>
+                                                <constraint firstItem="rVY-OF-4jP" firstAttribute="top" secondItem="yxT-fg-e8i" secondAttribute="top" constant="15" id="QTu-Qj-lTT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="U4d-A5-0NS" id="GOO-Xi-wmr"/>
+                                    <outlet property="delegate" destination="U4d-A5-0NS" id="Um2-dI-ANJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZUh-Jd-s9O" firstAttribute="leading" secondItem="NKZ-Jh-UyA" secondAttribute="leading" id="4bM-cr-hqX"/>
-                            <constraint firstItem="ZUh-Jd-s9O" firstAttribute="trailing" secondItem="NKZ-Jh-UyA" secondAttribute="trailing" id="VdF-77-JDR"/>
-                            <constraint firstAttribute="bottom" secondItem="ZUh-Jd-s9O" secondAttribute="bottom" id="X0w-3C-grS"/>
-                            <constraint firstItem="ZUh-Jd-s9O" firstAttribute="top" secondItem="NKZ-Jh-UyA" secondAttribute="top" id="gUz-5j-byW"/>
+                            <constraint firstItem="6Rd-Hb-rNG" firstAttribute="trailing" secondItem="NKZ-Jh-UyA" secondAttribute="trailing" id="V1L-Kr-h64"/>
+                            <constraint firstItem="6Rd-Hb-rNG" firstAttribute="bottom" secondItem="NKZ-Jh-UyA" secondAttribute="bottom" id="YtT-SU-1iv"/>
+                            <constraint firstItem="6Rd-Hb-rNG" firstAttribute="top" secondItem="NKZ-Jh-UyA" secondAttribute="top" id="g4z-Eh-cGA"/>
+                            <constraint firstItem="6Rd-Hb-rNG" firstAttribute="leading" secondItem="NKZ-Jh-UyA" secondAttribute="leading" id="hzX-SE-oL0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NKZ-Jh-UyA"/>
                     </view>
@@ -573,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B82-S9-sq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6319.1999999999998" y="-306.29685157421289"/>
+            <point key="canvasLocation" x="5496" y="290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eXi-10-Qde">

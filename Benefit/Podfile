@@ -11,5 +11,7 @@ target 'Benefit' do
   pod 'ImageSlideshow', '~> 1.4'
   pod 'MIBadgeButton-Swift', :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
   pod 'Charts'
+  pod 'SideMenu'
+  pod 'JTHamburgerButton', '~> 1.0'
 
 end

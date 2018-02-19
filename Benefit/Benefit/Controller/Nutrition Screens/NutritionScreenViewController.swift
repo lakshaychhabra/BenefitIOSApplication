@@ -29,6 +29,8 @@ class NutritionScreenViewController: UIViewController
         tableView.backgroundColor = UIColor.clear
 
     }
+
+
 }
 
 extension NutritionScreenViewController: UITableViewDelegate

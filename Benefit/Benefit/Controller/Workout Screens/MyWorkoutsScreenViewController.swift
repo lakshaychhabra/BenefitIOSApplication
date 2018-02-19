@@ -34,6 +34,8 @@ class MyWorkoutsScreenViewController: UIViewController
         registerCellNib(named: "RestDayCell", with: tableView)
 
     }
+
+
 }
 
 extension MyWorkoutsScreenViewController: CalendarViewControllerDelegate

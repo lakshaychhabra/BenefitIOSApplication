@@ -23,13 +23,7 @@ class NutritionArticleScreenViewController: UIViewController
         registerCellNib(named: "FullSizedImageViewCell", with: tableView)
         registerCellNib(named: "NutritionArticleViewCell", with: tableView)
         
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-
-    }
+    }   
 }
 
 extension NutritionArticleScreenViewController: UITableViewDataSource
