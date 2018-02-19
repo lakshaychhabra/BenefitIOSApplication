@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Semibold-webfont.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutRoutine" id="qO2-wP-bsZ">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qO2-wP-bsZ" id="fPI-x1-0qv">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bab-RC-7z6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Routine 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-tT-fhN">
+                                <rect key="frame" x="16" y="12" width="194" height="59.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
+                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="48"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31J-Yt-vMd">
+                                <rect key="frame" x="273" y="21.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="6kF-Ij-B8O"/>
+                                    <constraint firstAttribute="height" constant="35" id="XE7-LU-XH6"/>
+                                </constraints>
+                                <state key="normal" image="ic_next_24dp"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dHn-tT-fhN" secondAttribute="bottom" constant="8" id="AhI-JR-kiU"/>
+                            <constraint firstItem="31J-Yt-vMd" firstAttribute="centerY" secondItem="Bab-RC-7z6" secondAttribute="centerY" id="EP7-Pv-0to"/>
+                            <constraint firstItem="dHn-tT-fhN" firstAttribute="leading" secondItem="Bab-RC-7z6" secondAttribute="leading" constant="16" id="Lpx-sf-OWW"/>
+                            <constraint firstItem="dHn-tT-fhN" firstAttribute="top" secondItem="Bab-RC-7z6" secondAttribute="top" constant="12" id="esN-NZ-v6q"/>
+                            <constraint firstAttribute="trailing" secondItem="31J-Yt-vMd" secondAttribute="trailing" constant="12" id="y1L-ra-geS"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Bab-RC-7z6" firstAttribute="leading" secondItem="fPI-x1-0qv" secondAttribute="leading" id="5Gy-sY-FVZ"/>
+                    <constraint firstItem="Bab-RC-7z6" firstAttribute="top" secondItem="fPI-x1-0qv" secondAttribute="top" id="CpS-UI-JEp"/>
+                    <constraint firstAttribute="trailing" secondItem="Bab-RC-7z6" secondAttribute="trailing" id="LRX-AD-w2o"/>
+                    <constraint firstAttribute="bottom" secondItem="Bab-RC-7z6" secondAttribute="bottom" id="vGs-1n-3ut"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-1200" y="-67"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_next_24dp" width="128" height="128"/>
+    </resources>
+</document>

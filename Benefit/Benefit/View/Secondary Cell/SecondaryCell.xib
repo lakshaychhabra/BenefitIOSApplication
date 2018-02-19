@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondaryCell" id="6uX-be-N6L" userLabel="SecondaryCell" customClass="SecondaryCell" customModule="Benefit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6uX-be-N6L" id="Sfa-uc-F9g">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adc-76-1L2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE WORKOUTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Eb-Rm-hc7">
+                                <rect key="frame" x="16" y="12" width="155.5" height="59.5"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="24"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="48"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Eb-Rm-hc7" firstAttribute="top" secondItem="Adc-76-1L2" secondAttribute="top" constant="12" id="34T-cI-5Yf"/>
+                            <constraint firstAttribute="bottom" secondItem="7Eb-Rm-hc7" secondAttribute="bottom" constant="8" id="UmX-zG-N49"/>
+                            <constraint firstItem="7Eb-Rm-hc7" firstAttribute="leading" secondItem="Adc-76-1L2" secondAttribute="leading" constant="16" id="frA-Rd-hCZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Adc-76-1L2" secondAttribute="trailing" id="QlB-P4-6HR"/>
+                    <constraint firstItem="Adc-76-1L2" firstAttribute="top" secondItem="Sfa-uc-F9g" secondAttribute="top" id="cRI-Dh-sLD"/>
+                    <constraint firstItem="Adc-76-1L2" firstAttribute="leading" secondItem="Sfa-uc-F9g" secondAttribute="leading" id="ePe-9S-BaM"/>
+                    <constraint firstAttribute="bottom" secondItem="Adc-76-1L2" secondAttribute="bottom" id="tUN-6T-KTQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="secondaryLabel" destination="7Eb-Rm-hc7" id="i7E-kR-fvO"/>
+            </connections>
+            <point key="canvasLocation" x="-1200" y="-67"/>
+        </tableViewCell>
+    </objects>
+</document>

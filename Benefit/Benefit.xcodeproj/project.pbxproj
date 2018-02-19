@@ -7,27 +7,136 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
+		591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */; };
+		591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A299E20380696009454D4 /* UpdateProfileViewController.swift */; };
+		591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A29A0203806A9009454D4 /* MeasurementViewController.swift */; };
+		591E18AD20394C7D00FD167F /* SecondaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E18AC20394C7D00FD167F /* SecondaryCell.swift */; };
+		592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF70120353E6600B8AF53 /* MyCalendar.xib */; };
+		592AF70820353E6800B8AF53 /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF70220353E6600B8AF53 /* MyCalendar.swift */; };
+		592AF70920353E6800B8AF53 /* MonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF70320353E6700B8AF53 /* MonthCell.xib */; };
+		592AF70A20353E6800B8AF53 /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF70420353E6700B8AF53 /* MonthCell.swift */; };
+		592AF70B20353E6800B8AF53 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF70520353E6700B8AF53 /* DayCell.swift */; };
+		592AF70C20353E6800B8AF53 /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF70620353E6700B8AF53 /* DayCell.xib */; };
+		592AF70F203548B100B8AF53 /* NutritionDiet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF70E203548B100B8AF53 /* NutritionDiet.swift */; };
+		592AF7112035B27A00B8AF53 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AF7102035B27A00B8AF53 /* CommentCell.xib */; };
+		592AF7132035B33400B8AF53 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AF7122035B33400B8AF53 /* CommentCell.swift */; };
+		592E1B4820301D42006FFBF9 /* MyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592E1B4520301D42006FFBF9 /* MyDate.swift */; };
+		592E1B552030A6B5006FFBF9 /* RestDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592E1B542030A6B5006FFBF9 /* RestDayCell.xib */; };
+		592E1B5A2030B592006FFBF9 /* NutritionDiet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592E1B592030B592006FFBF9 /* NutritionDiet.xib */; };
+		59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */; };
+		59477742201C2CE30003FD7F /* FullSizedImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59477741201C2CE30003FD7F /* FullSizedImageViewCell.xib */; };
+		59477746201C58E80003FD7F /* HIITSingleWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59477745201C58E80003FD7F /* HIITSingleWorkoutViewController.swift */; };
+		5947774A201C6F820003FD7F /* WorkoutDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59477749201C6F820003FD7F /* WorkoutDescription.xib */; };
+		5947774C201C898F0003FD7F /* WorkoutInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5947774B201C898F0003FD7F /* WorkoutInfo.xib */; };
+		594B5CD6201AF61B0042F1BF /* SecondaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594B5CD5201AF61B0042F1BF /* SecondaryCell.xib */; };
+		594BF99E2016393000E7C103 /* NavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594BF99D2016393000E7C103 /* NavBar.xib */; };
+		5957ED7A20178A1600870A02 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7920178A1600870A02 /* NavBar.swift */; };
+		5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */; };
+		5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962D39D203A7F410081D4B2 /* SideBarViewController.swift */; };
+		5962D3A0203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */; };
+		59631B892038384B002653B9 /* SavedMealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59631B882038384B002653B9 /* SavedMealCell.xib */; };
 		59647044200A26CF00F9357F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647043200A26CF00F9357F /* AppDelegate.swift */; };
 		59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59647045200A26CF00F9357F /* LoginScreenViewController.swift */; };
-		59647049200A26CF00F9357F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59647047200A26CF00F9357F /* Main.storyboard */; };
-		5964704E200A26CF00F9357F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5964704C200A26CF00F9357F /* LaunchScreen.storyboard */; };
+		59647049200A26CF00F9357F /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59647047200A26CF00F9357F /* Dashboard.storyboard */; };
 		5964705B200A355000F9357F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5964705A200A355000F9357F /* Assets.xcassets */; };
 		59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647063200A97BA00F9357F /* Oswald-Medium.ttf */; };
 		59647066200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */; };
 		59647068200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */; };
+		596847A9201C9EBD00396BB1 /* Exercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596847A8201C9EBD00396BB1 /* Exercise.xib */; };
+		5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */; };
+		5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */; };
+		5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */; };
+		597DC8212024A7B400468960 /* NutritionArticleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597DC8202024A7B400468960 /* NutritionArticleScreenViewController.swift */; };
+		597DC8232024ABE200468960 /* FullSizedImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597DC8222024ABE200468960 /* FullSizedImageViewCell.swift */; };
+		597DC8252024B00F00468960 /* NutritionArticleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597DC8242024B00F00468960 /* NutritionArticleViewCell.xib */; };
+		597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597DC8262024B03300468960 /* NutritionArticleViewCell.swift */; };
+		598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598A78D620135031009D6B9A /* BMIScreenViewController.swift */; };
+		59AC648D2026D97700C139CE /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC648C2026D97700C139CE /* Triangle.swift */; };
+		59AF292F201A214B008EDD95 /* PremiumFeatureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AF292E201A214B008EDD95 /* PremiumFeatureCell.xib */; };
+		59AF8892201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF8891201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift */; };
+		59AF8894201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF8893201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift */; };
+		59B24601201B6FE900A096CD /* HIITViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B24600201B6FE900A096CD /* HIITViewController.swift */; };
+		59B24603201B99D500A096CD /* WorkoutRoutine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B24602201B99D500A096CD /* WorkoutRoutine.xib */; };
+		59C408952025DB6B004569C5 /* StartupScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C408942025DB6B004569C5 /* StartupScreens.storyboard */; };
+		59C408972025DBE9004569C5 /* LoginScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C408962025DBE9004569C5 /* LoginScreens.storyboard */; };
+		59C408992025E00C004569C5 /* WorkoutScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C408982025E00C004569C5 /* WorkoutScreens.storyboard */; };
+		59C4089B2025E087004569C5 /* NutritionScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C4089A2025E087004569C5 /* NutritionScreens.storyboard */; };
+		59E9EA4D2034884A0005B2B0 /* MyNutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E9EA4C2034884A0005B2B0 /* MyNutritionViewController.swift */; };
+		59F24B1D202384FE009DA20F /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F24B1C202384FE009DA20F /* CardViewCell.xib */; };
+		59F24B1F20238567009DA20F /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F24B1E20238567009DA20F /* CardViewCell.swift */; };
+		59F24B232023956B009DA20F /* PremiumFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F24B222023956B009DA20F /* PremiumFeatureCell.swift */; };
+		59F24B2520239BE4009DA20F /* NutritionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F24B2420239BE4009DA20F /* NutritionScreenViewController.swift */; };
+		59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeasurementScreens.storyboard; sourceTree = "<group>"; };
+		591A299E20380696009454D4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		591A29A0203806A9009454D4 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
+		591E18AC20394C7D00FD167F /* SecondaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCell.swift; sourceTree = "<group>"; };
+		591E18B6203983A700FD167F /* Benefit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Benefit-Bridging-Header.h"; sourceTree = "<group>"; };
+		592AF70120353E6600B8AF53 /* MyCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCalendar.xib; sourceTree = "<group>"; };
+		592AF70220353E6600B8AF53 /* MyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
+		592AF70320353E6700B8AF53 /* MonthCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
+		592AF70420353E6700B8AF53 /* MonthCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
+		592AF70520353E6700B8AF53 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		592AF70620353E6700B8AF53 /* DayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
+		592AF70E203548B100B8AF53 /* NutritionDiet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionDiet.swift; sourceTree = "<group>"; };
+		592AF7102035B27A00B8AF53 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		592AF7122035B33400B8AF53 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		592E1B4520301D42006FFBF9 /* MyDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDate.swift; sourceTree = "<group>"; };
+		592E1B542030A6B5006FFBF9 /* RestDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestDayCell.xib; sourceTree = "<group>"; };
+		592E1B592030B592006FFBF9 /* NutritionDiet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionDiet.xib; sourceTree = "<group>"; };
+		59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreenViewController.swift; sourceTree = "<group>"; };
+		59477741201C2CE30003FD7F /* FullSizedImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullSizedImageViewCell.xib; sourceTree = "<group>"; };
+		59477745201C58E80003FD7F /* HIITSingleWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITSingleWorkoutViewController.swift; sourceTree = "<group>"; };
+		59477749201C6F820003FD7F /* WorkoutDescription.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutDescription.xib; sourceTree = "<group>"; };
+		5947774B201C898F0003FD7F /* WorkoutInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutInfo.xib; sourceTree = "<group>"; };
+		594B5CD5201AF61B0042F1BF /* SecondaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondaryCell.xib; sourceTree = "<group>"; };
+		594BF99D2016393000E7C103 /* NavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavBar.xib; sourceTree = "<group>"; };
+		5957ED7920178A1600870A02 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsSectionViewController.swift; sourceTree = "<group>"; };
+		5962D39D203A7F410081D4B2 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNutritionScreenLockedViewController.swift; sourceTree = "<group>"; };
+		59631B882038384B002653B9 /* SavedMealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedMealCell.xib; sourceTree = "<group>"; };
 		59647040200A26CF00F9357F /* Benefit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benefit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59647043200A26CF00F9357F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59647045200A26CF00F9357F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
-		59647048200A26CF00F9357F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5964704D200A26CF00F9357F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59647048200A26CF00F9357F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		5964704F200A26CF00F9357F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5964705A200A355000F9357F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59647063200A97BA00F9357F /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		59647065200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Semibold-webfont.ttf"; sourceTree = "<group>"; };
 		59647067200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular-webfont.ttf"; sourceTree = "<group>"; };
+		596847A8201C9EBD00396BB1 /* Exercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Exercise.xib; sourceTree = "<group>"; };
+		5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreenViewController.swift; sourceTree = "<group>"; };
+		5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGoalScreenViewController.swift; sourceTree = "<group>"; };
+		5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileScreenViewController.swift; sourceTree = "<group>"; };
+		597DC8202024A7B400468960 /* NutritionArticleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionArticleScreenViewController.swift; sourceTree = "<group>"; };
+		597DC8222024ABE200468960 /* FullSizedImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSizedImageViewCell.swift; sourceTree = "<group>"; };
+		597DC8242024B00F00468960 /* NutritionArticleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionArticleViewCell.xib; sourceTree = "<group>"; };
+		597DC8262024B03300468960 /* NutritionArticleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionArticleViewCell.swift; sourceTree = "<group>"; };
+		598A78D620135031009D6B9A /* BMIScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScreenViewController.swift; sourceTree = "<group>"; };
+		59AC648C2026D97700C139CE /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		59AF292E201A214B008EDD95 /* PremiumFeatureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumFeatureCell.xib; sourceTree = "<group>"; };
+		59AF8891201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkoutsLockedScreenViewController.swift; sourceTree = "<group>"; };
+		59AF8893201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorkoutsScreenViewController.swift; sourceTree = "<group>"; };
+		59B24600201B6FE900A096CD /* HIITViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITViewController.swift; sourceTree = "<group>"; };
+		59B24602201B99D500A096CD /* WorkoutRoutine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutRoutine.xib; sourceTree = "<group>"; };
+		59C408942025DB6B004569C5 /* StartupScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartupScreens.storyboard; sourceTree = "<group>"; };
+		59C408962025DBE9004569C5 /* LoginScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreens.storyboard; sourceTree = "<group>"; };
+		59C408982025E00C004569C5 /* WorkoutScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WorkoutScreens.storyboard; sourceTree = "<group>"; };
+		59C4089A2025E087004569C5 /* NutritionScreens.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NutritionScreens.storyboard; sourceTree = "<group>"; };
+		59E9EA4C2034884A0005B2B0 /* MyNutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNutritionViewController.swift; sourceTree = "<group>"; };
+		59F24B1C202384FE009DA20F /* CardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = "<group>"; };
+		59F24B1E20238567009DA20F /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		59F24B222023956B009DA20F /* PremiumFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumFeatureCell.swift; sourceTree = "<group>"; };
+		59F24B2420239BE4009DA20F /* NutritionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionScreenViewController.swift; sourceTree = "<group>"; };
+		59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.debug.xcconfig"; sourceTree = "<group>"; };
+		DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Benefit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Benefit/Pods-Benefit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +144,94 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591A299D20380509009454D4 /* Measurement Screens */ = {
+			isa = PBXGroup;
+			children = (
+				591A299E20380696009454D4 /* UpdateProfileViewController.swift */,
+				591A29A0203806A9009454D4 /* MeasurementViewController.swift */,
+			);
+			path = "Measurement Screens";
+			sourceTree = "<group>";
+		};
+		591E18AB20394C5E00FD167F /* Secondary Cell */ = {
+			isa = PBXGroup;
+			children = (
+				594B5CD5201AF61B0042F1BF /* SecondaryCell.xib */,
+				591E18AC20394C7D00FD167F /* SecondaryCell.swift */,
+			);
+			path = "Secondary Cell";
+			sourceTree = "<group>";
+		};
+		592AF70D20353E6C00B8AF53 /* MyCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				592E1B4520301D42006FFBF9 /* MyDate.swift */,
+				592AF70520353E6700B8AF53 /* DayCell.swift */,
+				592AF70620353E6700B8AF53 /* DayCell.xib */,
+				592AF70420353E6700B8AF53 /* MonthCell.swift */,
+				592AF70320353E6700B8AF53 /* MonthCell.xib */,
+				592AF70220353E6600B8AF53 /* MyCalendar.swift */,
+				592AF70120353E6600B8AF53 /* MyCalendar.xib */,
+			);
+			path = MyCalendar;
+			sourceTree = "<group>";
+		};
+		592E1B582030B50E006FFBF9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				59C408942025DB6B004569C5 /* StartupScreens.storyboard */,
+				59C408962025DBE9004569C5 /* LoginScreens.storyboard */,
+				59647047200A26CF00F9357F /* Dashboard.storyboard */,
+				59C408982025E00C004569C5 /* WorkoutScreens.storyboard */,
+				59C4089A2025E087004569C5 /* NutritionScreens.storyboard */,
+				591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		592E1B5B2030B9BF006FFBF9 /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				59C408902025D479004569C5 /* Nutrition Article Cell */,
+				595CE3A9203825890086CE39 /* Nutrition Diet Cell */,
+				595CE3AA203825970086CE39 /* Comment Cell */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
+		595CE3A9203825890086CE39 /* Nutrition Diet Cell */ = {
+			isa = PBXGroup;
+			children = (
+				592E1B592030B592006FFBF9 /* NutritionDiet.xib */,
+				592AF70E203548B100B8AF53 /* NutritionDiet.swift */,
+			);
+			path = "Nutrition Diet Cell";
+			sourceTree = "<group>";
+		};
+		595CE3AA203825970086CE39 /* Comment Cell */ = {
+			isa = PBXGroup;
+			children = (
+				592AF7102035B27A00B8AF53 /* CommentCell.xib */,
+				592AF7122035B33400B8AF53 /* CommentCell.swift */,
+				59631B882038384B002653B9 /* SavedMealCell.xib */,
+			);
+			path = "Comment Cell";
+			sourceTree = "<group>";
+		};
 		59647037200A26CF00F9357F = {
 			isa = PBXGroup;
 			children = (
 				59647042200A26CF00F9357F /* Benefit */,
 				59647041200A26CF00F9357F /* Products */,
+				D9E08EA3B20C67446B716F17 /* Pods */,
+				D804225604BCA14F0787571D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +257,21 @@
 		59647055200A26D500F9357F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				59647047200A26CF00F9357F /* Main.storyboard */,
-				5964704C200A26CF00F9357F /* LaunchScreen.storyboard */,
+				592E1B582030B50E006FFBF9 /* Storyboards */,
+				59C4088D2025D42C004569C5 /* Card View Cell */,
+				59C4088E2025D43D004569C5 /* Premium Feature Cell */,
+				592E1B5B2030B9BF006FFBF9 /* Nutrition */,
+				592AF70D20353E6C00B8AF53 /* MyCalendar */,
+				59C4088F2025D44C004569C5 /* Custom Navigation Bar */,
+				591E18AB20394C5E00FD167F /* Secondary Cell */,
+				59B24602201B99D500A096CD /* WorkoutRoutine.xib */,
+				59477741201C2CE30003FD7F /* FullSizedImageViewCell.xib */,
+				597DC8222024ABE200468960 /* FullSizedImageViewCell.swift */,
+				59477749201C6F820003FD7F /* WorkoutDescription.xib */,
+				592E1B542030A6B5006FFBF9 /* RestDayCell.xib */,
+				5947774B201C898F0003FD7F /* WorkoutInfo.xib */,
+				596847A8201C9EBD00396BB1 /* Exercise.xib */,
+				59AC648C2026D97700C139CE /* Triangle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -80,7 +279,12 @@
 		59647056200A26E000F9357F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				59647045200A26CF00F9357F /* LoginScreenViewController.swift */,
+				59C4088A2025D3AC004569C5 /* Log In Screens */,
+				59FC7D1F201484F900C89D3C /* HomeScreenViewController.swift */,
+				59C4088B2025D3E3004569C5 /* Workout Screens */,
+				59C4088C2025D3F3004569C5 /* Nutrition Screens */,
+				591A299D20380509009454D4 /* Measurement Screens */,
+				5962D39D203A7F410081D4B2 /* SideBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -91,6 +295,7 @@
 				59647043200A26CF00F9357F /* AppDelegate.swift */,
 				5964705A200A355000F9357F /* Assets.xcassets */,
 				59647069200AA03300F9357F /* Fonts */,
+				591E18B6203983A700FD167F /* Benefit-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,6 +310,95 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		59C4088A2025D3AC004569C5 /* Log In Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59647045200A26CF00F9357F /* LoginScreenViewController.swift */,
+				59354BFA200D363500BFBE7D /* RegistrationScreenViewController.swift */,
+				5978612C2011C32A00C2B5D4 /* StartupScreenViewController.swift */,
+				5978612E201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift */,
+				5978613020120F4000C2B5D4 /* SetupProfileScreenViewController.swift */,
+				598A78D620135031009D6B9A /* BMIScreenViewController.swift */,
+			);
+			path = "Log In Screens";
+			sourceTree = "<group>";
+		};
+		59C4088B2025D3E3004569C5 /* Workout Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5957ED7F2017CC9A00870A02 /* WorkoutsSectionViewController.swift */,
+				59B24600201B6FE900A096CD /* HIITViewController.swift */,
+				59477745201C58E80003FD7F /* HIITSingleWorkoutViewController.swift */,
+				59AF8891201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift */,
+				59AF8893201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift */,
+			);
+			path = "Workout Screens";
+			sourceTree = "<group>";
+		};
+		59C4088C2025D3F3004569C5 /* Nutrition Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59F24B2420239BE4009DA20F /* NutritionScreenViewController.swift */,
+				597DC8202024A7B400468960 /* NutritionArticleScreenViewController.swift */,
+				59E9EA4C2034884A0005B2B0 /* MyNutritionViewController.swift */,
+				5962D39F203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift */,
+			);
+			path = "Nutrition Screens";
+			sourceTree = "<group>";
+		};
+		59C4088D2025D42C004569C5 /* Card View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				59F24B1C202384FE009DA20F /* CardViewCell.xib */,
+				59F24B1E20238567009DA20F /* CardViewCell.swift */,
+			);
+			path = "Card View Cell";
+			sourceTree = "<group>";
+		};
+		59C4088E2025D43D004569C5 /* Premium Feature Cell */ = {
+			isa = PBXGroup;
+			children = (
+				59AF292E201A214B008EDD95 /* PremiumFeatureCell.xib */,
+				59F24B222023956B009DA20F /* PremiumFeatureCell.swift */,
+			);
+			path = "Premium Feature Cell";
+			sourceTree = "<group>";
+		};
+		59C4088F2025D44C004569C5 /* Custom Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				594BF99D2016393000E7C103 /* NavBar.xib */,
+				5957ED7920178A1600870A02 /* NavBar.swift */,
+			);
+			path = "Custom Navigation Bar";
+			sourceTree = "<group>";
+		};
+		59C408902025D479004569C5 /* Nutrition Article Cell */ = {
+			isa = PBXGroup;
+			children = (
+				597DC8242024B00F00468960 /* NutritionArticleViewCell.xib */,
+				597DC8262024B03300468960 /* NutritionArticleViewCell.swift */,
+			);
+			path = "Nutrition Article Cell";
+			sourceTree = "<group>";
+		};
+		D804225604BCA14F0787571D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9E08EA3B20C67446B716F17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */,
+				DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +406,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59647052200A26CF00F9357F /* Build configuration list for PBXNativeTarget "Benefit" */;
 			buildPhases = (
+				9B75A419F1E6AD23B63A96C1 /* [CP] Check Pods Manifest.lock */,
 				5964703C200A26CF00F9357F /* Sources */,
 				5964703D200A26CF00F9357F /* Frameworks */,
 				5964703E200A26CF00F9357F /* Resources */,
+				F9A625D50FEDFAAEB9514002 /* [CP] Embed Pods Frameworks */,
+				72BFA4391CB146AD3069607A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +434,7 @@
 				TargetAttributes = {
 					5964703F200A26CF00F9357F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -164,23 +462,139 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5964704E200A26CF00F9357F /* LaunchScreen.storyboard in Resources */,
+				591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */,
+				592AF7112035B27A00B8AF53 /* CommentCell.xib in Resources */,
 				59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */,
+				59C408952025DB6B004569C5 /* StartupScreens.storyboard in Resources */,
+				592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */,
+				59C408992025E00C004569C5 /* WorkoutScreens.storyboard in Resources */,
+				59477742201C2CE30003FD7F /* FullSizedImageViewCell.xib in Resources */,
+				592AF70920353E6800B8AF53 /* MonthCell.xib in Resources */,
+				594B5CD6201AF61B0042F1BF /* SecondaryCell.xib in Resources */,
 				5964705B200A355000F9357F /* Assets.xcassets in Resources */,
+				59F24B1D202384FE009DA20F /* CardViewCell.xib in Resources */,
+				597DC8252024B00F00468960 /* NutritionArticleViewCell.xib in Resources */,
 				59647068200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf in Resources */,
+				59C408972025DBE9004569C5 /* LoginScreens.storyboard in Resources */,
 				59647066200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf in Resources */,
-				59647049200A26CF00F9357F /* Main.storyboard in Resources */,
+				5947774C201C898F0003FD7F /* WorkoutInfo.xib in Resources */,
+				59647049200A26CF00F9357F /* Dashboard.storyboard in Resources */,
+				592E1B5A2030B592006FFBF9 /* NutritionDiet.xib in Resources */,
+				59AF292F201A214B008EDD95 /* PremiumFeatureCell.xib in Resources */,
+				592AF70C20353E6800B8AF53 /* DayCell.xib in Resources */,
+				59B24603201B99D500A096CD /* WorkoutRoutine.xib in Resources */,
+				592E1B552030A6B5006FFBF9 /* RestDayCell.xib in Resources */,
+				5947774A201C6F820003FD7F /* WorkoutDescription.xib in Resources */,
+				59C4089B2025E087004569C5 /* NutritionScreens.storyboard in Resources */,
+				59631B892038384B002653B9 /* SavedMealCell.xib in Resources */,
+				596847A9201C9EBD00396BB1 /* Exercise.xib in Resources */,
+				594BF99E2016393000E7C103 /* NavBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72BFA4391CB146AD3069607A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B75A419F1E6AD23B63A96C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Benefit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A625D50FEDFAAEB9514002 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/JTHamburgerButton/JTHamburgerButton.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTHamburgerButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5964703C200A26CF00F9357F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				592AF70A20353E6800B8AF53 /* MonthCell.swift in Sources */,
+				59B24601201B6FE900A096CD /* HIITViewController.swift in Sources */,
+				5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */,
+				59AF8894201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift in Sources */,
+				592E1B4820301D42006FFBF9 /* MyDate.swift in Sources */,
+				591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */,
+				5978612F201203DA00C2B5D4 /* ChooseGoalScreenViewController.swift in Sources */,
+				592AF70820353E6800B8AF53 /* MyCalendar.swift in Sources */,
+				597DC8212024A7B400468960 /* NutritionArticleScreenViewController.swift in Sources */,
+				5962D3A0203AA8D70081D4B2 /* MyNutritionScreenLockedViewController.swift in Sources */,
+				59E9EA4D2034884A0005B2B0 /* MyNutritionViewController.swift in Sources */,
+				59F24B232023956B009DA20F /* PremiumFeatureCell.swift in Sources */,
+				591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */,
+				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
+				59AC648D2026D97700C139CE /* Triangle.swift in Sources */,
+				5957ED7A20178A1600870A02 /* NavBar.swift in Sources */,
+				5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */,
+				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
+				598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */,
+				5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */,
+				597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */,
+				597DC8232024ABE200468960 /* FullSizedImageViewCell.swift in Sources */,
+				592AF70F203548B100B8AF53 /* NutritionDiet.swift in Sources */,
+				591E18AD20394C7D00FD167F /* SecondaryCell.swift in Sources */,
+				5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */,
 				59647046200A26CF00F9357F /* LoginScreenViewController.swift in Sources */,
+				59477746201C58E80003FD7F /* HIITSingleWorkoutViewController.swift in Sources */,
+				592AF7132035B33400B8AF53 /* CommentCell.swift in Sources */,
+				59AF8892201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift in Sources */,
+				592AF70B20353E6800B8AF53 /* DayCell.swift in Sources */,
+				59F24B2520239BE4009DA20F /* NutritionScreenViewController.swift in Sources */,
+				59F24B1F20238567009DA20F /* CardViewCell.swift in Sources */,
 				59647044200A26CF00F9357F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,20 +602,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		59647047200A26CF00F9357F /* Main.storyboard */ = {
+		59647047200A26CF00F9357F /* Dashboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				59647048200A26CF00F9357F /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5964704C200A26CF00F9357F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5964704D200A26CF00F9357F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Dashboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -316,33 +722,48 @@
 		};
 		59647053200A26CF00F9357F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D5C43AB303494E76BCD1F6 /* Pods-Benefit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		59647054200A26CF00F9357F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF56B035D17677748944271 /* Pods-Benefit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Benefit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Benefit/Supporting Files/Benefit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Alt Regular-webfont.ttf">
+            <string>ProximaNovaA-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NutritionArticleViewCell" rowHeight="208" id="ES1-SM-WZF" userLabel="NutritionArticleViewCell" customClass="NutritionArticleViewCell" customModule="Benefit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="505" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ES1-SM-WZF" id="nDo-Gx-MdA">
+                <rect key="frame" x="0.0" y="0.0" width="505" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8y5-3Q-iaj">
+                        <rect key="frame" x="0.0" y="0.0" width="505" height="114.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEl-0R-X6f">
+                                <rect key="frame" x="20" y="10" width="475" height="94.5"/>
+                                <string key="text">With more than two-thirds of all Americans regularly taking at least one dietary supplement, the industry is booming! Even so, rumors and questions about the industry abound. Are supplements safe? Are they tested? Do they actually do any good? Understanding dietary supplement regulations can help you become an educated and confident consumer.
+
+Are Dietary Supplements Regulated?
+
+Despite rumors to the contrary, dietary supplements are regulated. The 1994 Dietary Supplement Health</string>
+                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="32"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kEl-0R-X6f" secondAttribute="bottom" constant="10" id="GnQ-ja-wLh"/>
+                            <constraint firstItem="kEl-0R-X6f" firstAttribute="top" secondItem="8y5-3Q-iaj" secondAttribute="top" constant="10" id="Yaz-7P-ePz"/>
+                            <constraint firstItem="kEl-0R-X6f" firstAttribute="leading" secondItem="8y5-3Q-iaj" secondAttribute="leading" constant="20" id="eRb-0P-ZjT"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kEl-0R-X6f" secondAttribute="trailing" constant="10" id="t6x-SZ-l5r"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="8y5-3Q-iaj" secondAttribute="bottom" id="DlB-mG-AQ1"/>
+                    <constraint firstItem="8y5-3Q-iaj" firstAttribute="top" secondItem="nDo-Gx-MdA" secondAttribute="top" id="WeV-aD-lp8"/>
+                    <constraint firstItem="8y5-3Q-iaj" firstAttribute="leading" secondItem="nDo-Gx-MdA" secondAttribute="leading" id="s5X-BF-qvc"/>
+                    <constraint firstAttribute="trailing" secondItem="8y5-3Q-iaj" secondAttribute="trailing" id="uRc-Sp-pee"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="articleTextLabel" destination="kEl-0R-X6f" id="ehb-kH-1oI"/>
+            </connections>
+            <point key="canvasLocation" x="40.5" y="39.5"/>
+        </tableViewCell>
+    </objects>
+</document>

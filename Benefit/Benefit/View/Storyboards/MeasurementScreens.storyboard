@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bka-hg-Ufm">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Alt Regular-webfont.ttf">
+            <string>ProximaNovaA-Regular</string>
+        </array>
+        <array key="Mark Simonson - Proxima Nova Semibold-webfont.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Measurement View Controller-->
+        <scene sceneID="QYJ-Rr-W24">
+            <objects>
+                <viewController storyboardIdentifier="Measurements" id="iE1-hP-bdX" customClass="MeasurementViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eP6-sj-849">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1796"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qg-7f-crp">
+                                <rect key="frame" x="0.0" y="20" width="320" height="1776"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryc-rF-YMi">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1796"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-fy-llY">
+                                                <rect key="frame" x="0.0" y="8" width="320" height="607.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make healthy food choices and participate in regular physical activities to be more fit and in shape" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="axk-eR-rF3">
+                                                        <rect key="frame" x="15" y="206.5" width="290" height="84.5"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="19"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR BODY MASS INDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="15s-wC-uWK">
+                                                        <rect key="frame" x="51" y="25" width="219.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="23"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fpd-wN-JWK">
+                                                        <rect key="frame" x="98.5" y="150" width="124.5" height="36.5"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        <color key="textColor" red="0.74901960779999999" green="0.91764705879999997" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="72"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.69" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hyJ-X3-HAH">
+                                                        <rect key="frame" x="107.5" y="90" width="106.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="41"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="91"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="2Uk-C5-Fbk" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="69.5" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="auU-uN-nRT">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI GRAPH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GX1-i2-Vhn">
+                                                        <rect key="frame" x="115" y="326" width="91" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="42"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="XNR-Vb-PNh" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="362" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="jOC-6h-utw">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4j-MX-wdD" customClass="LineChartView" customModule="Charts">
+                                                        <rect key="frame" x="20" y="382.5" width="280" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="7Q6-b8-e4m">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="501"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="2Uk-C5-Fbk" firstAttribute="leading" secondItem="YjL-fy-llY" secondAttribute="leading" constant="25" id="1vM-h1-2wz"/>
+                                                    <constraint firstItem="GX1-i2-Vhn" firstAttribute="centerX" secondItem="YjL-fy-llY" secondAttribute="centerX" id="49T-SG-zTn"/>
+                                                    <constraint firstItem="2Uk-C5-Fbk" firstAttribute="top" secondItem="15s-wC-uWK" secondAttribute="bottom" constant="10" id="BWc-ZU-Tya">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="XNR-Vb-PNh" secondAttribute="trailing" constant="25" id="CO2-eg-TId"/>
+                                                    <constraint firstItem="axk-eR-rF3" firstAttribute="leading" secondItem="YjL-fy-llY" secondAttribute="leading" constant="15" id="De4-Mz-Fg1">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="2Uk-C5-Fbk" secondAttribute="trailing" constant="25" id="FTH-Q1-Kkd"/>
+                                                    <constraint firstItem="15s-wC-uWK" firstAttribute="top" secondItem="YjL-fy-llY" secondAttribute="top" constant="25" id="GHM-os-7AM">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstItem="F4j-MX-wdD" firstAttribute="top" secondItem="XNR-Vb-PNh" secondAttribute="bottom" constant="20" id="Hgs-jE-dOc">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="axk-eR-rF3" secondAttribute="trailing" constant="15" id="KGU-uc-9AO">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstItem="hyJ-X3-HAH" firstAttribute="top" secondItem="2Uk-C5-Fbk" secondAttribute="bottom" constant="20" id="N8Y-3D-vaN">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="15s-wC-uWK" firstAttribute="centerX" secondItem="YjL-fy-llY" secondAttribute="centerX" id="SrJ-Ko-UxI"/>
+                                                    <constraint firstItem="hyJ-X3-HAH" firstAttribute="centerX" secondItem="YjL-fy-llY" secondAttribute="centerX" id="T3j-n0-qtm"/>
+                                                    <constraint firstItem="XNR-Vb-PNh" firstAttribute="leading" secondItem="YjL-fy-llY" secondAttribute="leading" constant="25" id="Tf0-xx-QP7"/>
+                                                    <constraint firstItem="axk-eR-rF3" firstAttribute="top" secondItem="Fpd-wN-JWK" secondAttribute="bottom" constant="20" id="UYO-0y-UKu">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="XNR-Vb-PNh" firstAttribute="top" secondItem="GX1-i2-Vhn" secondAttribute="bottom" constant="15" id="Vy9-aW-hLg">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Fpd-wN-JWK" firstAttribute="centerX" secondItem="YjL-fy-llY" secondAttribute="centerX" id="WQ4-B9-v72"/>
+                                                    <constraint firstItem="GX1-i2-Vhn" firstAttribute="top" secondItem="axk-eR-rF3" secondAttribute="bottom" constant="35" id="X7H-iB-0pJ">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Fpd-wN-JWK" firstAttribute="top" secondItem="hyJ-X3-HAH" secondAttribute="bottom" constant="10" id="ZBe-Tw-kj3"/>
+                                                    <constraint firstItem="F4j-MX-wdD" firstAttribute="leading" secondItem="YjL-fy-llY" secondAttribute="leading" constant="20" id="fTU-l7-nL1">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="F4j-MX-wdD" secondAttribute="trailing" constant="20" id="jzV-wm-wZU">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="F4j-MX-wdD" secondAttribute="bottom" constant="25" id="mum-5h-gsa">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIE-HG-M3c">
+                                                <rect key="frame" x="0.0" y="623.5" width="320" height="556"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cen-y1-gxO">
+                                                        <rect key="frame" x="15" y="144" width="290" height="105.5"/>
+                                                        <string key="text">The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive</string>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="19"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR BASAL METABOLIC RATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ehC-QR-8fU">
+                                                        <rect key="frame" x="25.5" y="25" width="269.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="23"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1765 CALORIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-ke-xba">
+                                                        <rect key="frame" x="61.5" y="90" width="197" height="34"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="28"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="67"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="NtR-wE-3Xh" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="69.5" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="Y7f-cR-Vvr">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR GRAPH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8g-cD-U7F">
+                                                        <rect key="frame" x="112" y="274.5" width="97.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="42"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-xd-h91" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="310.5" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="LZI-oc-Vrz">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqa-fz-SoN" customClass="LineChartView" customModule="Charts">
+                                                        <rect key="frame" x="20" y="331" width="280" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="bo9-dq-0af">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="501"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="DGP-xd-h91" firstAttribute="leading" secondItem="PIE-HG-M3c" secondAttribute="leading" constant="25" id="2oT-Ub-mLA"/>
+                                                    <constraint firstItem="jIT-ke-xba" firstAttribute="top" secondItem="NtR-wE-3Xh" secondAttribute="bottom" constant="20" id="549-lh-rZh">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="jqa-fz-SoN" firstAttribute="top" secondItem="DGP-xd-h91" secondAttribute="bottom" constant="20" id="5m2-pO-E7P">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstItem="ehC-QR-8fU" firstAttribute="top" secondItem="PIE-HG-M3c" secondAttribute="top" constant="25" id="8Ty-2J-Rf8">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Q8g-cD-U7F" firstAttribute="top" secondItem="cen-y1-gxO" secondAttribute="bottom" constant="25" id="Ex3-ru-eNB">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                                    </constraint>
+                                                    <constraint firstItem="cen-y1-gxO" firstAttribute="top" secondItem="jIT-ke-xba" secondAttribute="bottom" constant="20" id="I5H-kX-q5d">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="cen-y1-gxO" secondAttribute="trailing" constant="15" id="J8A-6i-2ca">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstItem="jIT-ke-xba" firstAttribute="centerX" secondItem="PIE-HG-M3c" secondAttribute="centerX" id="KSw-Nf-BlB"/>
+                                                    <constraint firstItem="Q8g-cD-U7F" firstAttribute="centerX" secondItem="PIE-HG-M3c" secondAttribute="centerX" id="LjD-ye-ZQX"/>
+                                                    <constraint firstItem="NtR-wE-3Xh" firstAttribute="leading" secondItem="PIE-HG-M3c" secondAttribute="leading" constant="25" id="Pt6-sB-BqD"/>
+                                                    <constraint firstItem="NtR-wE-3Xh" firstAttribute="top" secondItem="ehC-QR-8fU" secondAttribute="bottom" constant="10" id="c1y-so-OHb">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="jqa-fz-SoN" secondAttribute="bottom" constant="25" id="cPq-cj-auO">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="jqa-fz-SoN" secondAttribute="trailing" constant="20" id="fol-1d-s5k">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="jqa-fz-SoN" firstAttribute="leading" secondItem="PIE-HG-M3c" secondAttribute="leading" constant="20" id="gkK-2G-sfJ">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="cen-y1-gxO" firstAttribute="leading" secondItem="PIE-HG-M3c" secondAttribute="leading" constant="15" id="k7q-iN-hp9">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstItem="ehC-QR-8fU" firstAttribute="centerX" secondItem="PIE-HG-M3c" secondAttribute="centerX" id="lwy-W4-nE4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DGP-xd-h91" secondAttribute="trailing" constant="25" id="rsH-gu-kVx"/>
+                                                    <constraint firstItem="DGP-xd-h91" firstAttribute="top" secondItem="Q8g-cD-U7F" secondAttribute="bottom" constant="15" id="wnc-2X-nQ8">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="NtR-wE-3Xh" secondAttribute="trailing" constant="25" id="z06-L1-IEE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrj-fD-J9z">
+                                                <rect key="frame" x="0.0" y="1187.5" width="320" height="512.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR BODY FAT %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ym8-94-lzd">
+                                                        <rect key="frame" x="76.5" y="25" width="168.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="23"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15.9 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lPQ-Bn-ipe">
+                                                        <rect key="frame" x="120.5" y="90" width="79.5" height="34"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="28"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="67"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-ZI-kpD" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="69.5" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="Qfu-HT-KKR">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BODY FAT GRAPH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-rV-brd">
+                                                        <rect key="frame" x="89.5" y="231" width="141" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="42"/>
+                                                        </variation>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="HDq-pC-quY" userLabel="Separator">
+                                                        <rect key="frame" x="25" y="267" width="270" height="0.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="T5L-71-tuT">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLV-h0-RCw" customClass="LineChartView" customModule="Charts">
+                                                        <rect key="frame" x="20" y="287.5" width="280" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="rnl-Ho-BkM">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="501"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDEAL BODY FAT - 9 % " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8S-Sh-lIR">
+                                                        <rect key="frame" x="72" y="139" width="176" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IDEAL WEIGHT - 73 KGS " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-MR-4xL">
+                                                        <rect key="frame" x="66.5" y="170" width="188.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
+                                                        <color key="textColor" red="0.74901960779999999" green="0.91764705879999997" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="uy9-ZI-kpD" firstAttribute="top" secondItem="ym8-94-lzd" secondAttribute="bottom" constant="10" id="42s-uQ-tuh">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                                                    </constraint>
+                                                    <constraint firstItem="uy9-ZI-kpD" firstAttribute="leading" secondItem="Zrj-fD-J9z" secondAttribute="leading" constant="25" id="Dtn-5c-oTD"/>
+                                                    <constraint firstItem="ojb-MR-4xL" firstAttribute="centerX" secondItem="Zrj-fD-J9z" secondAttribute="centerX" id="IJ6-r4-Jaq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uy9-ZI-kpD" secondAttribute="trailing" constant="25" id="Jiy-z3-B4i"/>
+                                                    <constraint firstItem="uIp-rV-brd" firstAttribute="top" secondItem="ojb-MR-4xL" secondAttribute="bottom" constant="40" id="PPl-U3-CMH">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                                                    </constraint>
+                                                    <constraint firstItem="VLV-h0-RCw" firstAttribute="top" secondItem="HDq-pC-quY" secondAttribute="bottom" constant="20" id="Wv9-o1-5sv">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstItem="j8S-Sh-lIR" firstAttribute="centerX" secondItem="Zrj-fD-J9z" secondAttribute="centerX" id="aU8-Oq-nHK"/>
+                                                    <constraint firstItem="ym8-94-lzd" firstAttribute="centerX" secondItem="Zrj-fD-J9z" secondAttribute="centerX" id="aew-Xs-FAx"/>
+                                                    <constraint firstItem="lPQ-Bn-ipe" firstAttribute="centerX" secondItem="Zrj-fD-J9z" secondAttribute="centerX" id="azF-f7-0eT"/>
+                                                    <constraint firstItem="HDq-pC-quY" firstAttribute="top" secondItem="uIp-rV-brd" secondAttribute="bottom" constant="15" id="dy7-DZ-UaK">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                                    </constraint>
+                                                    <constraint firstItem="j8S-Sh-lIR" firstAttribute="top" secondItem="lPQ-Bn-ipe" secondAttribute="bottom" constant="15" id="eSS-T1-w0n">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="VLV-h0-RCw" firstAttribute="leading" secondItem="Zrj-fD-J9z" secondAttribute="leading" constant="20" id="k00-AQ-8Zs">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="trailing" secondItem="VLV-h0-RCw" secondAttribute="trailing" constant="20" id="oaO-VO-YSf">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="HDq-pC-quY" firstAttribute="leading" secondItem="Zrj-fD-J9z" secondAttribute="leading" constant="25" id="pi2-zd-7Wn"/>
+                                                    <constraint firstItem="ojb-MR-4xL" firstAttribute="top" secondItem="j8S-Sh-lIR" secondAttribute="bottom" constant="10" id="qRI-QQ-LFT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VLV-h0-RCw" secondAttribute="bottom" constant="25" id="sVp-jW-ESu">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="uIp-rV-brd" firstAttribute="centerX" secondItem="Zrj-fD-J9z" secondAttribute="centerX" id="sdi-IJ-hu1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HDq-pC-quY" secondAttribute="trailing" constant="25" id="ttw-jL-D5s"/>
+                                                    <constraint firstItem="ym8-94-lzd" firstAttribute="top" secondItem="Zrj-fD-J9z" secondAttribute="top" constant="25" id="vPA-Yt-EoM">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                    </constraint>
+                                                    <constraint firstItem="lPQ-Bn-ipe" firstAttribute="top" secondItem="uy9-ZI-kpD" secondAttribute="bottom" constant="20" id="yJi-3e-JTV">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3l-Oc-ENO">
+                                                <rect key="frame" x="41.5" y="1720" width="237" height="41"/>
+                                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="LSP-Mk-cQ6">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="98"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="Vnd-Pc-3Al">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="22"/>
+                                                <state key="normal" title="GET A COACH NOW">
+                                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
+                                                </variation>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Zrj-fD-J9z" firstAttribute="leading" secondItem="Ryc-rF-YMi" secondAttribute="leading" id="5Eb-rC-O7h"/>
+                                            <constraint firstItem="o3l-Oc-ENO" firstAttribute="top" secondItem="Zrj-fD-J9z" secondAttribute="bottom" constant="20" id="6uL-bF-88V">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="YjL-fy-llY" secondAttribute="trailing" id="75i-Ry-WH3"/>
+                                            <constraint firstItem="PIE-HG-M3c" firstAttribute="leading" secondItem="Ryc-rF-YMi" secondAttribute="leading" id="IsH-Sm-AuF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zrj-fD-J9z" secondAttribute="trailing" id="Vv2-v6-Ecc"/>
+                                            <constraint firstItem="YjL-fy-llY" firstAttribute="leading" secondItem="Ryc-rF-YMi" secondAttribute="leading" id="YDf-pf-Ktq"/>
+                                            <constraint firstItem="YjL-fy-llY" firstAttribute="top" secondItem="Ryc-rF-YMi" secondAttribute="top" constant="8" id="dTD-8N-Lv0"/>
+                                            <constraint firstAttribute="trailing" secondItem="PIE-HG-M3c" secondAttribute="trailing" id="gIZ-22-3fD"/>
+                                            <constraint firstItem="PIE-HG-M3c" firstAttribute="top" secondItem="YjL-fy-llY" secondAttribute="bottom" constant="8" id="hHP-u4-cDe">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                            </constraint>
+                                            <constraint firstItem="Zrj-fD-J9z" firstAttribute="top" secondItem="PIE-HG-M3c" secondAttribute="bottom" constant="8" id="vJY-XB-8Uo">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                            </constraint>
+                                            <constraint firstAttribute="bottom" secondItem="o3l-Oc-ENO" secondAttribute="bottom" constant="35" id="w4c-wU-URr"/>
+                                            <constraint firstItem="o3l-Oc-ENO" firstAttribute="centerX" secondItem="Ryc-rF-YMi" secondAttribute="centerX" id="wG6-oT-azM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ryc-rF-YMi" firstAttribute="width" secondItem="1Qg-7f-crp" secondAttribute="width" id="8jA-eZ-tgN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ryc-rF-YMi" secondAttribute="bottom" constant="184" id="Idj-dl-OPv"/>
+                                    <constraint firstItem="Ryc-rF-YMi" firstAttribute="top" secondItem="1Qg-7f-crp" secondAttribute="top" id="K1I-Ty-Oe0"/>
+                                    <constraint firstItem="Ryc-rF-YMi" firstAttribute="leading" secondItem="1Qg-7f-crp" secondAttribute="leading" id="MwN-4f-frb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ryc-rF-YMi" secondAttribute="trailing" id="Tbq-qJ-O4i"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Cb-Xl-xjv" firstAttribute="bottom" secondItem="1Qg-7f-crp" secondAttribute="bottom" id="PXL-Mb-e07"/>
+                            <constraint firstItem="9Cb-Xl-xjv" firstAttribute="trailing" secondItem="1Qg-7f-crp" secondAttribute="trailing" id="iL1-cW-cqE"/>
+                            <constraint firstItem="1Qg-7f-crp" firstAttribute="leading" secondItem="9Cb-Xl-xjv" secondAttribute="leading" id="rbf-Pc-7pw"/>
+                            <constraint firstItem="1Qg-7f-crp" firstAttribute="top" secondItem="9Cb-Xl-xjv" secondAttribute="top" id="vo2-sC-45D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Cb-Xl-xjv"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="1796"/>
+                    <connections>
+                        <outlet property="BMIChart" destination="F4j-MX-wdD" id="KrT-Op-Wzu"/>
+                        <outlet property="BMRChart" destination="jqa-fz-SoN" id="Uud-gy-EOc"/>
+                        <outlet property="BodyFatChart" destination="VLV-h0-RCw" id="O3N-Dx-8vc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KyG-gw-yYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-83" y="38"/>
+        </scene>
+        <!--Update Profile View Controller-->
+        <scene sceneID="I5S-hv-Ldu">
+            <objects>
+                <viewController id="Bka-hg-Ufm" customClass="UpdateProfileViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bM-wi-oCM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80R-ed-RN1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="1180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qor-pQ-fvL" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1063"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPDATE YOUR PROFILE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r25-AC-exU">
+                                                <rect key="frame" x="68" y="50" width="185.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="46"/>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtR-al-zwv">
+                                                <rect key="frame" x="110.5" y="111" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="Srl-d8-0bW">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="100" id="y8b-qk-Yuu">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <state key="normal" image="female_img"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-m9-cAs">
+                                                <rect key="frame" x="34.5" y="133" width="56" height="56"/>
+                                                <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="56" id="AZN-sS-Lis">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="56" id="Rbd-KG-1I0">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <state key="normal" image="ic_female_sel_24dp"/>
+                                                <connections>
+                                                    <action selector="femaleSelected:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="fPp-On-dg2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpA-uE-LDi">
+                                                <rect key="frame" x="230.5" y="133" width="56" height="56"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="bVd-4n-4MM">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="56" id="uKx-PM-aFM">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <state key="normal" image="ic_male_not_24dp"/>
+                                                <connections>
+                                                    <action selector="maleSelected:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="gl5-IE-Ki8"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Asy-3D-pX6">
+                                                <rect key="frame" x="41.5" y="281" width="237" height="57"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="FH0-xr-RM4">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="77"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="237" id="Qns-Ty-opL">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lw-oo-LNy">
+                                                <rect key="frame" x="41.5" y="241" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your age?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZvE-p1-K8y">
+                                                        <rect key="frame" x="5" y="5" width="136.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="237" id="SYH-BD-MuX">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="ZvE-p1-K8y" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9lw-oo-LNy" secondAttribute="trailing" constant="-95.5" id="Y0O-hm-87h"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ZyM-XM-2GV">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="ZvE-p1-K8y" secondAttribute="bottom" constant="5" id="fyF-Xb-fV5"/>
+                                                    <constraint firstItem="ZvE-p1-K8y" firstAttribute="leading" secondItem="9lw-oo-LNy" secondAttribute="leading" constant="5" id="hDh-fm-2f6">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                    <constraint firstItem="ZvE-p1-K8y" firstAttribute="top" secondItem="9lw-oo-LNy" secondAttribute="top" constant="5" id="lj3-FP-cbl"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-RG-djY">
+                                                <rect key="frame" x="41.5" y="353" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your height?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ss9-e9-lDP">
+                                                        <rect key="frame" x="5" y="5" width="158" height="22"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ss9-e9-lDP" firstAttribute="top" secondItem="1jE-RG-djY" secondAttribute="top" constant="5" id="72O-iW-1VF"/>
+                                                    <constraint firstAttribute="width" constant="237" id="Cgz-BZ-eHP">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="30" id="Rxw-Hx-UgG">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Ss9-e9-lDP" firstAttribute="leading" secondItem="1jE-RG-djY" secondAttribute="leading" constant="5" id="lfD-N5-BJk">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Ss9-e9-lDP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1jE-RG-djY" secondAttribute="trailing" constant="-200" id="xeb-Uk-BAJ">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="-200"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPf-xH-6hL">
+                                                <rect key="frame" x="41.5" y="465" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your weight?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="of4-8d-wPz">
+                                                        <rect key="frame" x="5" y="5" width="182" height="22"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3DV-bi-fF5">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="237" id="B0u-o5-dXE">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="of4-8d-wPz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tPf-xH-6hL" secondAttribute="trailing" constant="-200" id="FjA-Cy-2v2">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="of4-8d-wPz" firstAttribute="top" secondItem="tPf-xH-6hL" secondAttribute="top" constant="5" id="McR-NI-hhh"/>
+                                                    <constraint firstItem="of4-8d-wPz" firstAttribute="leading" secondItem="tPf-xH-6hL" secondAttribute="leading" constant="5" id="qLD-Si-3Fn">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5r-RM-aJB">
+                                                <rect key="frame" x="41.5" y="393" width="237" height="57"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7QH-2u-j7g">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="123" id="6ep-d4-7TH">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0U-iG-e0X">
+                                                        <rect key="frame" x="131" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="0yU-5e-23s">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="CM">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="heightToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="Ya4-EO-M4P"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ww-ba-xYq">
+                                                        <rect key="frame" x="187" y="0.0" width="50" height="57"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-bb-Klx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="28"/>
+                                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                                <state key="normal" title="FT">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="24"/>
+                                                                </variation>
+                                                                <connections>
+                                                                    <action selector="heightToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="prl-JM-JHl"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCW-qL-ONr">
+                                                                <rect key="frame" x="0.0" y="29" width="50" height="28"/>
+                                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                                <state key="normal" title="IN">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="24"/>
+                                                                </variation>
+                                                                <connections>
+                                                                    <action selector="heightToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="Vo6-ON-orI"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="F6F-gp-ZRX">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                            <constraint firstItem="bCW-qL-ONr" firstAttribute="height" secondItem="hRM-bb-Klx" secondAttribute="height" id="nj1-ke-w4I"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="c0U-iG-e0X" secondAttribute="bottom" id="2za-In-sbi"/>
+                                                    <constraint firstItem="7QH-2u-j7g" firstAttribute="leading" secondItem="C5r-RM-aJB" secondAttribute="leading" id="Brd-rf-hPv"/>
+                                                    <constraint firstItem="1ww-ba-xYq" firstAttribute="leading" secondItem="c0U-iG-e0X" secondAttribute="trailing" constant="6" id="OEU-rl-Tnm"/>
+                                                    <constraint firstItem="c0U-iG-e0X" firstAttribute="leading" secondItem="7QH-2u-j7g" secondAttribute="trailing" constant="8" id="T4C-vp-tmN"/>
+                                                    <constraint firstItem="1ww-ba-xYq" firstAttribute="top" secondItem="C5r-RM-aJB" secondAttribute="top" id="TXR-rb-rUl"/>
+                                                    <constraint firstAttribute="height" constant="77" id="YKm-Wz-3yN">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="57"/>
+                                                    </constraint>
+                                                    <constraint firstItem="7QH-2u-j7g" firstAttribute="top" secondItem="C5r-RM-aJB" secondAttribute="top" id="dvD-aR-2Xr"/>
+                                                    <constraint firstItem="c0U-iG-e0X" firstAttribute="top" secondItem="C5r-RM-aJB" secondAttribute="top" id="uWb-Z5-I8h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7QH-2u-j7g" secondAttribute="bottom" id="v2d-4a-4a2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1ww-ba-xYq" secondAttribute="bottom" id="xxL-mq-8kz"/>
+                                                    <constraint firstAttribute="width" constant="237" id="ykL-WN-bgc">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1t-4X-5nv">
+                                                <rect key="frame" x="41.5" y="505" width="237" height="57"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bak-vi-2Fh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="123" id="JAG-Y6-JrJ">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw5-2J-Uqg">
+                                                        <rect key="frame" x="131" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="vjd-Qb-8ti">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="KG">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="weightToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="hCd-hV-XsA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwW-IS-iw0">
+                                                        <rect key="frame" x="187" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="WpM-Iz-wda">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="LBS">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="weightToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="QYc-OB-qwy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="WwW-IS-iw0" firstAttribute="leading" secondItem="Zw5-2J-Uqg" secondAttribute="trailing" constant="6" id="1ek-DV-1Uf"/>
+                                                    <constraint firstItem="Zw5-2J-Uqg" firstAttribute="leading" secondItem="bak-vi-2Fh" secondAttribute="trailing" constant="8" id="5v2-do-bzH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WwW-IS-iw0" secondAttribute="bottom" id="Dbq-7d-4cD"/>
+                                                    <constraint firstAttribute="width" constant="237" id="Hzc-da-F6L">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="Zw5-2J-Uqg" secondAttribute="bottom" id="JjB-Jn-eMA"/>
+                                                    <constraint firstItem="Zw5-2J-Uqg" firstAttribute="top" secondItem="w1t-4X-5nv" secondAttribute="top" id="MuJ-9d-8iz"/>
+                                                    <constraint firstAttribute="height" constant="57" id="P31-68-qaB">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="77"/>
+                                                    </constraint>
+                                                    <constraint firstItem="bak-vi-2Fh" firstAttribute="leading" secondItem="w1t-4X-5nv" secondAttribute="leading" id="Q0f-Tk-uFd"/>
+                                                    <constraint firstItem="bak-vi-2Fh" firstAttribute="top" secondItem="w1t-4X-5nv" secondAttribute="top" id="QVQ-zK-SOT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bak-vi-2Fh" secondAttribute="bottom" id="wnr-tl-JAx"/>
+                                                    <constraint firstItem="WwW-IS-iw0" firstAttribute="top" secondItem="w1t-4X-5nv" secondAttribute="top" id="zBC-eC-mt6"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHJ-NI-i8y">
+                                                <rect key="frame" x="41.5" y="617" width="237" height="57"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-EQ-maK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="123" id="6rI-LU-oCQ">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kV2-T0-X09">
+                                                        <rect key="frame" x="131" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="AX3-XI-Rpv">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="CM">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="waistToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="ZCB-F9-hez"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCq-L0-hsI">
+                                                        <rect key="frame" x="187" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="pso-X5-Qq0">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="IN">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="waistToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="iqv-rJ-Hkp"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="kV2-T0-X09" firstAttribute="top" secondItem="HHJ-NI-i8y" secondAttribute="top" id="3Q5-j4-xsB"/>
+                                                    <constraint firstItem="kV2-T0-X09" firstAttribute="leading" secondItem="vGN-EQ-maK" secondAttribute="trailing" constant="8" id="FRu-5h-yn1"/>
+                                                    <constraint firstAttribute="height" constant="57" id="Fkv-Tp-8U1">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="77"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="vGN-EQ-maK" secondAttribute="bottom" id="JvI-AP-rWM"/>
+                                                    <constraint firstItem="OCq-L0-hsI" firstAttribute="top" secondItem="HHJ-NI-i8y" secondAttribute="top" id="MwH-HT-fN8"/>
+                                                    <constraint firstItem="vGN-EQ-maK" firstAttribute="leading" secondItem="HHJ-NI-i8y" secondAttribute="leading" id="U2T-xm-qbf"/>
+                                                    <constraint firstAttribute="width" constant="237" id="a9b-jK-dgq">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="kV2-T0-X09" secondAttribute="bottom" id="f9m-NI-1SA"/>
+                                                    <constraint firstItem="OCq-L0-hsI" firstAttribute="leading" secondItem="kV2-T0-X09" secondAttribute="trailing" constant="6" id="lbd-Gu-0mo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OCq-L0-hsI" secondAttribute="bottom" id="lms-EO-huX"/>
+                                                    <constraint firstItem="vGN-EQ-maK" firstAttribute="top" secondItem="HHJ-NI-i8y" secondAttribute="top" id="o0h-eG-TIJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gup-VF-cjA">
+                                                <rect key="frame" x="41.5" y="577" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your waist size?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-3h-uoB">
+                                                        <rect key="frame" x="5" y="5" width="184.5" height="22"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="fl4-3h-uoB" firstAttribute="leading" secondItem="Gup-VF-cjA" secondAttribute="leading" constant="5" id="2uF-OI-DGj">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="30" id="A0d-q1-1ey">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="fl4-3h-uoB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gup-VF-cjA" secondAttribute="trailing" constant="-200" id="EFt-pE-nKa">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="fl4-3h-uoB" firstAttribute="top" secondItem="Gup-VF-cjA" secondAttribute="top" constant="5" id="FcT-cw-mwL"/>
+                                                    <constraint firstAttribute="width" constant="237" id="ZAr-v2-ooT">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-xl-PJT">
+                                                <rect key="frame" x="41.5" y="729" width="237" height="57"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQD-2W-udu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="123" id="2o7-f9-vQe">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-gE-Pnt">
+                                                        <rect key="frame" x="131" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="myU-Q9-XFA">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="CM">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="neckToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="Ouk-3G-SF9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOi-s1-6cv">
+                                                        <rect key="frame" x="187" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="apu-sG-Sue">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="IN">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="neckToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="1SF-E7-iZ0"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="lQD-2W-udu" firstAttribute="leading" secondItem="Jwm-xl-PJT" secondAttribute="leading" id="090-eX-b0G"/>
+                                                    <constraint firstItem="OOi-s1-6cv" firstAttribute="top" secondItem="Jwm-xl-PJT" secondAttribute="top" id="DPD-r1-hlz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OOi-s1-6cv" secondAttribute="bottom" id="F0i-1B-9tv"/>
+                                                    <constraint firstAttribute="width" constant="237" id="FDw-aQ-SUV">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="lQD-2W-udu" firstAttribute="top" secondItem="Jwm-xl-PJT" secondAttribute="top" id="Gs1-KB-ee6"/>
+                                                    <constraint firstItem="3ql-gE-Pnt" firstAttribute="top" secondItem="Jwm-xl-PJT" secondAttribute="top" id="JTI-uP-zkh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3ql-gE-Pnt" secondAttribute="bottom" id="PHI-ZR-YZQ"/>
+                                                    <constraint firstAttribute="height" constant="57" id="c5B-EW-Pwu">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="77"/>
+                                                    </constraint>
+                                                    <constraint firstItem="OOi-s1-6cv" firstAttribute="leading" secondItem="3ql-gE-Pnt" secondAttribute="trailing" constant="6" id="frK-t8-fou"/>
+                                                    <constraint firstItem="3ql-gE-Pnt" firstAttribute="leading" secondItem="lQD-2W-udu" secondAttribute="trailing" constant="8" id="hAG-6i-kTP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lQD-2W-udu" secondAttribute="bottom" id="mCO-sS-ahJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkj-KB-3St">
+                                                <rect key="frame" x="41.5" y="689" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your neck size?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-Jq-MFs">
+                                                        <rect key="frame" x="5" y="5" width="182" height="22"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3Lv-XF-h8t">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Rmo-Jq-MFs" firstAttribute="leading" secondItem="Tkj-KB-3St" secondAttribute="leading" constant="5" id="FM2-RY-05A">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="237" id="LMz-PM-3dd">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="Rmo-Jq-MFs" firstAttribute="top" secondItem="Tkj-KB-3St" secondAttribute="top" constant="5" id="WUP-db-dd7"/>
+                                                    <constraint firstItem="Rmo-Jq-MFs" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tkj-KB-3St" secondAttribute="trailing" constant="-200" id="v5d-Dc-WRS">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                                                    </constraint>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-Ff-Mzs">
+                                                <rect key="frame" x="41.5" y="841" width="237" height="57"/>
+                                                <subviews>
+                                                    <textField opaque="NO" tag="5" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJV-Ao-qS2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="123" id="I6I-iS-QOy">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="275"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzL-Yi-xRf">
+                                                        <rect key="frame" x="131" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.37254901959999998" green="0.75294117650000003" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="6yT-aI-yS2">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="CM">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="hipToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="42N-2x-wAU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwa-db-tsK">
+                                                        <rect key="frame" x="187" y="0.0" width="50" height="57"/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="N8J-d7-94w">
+                                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="18"/>
+                                                        <state key="normal" title="IN">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="31"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="hipToggled:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="0Df-aL-MoA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="31e-2Y-S9O">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="77"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="bottom" secondItem="cJV-Ao-qS2" secondAttribute="bottom" id="3TR-P9-njN"/>
+                                                    <constraint firstAttribute="width" constant="237" id="7bW-yF-UP5">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="cJV-Ao-qS2" firstAttribute="leading" secondItem="Dqg-Ff-Mzs" secondAttribute="leading" id="BnM-3O-qfn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cwa-db-tsK" secondAttribute="bottom" id="RQ3-My-6AT"/>
+                                                    <constraint firstItem="cwa-db-tsK" firstAttribute="leading" secondItem="rzL-Yi-xRf" secondAttribute="trailing" constant="6" id="WRh-2f-EP5"/>
+                                                    <constraint firstItem="rzL-Yi-xRf" firstAttribute="top" secondItem="Dqg-Ff-Mzs" secondAttribute="top" id="a84-Kf-5fU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rzL-Yi-xRf" secondAttribute="bottom" id="cL2-4J-uIT"/>
+                                                    <constraint firstItem="rzL-Yi-xRf" firstAttribute="leading" secondItem="cJV-Ao-qS2" secondAttribute="trailing" constant="8" id="id1-pD-OSU"/>
+                                                    <constraint firstItem="cJV-Ao-qS2" firstAttribute="top" secondItem="Dqg-Ff-Mzs" secondAttribute="top" id="jLx-46-faD"/>
+                                                    <constraint firstItem="cwa-db-tsK" firstAttribute="top" secondItem="Dqg-Ff-Mzs" secondAttribute="top" id="oYZ-ty-PjS"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-d9-ZgV">
+                                                <rect key="frame" x="41.5" y="801" width="237" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your hip size?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IQC-pb-Bym">
+                                                        <rect key="frame" x="5" y="5" width="182" height="22"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="30"/>
+                                                        </variation>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="313-Rd-vHa">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                    </constraint>
+                                                    <constraint firstItem="IQC-pb-Bym" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XaI-d9-ZgV" secondAttribute="trailing" constant="-200" id="eZB-9O-ec9">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="237" id="lMs-co-CbH">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                    <constraint firstItem="IQC-pb-Bym" firstAttribute="leading" secondItem="XaI-d9-ZgV" secondAttribute="leading" constant="5" id="mKE-Z7-eMF">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="25"/>
+                                                    </constraint>
+                                                    <constraint firstItem="IQC-pb-Bym" firstAttribute="top" secondItem="XaI-d9-ZgV" secondAttribute="top" constant="5" id="o35-rF-NvQ"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViI-go-ATq">
+                                                <rect key="frame" x="41.5" y="953" width="237" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="85" id="YVH-fz-mCF">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="237" id="r1f-vs-OLL">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="22"/>
+                                                <state key="normal" title="SAVE">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="51"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="Bka-hg-Ufm" eventType="touchUpInside" id="HM2-gl-bFq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ViI-go-ATq" firstAttribute="top" secondItem="Dqg-Ff-Mzs" secondAttribute="bottom" constant="55" id="3Vo-ox-XTT"/>
+                                            <constraint firstItem="r25-AC-exU" firstAttribute="top" secondItem="Qor-pQ-fvL" secondAttribute="top" constant="50" id="4Rg-Ou-VTX"/>
+                                            <constraint firstItem="tPf-xH-6hL" firstAttribute="top" secondItem="C5r-RM-aJB" secondAttribute="bottom" constant="15" id="63z-hc-neZ"/>
+                                            <constraint firstItem="xtR-al-zwv" firstAttribute="leading" secondItem="eJG-m9-cAs" secondAttribute="trailing" constant="20" id="8U6-JD-zVy"/>
+                                            <constraint firstItem="w1t-4X-5nv" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="B0O-V8-DA4"/>
+                                            <constraint firstItem="C5r-RM-aJB" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="BLv-ml-o3h"/>
+                                            <constraint firstItem="xtR-al-zwv" firstAttribute="top" secondItem="r25-AC-exU" secondAttribute="bottom" constant="30" id="EAn-LE-I9S"/>
+                                            <constraint firstItem="HHJ-NI-i8y" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="Ggb-lI-gDT"/>
+                                            <constraint firstItem="Jwm-xl-PJT" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="Hqm-4G-OvH"/>
+                                            <constraint firstItem="TpA-uE-LDi" firstAttribute="centerY" secondItem="xtR-al-zwv" secondAttribute="centerY" id="Ir4-XQ-MWI"/>
+                                            <constraint firstItem="XaI-d9-ZgV" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="JlD-t6-mdf"/>
+                                            <constraint firstItem="1jE-RG-djY" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="Mi6-b4-3Q2"/>
+                                            <constraint firstItem="eJG-m9-cAs" firstAttribute="centerY" secondItem="xtR-al-zwv" secondAttribute="centerY" id="P8p-LQ-ZJi"/>
+                                            <constraint firstItem="Gup-VF-cjA" firstAttribute="top" secondItem="w1t-4X-5nv" secondAttribute="bottom" constant="15" id="Ryd-iK-sSg"/>
+                                            <constraint firstItem="tPf-xH-6hL" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="SFc-kZ-oxk"/>
+                                            <constraint firstItem="Tkj-KB-3St" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="TLL-xv-b7t"/>
+                                            <constraint firstItem="XaI-d9-ZgV" firstAttribute="top" secondItem="Jwm-xl-PJT" secondAttribute="bottom" constant="15" id="TVD-K1-jhT"/>
+                                            <constraint firstItem="Jwm-xl-PJT" firstAttribute="top" secondItem="Tkj-KB-3St" secondAttribute="bottom" constant="10" id="VCZ-Oa-bU2"/>
+                                            <constraint firstItem="9lw-oo-LNy" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="Vv2-z2-aQQ"/>
+                                            <constraint firstItem="Tkj-KB-3St" firstAttribute="top" secondItem="HHJ-NI-i8y" secondAttribute="bottom" constant="15" id="Vzg-dI-P3j"/>
+                                            <constraint firstItem="Gup-VF-cjA" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="XRM-Md-aNx"/>
+                                            <constraint firstAttribute="height" constant="1063" id="YLc-cT-cf7">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="1536"/>
+                                            </constraint>
+                                            <constraint firstItem="Asy-3D-pX6" firstAttribute="top" secondItem="9lw-oo-LNy" secondAttribute="bottom" constant="10" id="YRD-ji-d81"/>
+                                            <constraint firstItem="xtR-al-zwv" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="ZcX-0D-kQp"/>
+                                            <constraint firstItem="ViI-go-ATq" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="chK-83-1gj"/>
+                                            <constraint firstItem="9lw-oo-LNy" firstAttribute="top" secondItem="xtR-al-zwv" secondAttribute="bottom" constant="30" id="cnd-Mr-rzl"/>
+                                            <constraint firstItem="Asy-3D-pX6" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="g5p-Gf-rpy"/>
+                                            <constraint firstItem="Dqg-Ff-Mzs" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="jQJ-8k-TWf"/>
+                                            <constraint firstItem="HHJ-NI-i8y" firstAttribute="top" secondItem="Gup-VF-cjA" secondAttribute="bottom" constant="10" id="jex-F8-MBq"/>
+                                            <constraint firstItem="r25-AC-exU" firstAttribute="centerX" secondItem="Qor-pQ-fvL" secondAttribute="centerX" id="o5q-d6-sfW"/>
+                                            <constraint firstItem="1jE-RG-djY" firstAttribute="top" secondItem="Asy-3D-pX6" secondAttribute="bottom" constant="15" id="s2E-qW-QK8"/>
+                                            <constraint firstItem="TpA-uE-LDi" firstAttribute="leading" secondItem="xtR-al-zwv" secondAttribute="trailing" constant="20" id="tga-5m-bVR"/>
+                                            <constraint firstItem="C5r-RM-aJB" firstAttribute="top" secondItem="1jE-RG-djY" secondAttribute="bottom" constant="10" id="tlW-tF-dRm"/>
+                                            <constraint firstItem="Dqg-Ff-Mzs" firstAttribute="top" secondItem="XaI-d9-ZgV" secondAttribute="bottom" constant="10" id="v5B-dq-64a"/>
+                                            <constraint firstItem="w1t-4X-5nv" firstAttribute="top" secondItem="tPf-xH-6hL" secondAttribute="bottom" constant="10" id="y4X-wb-oDZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Qor-pQ-fvL" secondAttribute="bottom" id="Eer-YP-0ev"/>
+                                    <constraint firstItem="Qor-pQ-fvL" firstAttribute="top" secondItem="80R-ed-RN1" secondAttribute="top" id="NmA-jj-06U"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qor-pQ-fvL" secondAttribute="trailing" id="at0-s8-RRI"/>
+                                    <constraint firstItem="Qor-pQ-fvL" firstAttribute="leading" secondItem="80R-ed-RN1" secondAttribute="leading" id="bhC-dM-rOK"/>
+                                    <constraint firstItem="Qor-pQ-fvL" firstAttribute="width" secondItem="80R-ed-RN1" secondAttribute="width" id="eeW-Bu-KSq"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="80R-ed-RN1" firstAttribute="leading" secondItem="9YN-ye-afl" secondAttribute="leading" id="292-zo-pJf"/>
+                            <constraint firstItem="9YN-ye-afl" firstAttribute="bottom" secondItem="80R-ed-RN1" secondAttribute="bottom" id="94x-zf-fEX"/>
+                            <constraint firstItem="80R-ed-RN1" firstAttribute="top" secondItem="9YN-ye-afl" secondAttribute="top" id="C8b-K9-ZwP"/>
+                            <constraint firstItem="9YN-ye-afl" firstAttribute="trailing" secondItem="80R-ed-RN1" secondAttribute="trailing" id="q5M-a0-bfw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9YN-ye-afl"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1200"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="Asy-3D-pX6" id="jSC-to-Mhx"/>
+                        <outlet property="genderDisplay" destination="xtR-al-zwv" id="9mN-sj-jVz"/>
+                        <outlet property="heightCMToggleButton" destination="c0U-iG-e0X" id="R6D-OL-C0G"/>
+                        <outlet property="heightFeetToggleButton" destination="hRM-bb-Klx" id="oSb-Jt-928"/>
+                        <outlet property="heightInchesToggleButton" destination="bCW-qL-ONr" id="GpY-yP-TCK"/>
+                        <outlet property="heightTextField" destination="7QH-2u-j7g" id="yDU-wn-L3Y"/>
+                        <outlet property="hipCMToggleButton" destination="rzL-Yi-xRf" id="qvu-un-gm3"/>
+                        <outlet property="hipInchesToggleButton" destination="cwa-db-tsK" id="dW2-B8-5gP"/>
+                        <outlet property="hipTextField" destination="cJV-Ao-qS2" id="CsJ-gp-1X5"/>
+                        <outlet property="neckCMToggleButton" destination="3ql-gE-Pnt" id="xKy-9Z-OvD"/>
+                        <outlet property="neckInchesToggleButton" destination="OOi-s1-6cv" id="OZK-Vq-XjL"/>
+                        <outlet property="neckTextField" destination="lQD-2W-udu" id="3NZ-v8-zSk"/>
+                        <outlet property="nextButton" destination="ViI-go-ATq" id="3cb-Ek-HNt"/>
+                        <outlet property="scrollView" destination="80R-ed-RN1" id="iQm-aW-rAR"/>
+                        <outlet property="selectFemaleButton" destination="eJG-m9-cAs" id="ZCI-M8-GuF"/>
+                        <outlet property="selectMaleButton" destination="TpA-uE-LDi" id="FVm-rn-ShJ"/>
+                        <outlet property="waistCMToggleButton" destination="kV2-T0-X09" id="UDR-om-evC"/>
+                        <outlet property="waistInchesToggleButton" destination="OCq-L0-hsI" id="TAg-KV-5fC"/>
+                        <outlet property="waistTextField" destination="vGN-EQ-maK" id="Hh8-lK-a82"/>
+                        <outlet property="weightKGToggleButton" destination="Zw5-2J-Uqg" id="ClW-pZ-yb6"/>
+                        <outlet property="weightLBSToggleButton" destination="WwW-IS-iw0" id="FhN-hY-Hh9"/>
+                        <outlet property="weightTextField" destination="bak-vi-2Fh" id="jCm-6W-IL0"/>
+                        <segue destination="iE1-hP-bdX" kind="show" identifier="showMeasurementData" id="Oe0-a1-hW3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Hr-jq-HRu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-889" y="-276"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Rectangle 3" width="392" height="3"/>
+        <image name="female_img" width="200" height="200"/>
+        <image name="ic_female_sel_24dp" width="96" height="96"/>
+        <image name="ic_male_not_24dp" width="96" height="96"/>
+    </resources>
+</document>

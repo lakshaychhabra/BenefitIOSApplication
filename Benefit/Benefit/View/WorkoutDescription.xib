@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mark Simonson - Proxima Nova Alt Regular-webfont.ttf">
+            <string>ProximaNovaA-Regular</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutDescription" rowHeight="348" id="DS3-ZL-5wc">
+            <rect key="frame" x="0.0" y="0.0" width="577" height="255"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DS3-ZL-5wc" id="Jb6-YT-h7Z">
+                <rect key="frame" x="0.0" y="0.0" width="577" height="254.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-rb-e34">
+                        <rect key="frame" x="0.0" y="0.0" width="577" height="254.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTENSITY -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtu-ky-BzR">
+                                <rect key="frame" x="20" y="184" width="153.5" height="50.5"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDIUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGW-LT-R6e">
+                                <rect key="frame" x="178.5" y="184.5" width="109" height="50.5"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                                <color key="textColor" red="0.54117647058823526" green="0.71764705882352942" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A specialized workout designed to make sure that you hit all muscles with high intensity." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wss-3B-7LX">
+                                <rect key="frame" x="20" y="30" width="495.5" height="106.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="32"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qtu-ky-BzR" firstAttribute="leading" secondItem="Wss-3B-7LX" secondAttribute="leading" id="0VW-UZ-QtH"/>
+                            <constraint firstAttribute="bottom" secondItem="qtu-ky-BzR" secondAttribute="bottom" constant="5" id="3ku-6o-Lmh">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="JGW-LT-R6e" firstAttribute="centerY" secondItem="qtu-ky-BzR" secondAttribute="centerY" id="CYv-nR-yQZ"/>
+                            <constraint firstItem="qtu-ky-BzR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wss-3B-7LX" secondAttribute="bottom" id="Qjw-Dr-3Cg">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Wss-3B-7LX" firstAttribute="top" secondItem="Shc-rb-e34" secondAttribute="top" constant="10" id="Tpq-v8-bhP">
+                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="Wss-3B-7LX" firstAttribute="leading" secondItem="Shc-rb-e34" secondAttribute="leading" constant="20" id="qdJ-O0-QCN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wss-3B-7LX" secondAttribute="trailing" constant="10" id="wC9-pl-6Lv"/>
+                            <constraint firstItem="JGW-LT-R6e" firstAttribute="leading" secondItem="qtu-ky-BzR" secondAttribute="trailing" constant="5" id="wHc-Gl-FNe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="Shc-rb-e34" firstAttribute="leading" secondItem="Jb6-YT-h7Z" secondAttribute="leading" id="0fs-M3-Chm"/>
+                    <constraint firstItem="Shc-rb-e34" firstAttribute="top" secondItem="Jb6-YT-h7Z" secondAttribute="top" id="7g6-2r-2Lj"/>
+                    <constraint firstAttribute="bottom" secondItem="Shc-rb-e34" secondAttribute="bottom" id="kOM-R1-kxR"/>
+                    <constraint firstAttribute="trailing" secondItem="Shc-rb-e34" secondAttribute="trailing" id="zmj-eD-sYh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="76.5" y="109.5"/>
+        </tableViewCell>
+    </objects>
+</document>
