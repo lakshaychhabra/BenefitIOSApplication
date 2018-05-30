@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Gs-GL-ImI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Gs-GL-ImI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -92,7 +92,7 @@
                                                     <action selector="maleSelected:" destination="CyY-dn-978" eventType="touchUpInside" id="imG-QZ-UtT"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-NX-IrJ">
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-NX-IrJ">
                                                 <rect key="frame" x="69" y="271.5" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -199,7 +199,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTc-zF-Y8n">
                                                 <rect key="frame" x="69" y="383.5" width="237" height="57"/>
                                                 <subviews>
-                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aow-8S-mOs">
+                                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aow-8S-mOs">
                                                         <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
                                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -292,7 +292,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AE0-X9-y96">
                                                 <rect key="frame" x="69" y="495.5" width="237" height="57"/>
                                                 <subviews>
-                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkB-i9-6Lg">
+                                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkB-i9-6Lg">
                                                         <rect key="frame" x="0.0" y="0.0" width="123" height="57"/>
                                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
