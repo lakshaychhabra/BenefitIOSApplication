@@ -571,19 +571,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-T3-arT">
-                                <rect key="frame" x="0.0" y="42.5" width="320" height="476.5"/>
+                                <rect key="frame" x="0.0" y="54.5" width="320" height="465.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x6Q-T3-arT" firstAttribute="leading" secondItem="p08-aC-xOt" secondAttribute="leading" id="OKZ-1J-gTh"/>
-                            <constraint firstItem="x6Q-T3-arT" firstAttribute="bottom" secondItem="p08-aC-xOt" secondAttribute="bottom" id="X3F-X3-yhr"/>
-                            <constraint firstItem="pcU-qS-CPl" firstAttribute="trailing" secondItem="p08-aC-xOt" secondAttribute="trailing" id="XCm-bS-Z0e"/>
-                            <constraint firstItem="x6Q-T3-arT" firstAttribute="top" secondItem="pcU-qS-CPl" secondAttribute="bottom" constant="-4" id="hmU-Cd-nvf"/>
-                            <constraint firstItem="x6Q-T3-arT" firstAttribute="trailing" secondItem="p08-aC-xOt" secondAttribute="trailing" id="li1-J3-edd"/>
-                            <constraint firstItem="pcU-qS-CPl" firstAttribute="top" secondItem="p08-aC-xOt" secondAttribute="top" id="s6m-6i-ZEb"/>
-                            <constraint firstItem="pcU-qS-CPl" firstAttribute="leading" secondItem="p08-aC-xOt" secondAttribute="leading" id="t37-wj-tPs"/>
+                            <constraint firstItem="pcU-qS-CPl" firstAttribute="trailing" secondItem="p08-aC-xOt" secondAttribute="trailing" id="9aU-90-biL"/>
+                            <constraint firstItem="pcU-qS-CPl" firstAttribute="top" secondItem="p08-aC-xOt" secondAttribute="top" id="I5J-S2-03h"/>
+                            <constraint firstItem="pcU-qS-CPl" firstAttribute="leading" secondItem="p08-aC-xOt" secondAttribute="leading" id="W3R-nQ-xdu"/>
+                            <constraint firstAttribute="bottom" secondItem="x6Q-T3-arT" secondAttribute="bottom" constant="48" id="cYx-vi-bAf"/>
+                            <constraint firstItem="x6Q-T3-arT" firstAttribute="trailing" secondItem="p08-aC-xOt" secondAttribute="trailing" id="mau-0Z-Izv"/>
+                            <constraint firstItem="x6Q-T3-arT" firstAttribute="top" secondItem="pcU-qS-CPl" secondAttribute="bottom" constant="8" id="vB9-1m-UBc"/>
+                            <constraint firstItem="x6Q-T3-arT" firstAttribute="leading" secondItem="p08-aC-xOt" secondAttribute="leading" id="vvd-y6-xec"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p08-aC-xOt"/>
                     </view>
