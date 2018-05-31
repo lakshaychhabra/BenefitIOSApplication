@@ -12,12 +12,16 @@ import JTHamburgerButton
 
 class HomeScreenViewController: UIViewController{
    // var leftMenuNavController: UISideMenuNavigationController!
+    
+    
     @IBOutlet weak var chatButton: UIButton!
-    @IBOutlet var homeSelectedButton: UIBarButtonItem!
+ 
+    @IBOutlet var homeButtonTab: UITabBarItem!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        setupRounded(button: chatButton)
+//        setupRounded(button: chatButton)
         //NavBar Image Added
         let logo = UIImage(named: "benefit_logo")
         let imageView = UIImageView(image:logo)
@@ -25,6 +29,8 @@ class HomeScreenViewController: UIViewController{
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = imageView
         
+        
+        homeButtonTab.selectedImage = UIImage(named: "ic_home_sel")
      
        
 
