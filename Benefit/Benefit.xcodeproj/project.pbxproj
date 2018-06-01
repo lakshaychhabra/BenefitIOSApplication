@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A1F4E1C20BF316900B2702E /* NotificationTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */; };
+		3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EECDC20C081E500DD3D27 /* TabBar.xib */; };
+		3A7EECDF20C0856200DD3D27 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EECDE20C0856200DD3D27 /* TabBar.swift */; };
 		3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
 		3ADDDBD920BFD4440077CC7E /* ChatTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDDBD820BFD4440077CC7E /* ChatTabViewController.swift */; };
 		3ADDDBDB20BFD4500077CC7E /* CoachTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTabViewController.swift; sourceTree = "<group>"; };
+		3A7EECDC20C081E500DD3D27 /* TabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
+		3A7EECDE20C0856200DD3D27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		3ADDDBD820BFD4440077CC7E /* ChatTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewController.swift; sourceTree = "<group>"; };
 		3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachTabViewController.swift; sourceTree = "<group>"; };
 		3ADDDBDC20BFD45E0077CC7E /* SelectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMenuViewController.swift; sourceTree = "<group>"; };
@@ -195,8 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				59C408942025DB6B004569C5 /* StartupScreens.storyboard */,
-				59C408962025DBE9004569C5 /* LoginScreens.storyboard */,
+				3A7EECDC20C081E500DD3D27 /* TabBar.xib */,
 				59647047200A26CF00F9357F /* Dashboard.storyboard */,
+				59C408962025DBE9004569C5 /* LoginScreens.storyboard */,
 				59C408982025E00C004569C5 /* WorkoutScreens.storyboard */,
 				59C4089A2025E087004569C5 /* NutritionScreens.storyboard */,
 				591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */,
@@ -297,6 +302,7 @@
 				59C4088C2025D3F3004569C5 /* Nutrition Screens */,
 				591A299D20380509009454D4 /* Measurement Screens */,
 				5962D39D203A7F410081D4B2 /* SideBarViewController.swift */,
+				3A7EECDE20C0856200DD3D27 /* TabBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */,
 				592AF7112035B27A00B8AF53 /* CommentCell.xib in Resources */,
 				59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */,
+				3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */,
 				59C408952025DB6B004569C5 /* StartupScreens.storyboard in Resources */,
 				592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */,
 				59C408992025E00C004569C5 /* WorkoutScreens.storyboard in Resources */,
@@ -580,6 +587,7 @@
 				5957ED7A20178A1600870A02 /* NavBar.swift in Sources */,
 				5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */,
 				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,
+				3A7EECDF20C0856200DD3D27 /* TabBar.swift in Sources */,
 				598A78D720135031009D6B9A /* BMIScreenViewController.swift in Sources */,
 				5978613120120F4000C2B5D4 /* SetupProfileScreenViewController.swift in Sources */,
 				597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */,

@@ -10,13 +10,25 @@ import UIKit
 import SideMenu
 import JTHamburgerButton
 
-class HomeScreenViewController: UIViewController{
+class HomeScreenViewController: UIViewController, SegueProtocol{
+    func coachSegue() {
+        performSegue(withIdentifier: "toCoachTab", sender: self)
+    }
+    func notificationSegue() {
+        performSegue(withIdentifier: "toNotificationTab", sender: self)
+    }
+    func menuSegue() {
+        performSegue(withIdentifier: "toMenuTab", sender: self)
+        
+    }
+    
    // var leftMenuNavController: UISideMenuNavigationController!
     
+    @IBOutlet var tabBarView: TabBar!
     
-    @IBOutlet weak var chatButton: UIButton!
- 
-    @IBOutlet var homeButtonTab: UITabBarItem!
+    @IBOutlet var chatButtonTab: UIButton!
+    
+    
     
     override func viewDidLoad()
     {
@@ -28,20 +40,25 @@ class HomeScreenViewController: UIViewController{
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = imageView
+        tabBarView.delegate = self
         
+        chatButtonTab.layer.borderColor = UIColor.white.cgColor
+        chatButtonTab.layer.borderWidth = 2
+        chatButtonTab.layer.cornerRadius = chatButtonTab.frame.size.width/2
+        chatButtonTab.layer.masksToBounds = true
+        tabBarView.homeButtonPressed((Any).self)
         
-        homeButtonTab.selectedImage = UIImage(named: "ic_home_sel")
-     
        
 
     }
+    
     
 //    override func viewWillAppear(_ animated: Bool)
 //    {
 //        setupCustomNavigationBar()
 //    }
 
- 
+
     @IBAction func workoutsButtonPressed(_ sender: UIButton)
     {
         print("Workout")
