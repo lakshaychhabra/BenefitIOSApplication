@@ -13,11 +13,12 @@ protocol SegueProtocol : class {
     func coachSegue()
     func notificationSegue()
     func menuSegue()
+    func homeSegue()
 }
 
 
 
-@IBDesignable class TabBar: UIView {
+ class TabBar: UIView {
 
     
      weak var delegate:SegueProtocol?
@@ -78,7 +79,7 @@ protocol SegueProtocol : class {
         notificationButton.setImage(notifDefault, for: [])
         coachButton.setImage(coachDefault, for: [])
         menuButton.setImage(menuDefault, for: [])
-     
+        self.delegate?.homeSegue()
         
         
     }

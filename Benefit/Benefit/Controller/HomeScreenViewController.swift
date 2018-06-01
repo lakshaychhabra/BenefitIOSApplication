@@ -21,6 +21,9 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
         performSegue(withIdentifier: "toMenuTab", sender: self)
         
     }
+    func homeSegue() {
+        print("at home")
+    }
     
    // var leftMenuNavController: UISideMenuNavigationController!
     
@@ -48,9 +51,20 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
         chatButtonTab.layer.masksToBounds = true
         tabBarView.homeButtonPressed((Any).self)
         
+        
        
 
     }
+
+    //display alerts
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     
 //    override func viewWillAppear(_ animated: Bool)
@@ -93,6 +107,11 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
     
     
    
+
+    @IBAction func chatButtonPressed(_ sender: Any) {
+        
+        displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+    }
     
 }
 
