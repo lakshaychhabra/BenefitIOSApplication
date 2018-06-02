@@ -35,7 +35,9 @@ class SelectMenuViewController: UIViewController, SegueProtocol{
         chatButton.layer.borderWidth = 2
         chatButton.layer.cornerRadius = chatButton.frame.size.width/2
         chatButton.layer.masksToBounds = true
-        tabBarView.menuButtonPressed((Any).self)
+       // tabBarView.menuButtonPressed((Any).self)
+        tabBarView.buttonPressed(UIButton.self())
+        tabBarView.menuButtonPressed()
     
     }
 

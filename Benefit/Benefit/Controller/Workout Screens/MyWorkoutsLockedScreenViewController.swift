@@ -16,6 +16,11 @@ class MyWorkoutsLockedScreenViewController: UIViewController
         super.viewDidLoad()
         //setNav()
         //navigationItem.hidesBackButton = true
+        let logo = UIImage(named: "benefit_logo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = imageView
     }
 
 

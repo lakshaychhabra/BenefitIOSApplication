@@ -35,7 +35,9 @@ class NotificationTabViewController: UIViewController, SegueProtocol{
         chatButton.layer.borderWidth = 2
         chatButton.layer.cornerRadius = chatButton.frame.size.width/2
         chatButton.layer.masksToBounds = true
-        tabBarView.notificationButtonPressed((Any).self)
+      //  tabBarView.notificationButtonPressed((Any).self)
+        tabBarView.buttonPressed(UIButton.self())
+        tabBarView.notificationButtonPressed()
         
     }
     

@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaT-RJ-r9B">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaT-RJ-r9B">
                     <rect key="frame" x="25" y="13" width="36" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="Zd1-W9-Ubv"/>
@@ -32,10 +32,10 @@
                     </constraints>
                     <state key="normal" image="ic_home"/>
                     <connections>
-                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="j1B-Eh-Vqp"/>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="0Yx-fP-jFT"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-P2-Juw">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-P2-Juw">
                     <rect key="frame" x="78" y="13" width="39" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="DDC-0o-QOD"/>
@@ -43,10 +43,10 @@
                     </constraints>
                     <state key="normal" image="ic_notif"/>
                     <connections>
-                        <action selector="notificationButtonPressed:" destination="-1" eventType="touchUpInside" id="p14-hE-OSv"/>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="dik-2t-At8"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-Yv-f1s">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-Yv-f1s">
                     <rect key="frame" x="278" y="11" width="32" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="32" id="ORB-NA-IBl"/>
@@ -54,10 +54,10 @@
                     </constraints>
                     <state key="normal" title="Button" image="ic_menu"/>
                     <connections>
-                        <action selector="menuButtonPressed:" destination="-1" eventType="touchUpInside" id="Ehc-aj-Dx2"/>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="kKh-iL-eHw"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY7-Gk-qhe">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY7-Gk-qhe">
                     <rect key="frame" x="206" y="13" width="47" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="IlO-F9-KBD"/>
@@ -65,7 +65,7 @@
                     </constraints>
                     <state key="normal" image="ic_coach"/>
                     <connections>
-                        <action selector="coachButtonPressed:" destination="-1" eventType="touchUpInside" id="Bci-MV-b6o"/>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Tny-vj-Gq4"/>
                     </connections>
                 </button>
             </subviews>

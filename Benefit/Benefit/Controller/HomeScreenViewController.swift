@@ -12,10 +12,15 @@ import JTHamburgerButton
 
 class HomeScreenViewController: UIViewController, SegueProtocol{
     func coachSegue() {
+        print("Reached home from coach")
         performSegue(withIdentifier: "toCoachTab", sender: self)
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
+//   self.present(newViewController, animated: true, completion: nil)
     }
     func notificationSegue() {
         performSegue(withIdentifier: "toNotificationTab", sender: self)
+        
     }
     func menuSegue() {
         performSegue(withIdentifier: "toMenuTab", sender: self)
@@ -32,6 +37,7 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
     @IBOutlet var chatButtonTab: UIButton!
     
     
+    @IBOutlet var fixedNavigationBar: UINavigationItem!
     
     override func viewDidLoad()
     {
@@ -43,15 +49,18 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.navigationItem.titleView = imageView
+        fixedNavigationBar.titleView = imageView
+        
         tabBarView.delegate = self
         
         chatButtonTab.layer.borderColor = UIColor.white.cgColor
         chatButtonTab.layer.borderWidth = 2
         chatButtonTab.layer.cornerRadius = chatButtonTab.frame.size.width/2
         chatButtonTab.layer.masksToBounds = true
-        tabBarView.homeButtonPressed((Any).self)
-        
-        
+        tabBarView.buttonPressed(UIButton.self())
+        tabBarView.homeButtonPressed()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
        
 
     }
@@ -67,10 +76,14 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
     
     
     
-//    override func viewWillAppear(_ animated: Bool)
-//    {
-//        setupCustomNavigationBar()
-//    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        
+        super.viewWillAppear(animated)
+         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        
+    }
 
 
     @IBAction func workoutsButtonPressed(_ sender: UIButton)

@@ -26,6 +26,11 @@ class WorkoutsSectionViewController: UIViewController
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
         tableView.backgroundColor = UIColor.clear
+        let logo = UIImage(named: "benefit_logo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = imageView
     }
     
 

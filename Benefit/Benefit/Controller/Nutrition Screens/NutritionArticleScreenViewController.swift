@@ -8,11 +8,43 @@
 
 import UIKit
 
-class NutritionArticleScreenViewController: UIViewController
-{
+class NutritionArticleScreenViewController: UIViewController, SegueProtocol{
+    func coachSegue() {
+        //performSegue(withIdentifier: "toCoachTab", sender: self)
+       
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
+                
+           self.present(newViewController, animated: true, completion: nil)
+    }
+    func notificationSegue() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func menuSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func homeSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
+        self.present(newViewController, animated: true, completion: nil)
+
+        
+    }
+
     
     let cellList = ["ArticleTitle", "FullSizedImageViewCell", "ShareArticle", "NutritionArticleViewCell"]
     
+    @IBOutlet var tabBarView: TabBar!
+    @IBOutlet var chatButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad()
     {
@@ -22,8 +54,35 @@ class NutritionArticleScreenViewController: UIViewController
         tableView.estimatedRowHeight = 80
         registerCellNib(named: "FullSizedImageViewCell", with: tableView)
         registerCellNib(named: "NutritionArticleViewCell", with: tableView)
+        tabBarView.delegate = self
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        chatButton.layer.borderWidth = 2
+        chatButton.layer.cornerRadius = chatButton.frame.size.width/2
+        chatButton.layer.masksToBounds = true
+        tabBarView.buttonPressed(UIButton.self())
         
-    }   
+        
+    }
+    
+    @IBAction func chatButtonPressed(_ sender: Any) {
+         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+        
+    }
+    
+    //display alerts
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }
 
 extension NutritionArticleScreenViewController: UITableViewDataSource
@@ -66,6 +125,7 @@ extension NutritionArticleScreenViewController: UITableViewDataSource
     {
         return UITableViewAutomaticDimension
     }
+    
 }
 
 extension NutritionArticleScreenViewController: UITableViewDelegate

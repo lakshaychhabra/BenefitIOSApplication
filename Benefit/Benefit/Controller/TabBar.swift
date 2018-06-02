@@ -72,51 +72,80 @@ protocol SegueProtocol : class {
     }
 
 
-    @IBAction func homeButtonPressed(_ sender: Any) {
-        
-      
-           homeButton.setImage(homeImage, for: [])
+    
+    
+     func homeButtonPressed() {
+        homeButton.setImage(homeImage, for: [])
         notificationButton.setImage(notifDefault, for: [])
         coachButton.setImage(coachDefault, for: [])
         menuButton.setImage(menuDefault, for: [])
-        self.delegate?.homeSegue()
-        
         
     }
     
     
-    @IBAction func notificationButtonPressed(_ sender: Any) {
+     func notificationButtonPressed() {
         
         
-     
+        
         homeButton.setImage(homeDefault, for: [])
         notificationButton.setImage(notifImage, for: [])
         coachButton.setImage(coachDefault, for: [])
         menuButton.setImage(menuDefault, for: [])
-        self.delegate?.notificationSegue()
+        
         
     }
     
     
-    @IBAction func coachButtonPressed(_ sender: Any) {
+     func coachButtonPressed() {
+        
         homeButton.setImage(homeDefault, for: [])
         notificationButton.setImage(notifDefault, for: [])
         coachButton.setImage(coachImage, for: [])
         menuButton.setImage(menuDefault, for: [])
-        self.delegate?.coachSegue()
+        
         
     }
     
    
-    @IBAction func menuButtonPressed(_ sender: Any) {
+     func menuButtonPressed() {
         
         homeButton.setImage(homeDefault, for: [])
         notificationButton.setImage(notifDefault, for: [])
         coachButton.setImage(coachDefault, for: [])
         menuButton.setImage(menuImage, for: [])
-        self.delegate?.menuSegue()
+       
         
     }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+    
+        switch sender.tag {
+        case 1: self.delegate?.homeSegue()
+                print("Button Home Pressed")
+        break;
+        case 2: self.delegate?.notificationSegue()
+                print("Button Notif Pressed")//button2
+        break;
+        case 3: self.delegate?.coachSegue()
+                print("Button Coach Pressed")//button3
+        break;
+        case 4: self.delegate?.menuSegue()
+                print("Button menu Pressed")//button4
+        break;
+        
+        
+        default: ()
+        break;
+            
+        }
+
+    
+    
+    
+    }
+    
+    
+    
     
 
 }

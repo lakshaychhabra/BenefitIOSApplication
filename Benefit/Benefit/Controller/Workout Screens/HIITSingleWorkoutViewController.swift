@@ -25,7 +25,11 @@ class HIITSingleWorkoutViewController: UIViewController
         registerCellNib(named: "WorkoutInfo", with: tableView)
         registerCellNib(named: "Exercise", with: tableView)
         tableView.tableFooterView = UIView()
-
+        let logo = UIImage(named: "benefit_logo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = imageView
     }
 
     

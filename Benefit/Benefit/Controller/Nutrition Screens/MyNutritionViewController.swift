@@ -7,10 +7,43 @@
 //
 import UIKit
 
-class MyNutritionViewController: UIViewController
-{
+class MyNutritionViewController: UIViewController, SegueProtocol{
+    func coachSegue() {
+        //performSegue(withIdentifier: "toCoachTab", sender: self)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    func notificationSegue() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func menuSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func homeSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
+        self.present(newViewController, animated: true, completion: nil)
+        
+        
+    }
+
+    
+    @IBOutlet var chatButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var tabBarView: TabBar!
     let rows = ["PremiumFeatureCell", "CalendarCell", "TodaysNutritionPlan", "NutritionDiet", "CommentCell", "SavedMealCell"]
     let mealBackgroundColors = [UIColor(hex: "E0A662"), UIColor(hex: "73C997"), UIColor(hex: "457B97"), UIColor(hex: "C64A4D"), UIColor(hex: "2A373E")]
     let meals = ["Breakfast", "Mid-morning", "Lunch", "Snacks", "Dinner"]
@@ -19,9 +52,23 @@ class MyNutritionViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        chatButton.layer.borderWidth = 2
+        chatButton.layer.cornerRadius = chatButton.frame.size.width/2
+        chatButton.layer.masksToBounds = true
         setupTableView()
+        tabBarView.delegate = self
+        tabBarView.buttonPressed(UIButton.self())
     }
 
+    //display alerts
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 
     func setupTableView()
     {
@@ -56,6 +103,10 @@ class MyNutritionViewController: UIViewController
         {
             tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         }
+    }
+    
+    @IBAction func chatButtonPressed(_ sender: Any) {
+         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
     }
 }
 

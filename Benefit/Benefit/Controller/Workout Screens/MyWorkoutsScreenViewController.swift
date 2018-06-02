@@ -32,7 +32,11 @@ class MyWorkoutsScreenViewController: UIViewController
         registerCellNib(named: "WorkoutInfo", with: tableView)
         registerCellNib(named: "Exercise", with: tableView)
         registerCellNib(named: "RestDayCell", with: tableView)
-
+        let logo = UIImage(named: "benefit_logo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = imageView
     }
 
 

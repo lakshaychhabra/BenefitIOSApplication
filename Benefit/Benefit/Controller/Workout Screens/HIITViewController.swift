@@ -19,7 +19,11 @@ class HIITViewController: UIViewController
         tableView.estimatedRowHeight = 80
         registerCellNib(named: "FullSizedImageViewCell", with: tableView)
         tableView.tableFooterView = UIView()
-        
+        let logo = UIImage(named: "benefit_logo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView = imageView
     }
 
     
