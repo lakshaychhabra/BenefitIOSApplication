@@ -10,19 +10,36 @@ import UIKit
 
 class CoachTabViewController: UIViewController, SegueProtocol{
     func coachSegue() {
-       print("Nothing")
+        //performSegue(withIdentifier: "toCoachTab", sender: self)
+        
+       print("Coach Module")
     }
     func notificationSegue() {
-        performSegue(withIdentifier: "toNotifFromCoach", sender: self)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
     }
     func menuSegue() {
-        performSegue(withIdentifier: "toSelectFromCoach", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
         
     }
     func homeSegue() {
-        performSegue(withIdentifier: "toHomeFromCoach", sender: self)
-    
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
+        
+        
     }
+
     
     
     @IBOutlet var tabBarView: TabBar!

@@ -12,18 +12,26 @@ import JTHamburgerButton
 
 class HomeScreenViewController: UIViewController, SegueProtocol{
     func coachSegue() {
-        print("Reached home from coach")
-        performSegue(withIdentifier: "toCoachTab", sender: self)
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
-//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
-//   self.present(newViewController, animated: true, completion: nil)
+        //performSegue(withIdentifier: "toCoachTab", sender: self)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
     }
     func notificationSegue() {
-        performSegue(withIdentifier: "toNotificationTab", sender: self)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
         
     }
     func menuSegue() {
-        performSegue(withIdentifier: "toMenuTab", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
         
     }
     func homeSegue() {

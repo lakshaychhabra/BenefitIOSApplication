@@ -35,7 +35,10 @@ class NutritionArticleScreenViewController: UIViewController, SegueProtocol{
     func homeSegue() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
-        self.present(newViewController, animated: true, completion: nil)
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
 
         
     }
