@@ -44,7 +44,12 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
     
     @IBOutlet var chatButtonTab: UIButton!
     
+    @IBOutlet var workoutButton: UIButton!
     
+    @IBOutlet var Challenges: UIButton!
+    @IBOutlet var trackButton: UIButton!
+    @IBOutlet var measurementButton: UIButton!
+    @IBOutlet var nutritionButton: UIButton!
     @IBOutlet var fixedNavigationBar: UINavigationItem!
     
     override func viewDidLoad()

@@ -13,5 +13,7 @@ target 'Benefit' do
   pod 'Charts'
   pod 'SideMenu'
   pod 'JTHamburgerButton', '~> 1.0'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 
 end

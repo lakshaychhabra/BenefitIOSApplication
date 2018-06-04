@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RegistrationScreenViewController: UIViewController
 {
+    let url = "http://13.59.14.56:5000/api/v1/auth/signup"
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailAddressTextField: UITextField!
@@ -26,7 +29,7 @@ class RegistrationScreenViewController: UIViewController
     {
         super.viewDidLoad()
         setupNavigationBar(with: "CREATE A NEW ACCOUNT")
-        registerForKeyboardNotifications()
+      //  registerForKeyboardNotifications()
         invalidEmailAddressLabel.text = ""
         incorrectPasswordLabel.text = ""
         initialize(usernameTextField)
@@ -45,25 +48,46 @@ class RegistrationScreenViewController: UIViewController
     
     func next()
     {
-        let errorInEmailAddress = true
-        let errorInPassword = true
-        if errorInEmailAddress
-        {
-            invalidEmailAddressLabel.text = "Invalid"
-            invalidEmailAddressLabel.textColor = UIColor.red
-            let border = CALayer()
-            addInitial(border, to: emailAddressTextField)
-            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+        
+        
+        if usernameTextField.text == "" || emailAddressTextField.text == "" || passwordTextField.text == "" {
+            displayAlert(title: "Enter Everything", message: "All Fields Are neccessary")
+        }
+        
+        else {
+            let params : [String : AnyObject] = ["name" : usernameTextField.text! as AnyObject, "email" : emailAddressTextField.text! as AnyObject, "password" : passwordTextField.text! as AnyObject]
+            
+            Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody).responseJSON(completionHandler: { (response) in
+                print(response)
+                let data : JSON = JSON(response.result.value!)
+                
+                print(data)
+                self.performSegue(withIdentifier: "signin", sender: nil)
+                
+            })
+            
             
         }
-        if errorInPassword
-        {
-            incorrectPasswordLabel.text = "Atleast 8 characters"
-            incorrectPasswordLabel.textColor = UIColor.red
-            let border = CALayer()
-            addInitial(border, to: passwordTextField)
-            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
-        }
+        
+//        let errorInEmailAddress = true
+//        let errorInPassword = true
+//        if errorInEmailAddress
+//        {
+//            invalidEmailAddressLabel.text = "Invalid"
+//            invalidEmailAddressLabel.textColor = UIColor.red
+//            let border = CALayer()
+//            addInitial(border, to: emailAddressTextField)
+//            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+//
+//        }
+//        if errorInPassword
+//        {
+//            incorrectPasswordLabel.text = "Atleast 8 characters"
+//            incorrectPasswordLabel.textColor = UIColor.red
+//            let border = CALayer()
+//            addInitial(border, to: passwordTextField)
+//            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+//        }
         
         print("Next Button Pressed")
     }
@@ -82,10 +106,10 @@ class RegistrationScreenViewController: UIViewController
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
-        
+
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
-        
+
         var aRect : CGRect = self.view.frame
         aRect.size.height -= keyboardSize!.height
         if let activeField = self.activeField
@@ -112,7 +136,7 @@ class RegistrationScreenViewController: UIViewController
     {
         textField.delegate = self
         textField.setLeftPaddingPoints(10)
-        
+
         //To remove the autofill accessory view option
         if #available(iOS 11, *)
         {
@@ -120,10 +144,12 @@ class RegistrationScreenViewController: UIViewController
         }
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
- 
+   
+    
+    func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
@@ -138,18 +164,18 @@ extension RegistrationScreenViewController: UITextFieldDelegate
         let border = CALayer()
         addInitial(border, to: textField)
         runTransition(on: border, with: kCATransitionPush, to: finalColourOfBorder)
-        
+
         if currentTextField == emailAddressTextField
         {
             invalidEmailAddressLabel.text = ""
         }
-        
+
         if currentTextField == passwordTextField
         {
             incorrectPasswordLabel.text = ""
         }
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField)
     {
         activeField = nil
@@ -161,7 +187,7 @@ extension RegistrationScreenViewController: UITextFieldDelegate
         addInitial(border, to: textField)
         runTransition(on: border, with: kCATransitionFade, to: initialColourOfBorder )
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField
@@ -172,7 +198,7 @@ extension RegistrationScreenViewController: UITextFieldDelegate
         {
             textField.resignFirstResponder()
             next()
-            
+
         }
         return false
     }

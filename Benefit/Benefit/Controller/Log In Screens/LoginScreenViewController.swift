@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+
+
 
 //colour of bottom border of the text field before the animation starts
 let initialColourOfBorder = UIColor.init(ciColor: CIColor(red: 240, green: 240, blue: 240)).cgColor
@@ -15,6 +20,9 @@ let finalColourOfBorder = UIColor.darkGray.cgColor
 
 class LoginScreenViewController: UIViewController
 {
+    
+    static var token = "1"
+    var output : JSON = []
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var invalidUsernameLabel: UILabel!
     @IBOutlet weak var incorrectPasswordLabel: UILabel!
@@ -24,12 +32,13 @@ class LoginScreenViewController: UIViewController
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
     var enteredPassword: String?
+    var messageRecieved : String = ""
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setupNavigationBar(with: "LOG IN OR SIGN UP")
-        registerForKeyboardNotifications()
+       // registerForKeyboardNotifications()
         invalidUsernameLabel.text = ""
         incorrectPasswordLabel.text = ""
         initialize(usernameTextField)
@@ -91,32 +100,98 @@ class LoginScreenViewController: UIViewController
     
     func logIn()
     {
-        let errorInUsername = true
-        let errorInPassword = true
-        if errorInUsername
-        {
-            invalidUsernameLabel.text = "Invalid"
-            invalidUsernameLabel.textColor = UIColor.red
-            let border = CALayer()
-            addInitial(border, to: usernameTextField)
-            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+        if usernameTextField.text == "" || passwordTextField.text == "" {
+            
+            displayAlert(title: "Missing Info", message: "Must Enter Email and Password")
             
         }
-        if errorInPassword
-        {
-            incorrectPasswordLabel.text = "Incorrect"
-            incorrectPasswordLabel.textColor = UIColor.red
-            let border = CALayer()
-            addInitial(border, to: passwordTextField)
-            runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+        else{
+            //spinners
+            
+            let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+            
+            //spinners end
+            
+            if let username = usernameTextField.text {
+                if let password = passwordTextField.text{
+                    let parameters : [String : String] = ["email" : username, "password" : password]
+                    let url = "http://13.59.14.56:5000/api/v1/auth/login"
+                    
+                    Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
+                        
+                        
+                        print(response)
+                        
+                        let data : JSON = JSON(response.result.value!)
+                        print(data)
+                        self.output = data["token"]["token"]
+                        if let  message = data["message"].rawString() {
+                            self.messageRecieved = message
+                        }
+                        if self.output != JSON.null  {
+                            
+                            if let token1 = self.output.rawString() {
+                                LoginScreenViewController.token = token1
+                                //        print(self.token)
+                            }
+                            self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                            
+                            activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                            print("See Token")
+                            print(LoginScreenViewController.token)
+                        }
+                            
+                        else{
+                            activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                            if self.messageRecieved == "User doesn´t exist" {
+                                print("No User Exist")
+                                self.noUserFound()
+                            }
+                            if self.messageRecieved == "Invalid Password." {
+                                print("Wrong Password")
+                                self.wrongPassword()
+                            }
+                            
+                        }
+                        
+                    }
+                }
+                
+                
+                
+            }
         }
-        
         print("Login Button Pressed")
+    }
+    func noUserFound(){
+        invalidUsernameLabel.text = "Invalid"
+        invalidUsernameLabel.textColor = UIColor.red
+        let border = CALayer()
+        addInitial(border, to: usernameTextField)
+        runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
+    }
+    func wrongPassword(){
+        incorrectPasswordLabel.text = "Incorrect"
+        incorrectPasswordLabel.textColor = UIColor.red
+        let border = CALayer()
+        addInitial(border, to: passwordTextField)
+        runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton)
     {
         logIn()
+        
     }
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton)
@@ -130,10 +205,12 @@ class LoginScreenViewController: UIViewController
         print("Forgot Password Button Pressed")
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-
+   
+    
+    func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -183,6 +260,7 @@ extension LoginScreenViewController: UITextFieldDelegate
         }
         return false
     }
+    
 }
 
 extension UITextField

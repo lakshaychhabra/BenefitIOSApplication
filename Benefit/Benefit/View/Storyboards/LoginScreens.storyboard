@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,8 +76,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-0D-Yrz">
                                                 <rect key="frame" x="69" y="292" width="237" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-lO-eQs">
-                                                        <rect key="frame" x="20" y="5" width="83" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-lO-eQs">
+                                                        <rect key="frame" x="20" y="5" width="115" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -336,11 +337,12 @@
                         <outlet property="passwordTextField" destination="3CM-dm-yZo" id="87c-Ib-gYr"/>
                         <outlet property="scrollView" destination="UhT-Ln-sFy" id="fWm-0h-vgS"/>
                         <outlet property="usernameTextField" destination="AJL-iC-qLg" id="5nb-m5-7kr"/>
+                        <segue destination="WPg-fi-vQl" kind="show" identifier="afterLoginSegue" id="MEu-JN-iWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="92"/>
+            <point key="canvasLocation" x="1393" y="117"/>
         </scene>
         <!--CREATE A NEW ACCOUNT-->
         <scene sceneID="a3w-Mw-92G">
@@ -356,7 +358,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I17-cf-dqD" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-uh-gbd">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-uh-gbd">
                                                 <rect key="frame" x="69" y="166" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -371,7 +373,7 @@
                                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
                                             </textField>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Q6-HV-TMK">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Q6-HV-TMK">
                                                 <rect key="frame" x="69" y="268" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -386,7 +388,7 @@
                                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="username"/>
                                             </textField>
-                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-AF-cev">
+                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-AF-cev">
                                                 <rect key="frame" x="69" y="370" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -426,14 +428,13 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="nextButtonPressed:" destination="U12-vE-ywI" eventType="touchUpInside" id="nM4-8N-Ddl"/>
-                                                    <segue destination="WPg-fi-vQl" kind="show" id="GWD-Q9-dxK"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-7C-qTg">
                                                 <rect key="frame" x="69" y="233" width="237" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-Je-O4V">
-                                                        <rect key="frame" x="10" y="5" width="73.5" height="20"/>
+                                                        <rect key="frame" x="10" y="5" width="74" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -504,7 +505,7 @@
                                                 <rect key="frame" x="69" y="335" width="237" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RhK-nV-U77">
-                                                        <rect key="frame" x="10" y="5" width="69.5" height="20"/>
+                                                        <rect key="frame" x="10" y="5" width="70" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -513,7 +514,7 @@
                                                         </variation>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 8 characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IVK-qh-6GY">
-                                                        <rect key="frame" x="90.5" y="5" width="146.5" height="20"/>
+                                                        <rect key="frame" x="90" y="5" width="147" height="20"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -555,6 +556,13 @@
                                                     <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="34"/>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGn-mj-wjk">
+                                                <rect key="frame" x="168" y="609" width="38" height="30"/>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" id="Q7U-XA-6tn"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -573,9 +581,11 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="70"/>
                                             </constraint>
                                             <constraint firstItem="w4x-7C-qTg" firstAttribute="centerX" secondItem="I17-cf-dqD" secondAttribute="centerX" id="UMl-UM-Zng"/>
+                                            <constraint firstItem="CGn-mj-wjk" firstAttribute="centerX" secondItem="3Xi-q5-HBj" secondAttribute="centerX" id="Uey-2q-Eka"/>
                                             <constraint firstItem="w4x-7C-qTg" firstAttribute="top" secondItem="NeX-uh-gbd" secondAttribute="bottom" constant="10" id="Yf6-MA-fIi">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                             </constraint>
+                                            <constraint firstItem="CGn-mj-wjk" firstAttribute="bottom" secondItem="I17-cf-dqD" secondAttribute="bottomMargin" id="bcE-sW-jhg"/>
                                             <constraint firstItem="NCf-AF-cev" firstAttribute="centerX" secondItem="I17-cf-dqD" secondAttribute="centerX" id="iqF-UD-W4s"/>
                                             <constraint firstItem="NCf-AF-cev" firstAttribute="top" secondItem="ayO-vN-lUd" secondAttribute="bottom" constant="5" id="irt-JO-axi"/>
                                             <constraint firstItem="4Q6-HV-TMK" firstAttribute="top" secondItem="w4x-7C-qTg" secondAttribute="bottom" constant="5" id="kaP-gi-gWy"/>
@@ -613,17 +623,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="CREATE A NEW ACCOUNT" id="G2I-lA-HHY"/>
                     <connections>
-                        <outlet property="emailAddressTextField" destination="NeX-uh-gbd" id="1Eq-Ed-Pw9"/>
+                        <outlet property="emailAddressTextField" destination="NeX-uh-gbd" id="yrd-Fb-SrY"/>
                         <outlet property="incorrectPasswordLabel" destination="IVK-qh-6GY" id="liZ-LX-7Cu"/>
                         <outlet property="invalidEmailAddressLabel" destination="Y1q-Tg-6Zx" id="aua-OZ-CRJ"/>
-                        <outlet property="passwordTextField" destination="NCf-AF-cev" id="q62-Wa-BV2"/>
+                        <outlet property="passwordTextField" destination="NCf-AF-cev" id="Sn4-Pg-mio"/>
                         <outlet property="scrollView" destination="8PR-N9-P1S" id="w65-GK-Ih0"/>
-                        <outlet property="usernameTextField" destination="4Q6-HV-TMK" id="uNm-pl-xL2"/>
+                        <outlet property="usernameTextField" destination="4Q6-HV-TMK" id="2zc-EP-Vj5"/>
+                        <segue destination="WPg-fi-vQl" kind="show" identifier="signin" id="PBR-jL-Fsy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5v-oM-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.5" y="91.901408450704224"/>
+            <point key="canvasLocation" x="2855" y="68"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="2Iw-qG-zpX">
@@ -631,7 +642,7 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" id="WPg-fi-vQl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nw-Fv-5Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3065" y="64"/>
+            <point key="canvasLocation" x="1926" y="-387"/>
         </scene>
     </scenes>
     <resources>
@@ -639,5 +650,8 @@
         <image name="Google Login" width="392" height="92"/>
         <image name="Rectangle 3" width="392" height="3"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PBR-jL-Fsy"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

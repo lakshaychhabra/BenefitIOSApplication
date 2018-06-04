@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.6.0)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
@@ -9,21 +10,26 @@ PODS:
   - MIBadgeButton-Swift (0.5)
   - SideMenu (3.1.5)
   - Spring (1.0.5)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Charts
   - ImageSlideshow (~> 1.4)
   - JTHamburgerButton (~> 1.0)
   - MIBadgeButton-Swift (from `https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git`, branch `master`)
   - SideMenu
   - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - Charts
     - ImageSlideshow
     - JTHamburgerButton
     - SideMenu
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   MIBadgeButton-Swift:
@@ -41,13 +47,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   ImageSlideshow: 1bb0e610e28a71e8936d57265d882f61714a470b
   JTHamburgerButton: 9a41c7d051c72590a9d2c18416d84d1b912f12e3
   MIBadgeButton-Swift: 9e57309b00b168d75ca8fecb45bc75124a8ffddf
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   Spring: 48aad470f3ead043b2da98b64e0bf0630b7ebc42
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 2f61c7f76fdbc0129cc5646e038e24314614583b
+PODFILE CHECKSUM: ae0e5eb1fb19ae85fe37a8db01e3ae0d0823157f
 
 COCOAPODS: 1.5.0
