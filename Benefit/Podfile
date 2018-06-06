@@ -15,5 +15,6 @@ target 'Benefit' do
   pod 'JTHamburgerButton', '~> 1.0'
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'Google/SignIn'
 
 end

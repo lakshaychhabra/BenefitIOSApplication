@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import GGLSignIn
+import GoogleSignIn
+
 
 
 
@@ -18,7 +21,7 @@ let initialColourOfBorder = UIColor.init(ciColor: CIColor(red: 240, green: 240, 
 //colour of bottom border of the text field after the animation has finished
 let finalColourOfBorder = UIColor.darkGray.cgColor
 
-class LoginScreenViewController: UIViewController
+class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate
 {
     
     static var token = "1"
@@ -39,6 +42,9 @@ class LoginScreenViewController: UIViewController
         super.viewDidLoad()
         setupNavigationBar(with: "LOG IN OR SIGN UP")
        // registerForKeyboardNotifications()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         invalidUsernameLabel.text = ""
         incorrectPasswordLabel.text = ""
         initialize(usernameTextField)
@@ -46,6 +52,102 @@ class LoginScreenViewController: UIViewController
         hideKeyboard()
     }
 
+    //MARK: - Google Signin
+    
+  
+   
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let email = user.profile.email
+            let name = user.profile.name
+           // print(email)
+            
+            let parameters : [String : String] = ["email" : email!,"name" : name!, "googleToken" : idToken!]
+            let url = "http://13.59.14.56:5000/api/v1/auth/login/google"
+           // let url2 = "http://13.59.14.56:5000/api/v1/auth/signup"
+            let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
+                print(response)
+                
+                
+                let data : JSON = JSON(response.result.value!)
+                print(data)
+                self.output = data["token"]["token"]
+                if let  message = data["message"].rawString() {
+                    self.messageRecieved = message
+                }
+                if self.output != JSON.null  {
+                    
+                    if let token1 = self.output.rawString() {
+                        LoginScreenViewController.token = token1
+                        //        print(self.token)
+                    }
+                    self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                    
+                    activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    print("See Token")
+                    print(LoginScreenViewController.token)
+                }
+                else {
+                    self.displayAlert(title: "Error Login Through Google", message: "Please try Custom login or try again after some time. ")
+                }
+            }
+       
+        } else {
+           print(error)
+            }
+        }
+    
+    
+    
+//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+//    //    myActivityIndicator.stopAnimating()
+//    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+
+//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+//        myActivityIndicator.stopAnimating()
+//    }
+//
+//    // Present a view that prompts the user to sign in with Google
+//    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+//
+//        present(viewController, animated: true, completion: nil)
+//
+//    }
+   
+//
+//    // Dismiss the "Sign in with Google" view
+//    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+//        viewController.dismiss(animated: true, completion: nil)
+//    }
+    
+    
+    @IBAction func googleSigninButtonPresses(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
+    
     //MARK: - Manage Content Hidden Under Keyboard
     
     func registerForKeyboardNotifications()

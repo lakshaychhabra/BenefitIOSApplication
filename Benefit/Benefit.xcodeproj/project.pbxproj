@@ -13,6 +13,7 @@
 		3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
 		3ADDDBDB20BFD4500077CC7E /* CoachTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */; };
 		3ADDDBDD20BFD45E0077CC7E /* SelectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADDDBDC20BFD45E0077CC7E /* SelectMenuViewController.swift */; };
+		3AE7B5DF20C6F88200D5B96B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7B5DE20C6F88200D5B96B /* GoogleService-Info.plist */; };
 		591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */; };
 		591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A299E20380696009454D4 /* UpdateProfileViewController.swift */; };
 		591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A29A0203806A9009454D4 /* MeasurementViewController.swift */; };
@@ -82,6 +83,7 @@
 		3A7EECDE20C0856200DD3D27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachTabViewController.swift; sourceTree = "<group>"; };
 		3ADDDBDC20BFD45E0077CC7E /* SelectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMenuViewController.swift; sourceTree = "<group>"; };
+		3AE7B5DE20C6F88200D5B96B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeasurementScreens.storyboard; sourceTree = "<group>"; };
 		591A299E20380696009454D4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		591A29A0203806A9009454D4 /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				5964705A200A355000F9357F /* Assets.xcassets */,
 				59647069200AA03300F9357F /* Fonts */,
 				591E18B6203983A700FD167F /* Benefit-Bridging-Header.h */,
+				3AE7B5DE20C6F88200D5B96B /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				5964703D200A26CF00F9357F /* Frameworks */,
 				5964703E200A26CF00F9357F /* Resources */,
 				F9A625D50FEDFAAEB9514002 /* [CP] Embed Pods Frameworks */,
+				8B8F34D31B681A4806F9D451 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,6 +484,7 @@
 				592AF7112035B27A00B8AF53 /* CommentCell.xib in Resources */,
 				59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */,
 				3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */,
+				3AE7B5DF20C6F88200D5B96B /* GoogleService-Info.plist in Resources */,
 				59C408952025DB6B004569C5 /* StartupScreens.storyboard in Resources */,
 				592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */,
 				59C408992025E00C004569C5 /* WorkoutScreens.storyboard in Resources */,
@@ -510,6 +515,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8B8F34D31B681A4806F9D451 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B75A419F1E6AD23B63A96C1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +560,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Benefit/Pods-Benefit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/JTHamburgerButton/JTHamburgerButton.framework",
 				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
@@ -548,6 +574,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTHamburgerButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
