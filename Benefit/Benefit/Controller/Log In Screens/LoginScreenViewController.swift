@@ -34,7 +34,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     @IBOutlet weak var incorrectPasswordLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
  
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
@@ -56,11 +56,16 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
         hideKeyboard()
     }
 
-    //MARK: - Google Signin
+    func activityIndicatorFunc() {
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+    }
     
+    //MARK: - Google Signin
   
-   
-
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             let idToken = user.authentication.idToken // Safe to send to the server
@@ -73,10 +78,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
            // let url2 = "http://13.59.14.56:5000/api/v1/auth/signup"
             let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-            view.addSubview(activityIndicator)
+            activityIndicatorFunc()
             activityIndicator.startAnimating()
             UIApplication.shared.beginIgnoringInteractionEvents()
             
@@ -158,7 +160,8 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
             
             }
             else{
-                print("User pressed back button")
+                print("User pressed back button \(String(describing: error))")
+                 self.displayAlert(title: "Error Login Through Facebook", message: "Please try Custom login or try again after some time. ")
             }
           }
         
@@ -167,6 +170,11 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
+            
+            activityIndicatorFunc()
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            
            // print(FBSDKAccessToken.current().tokenString)
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
@@ -182,13 +190,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                     
                     let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
                     
-                    activityIndicator.center = self.view.center
-                    activityIndicator.hidesWhenStopped = true
-                    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-                    self.view.addSubview(activityIndicator)
-                    activityIndicator.startAnimating()
-                    UIApplication.shared.beginIgnoringInteractionEvents()
-                    
+                   
                     Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
                         print(response)
                         
@@ -226,24 +228,8 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     }
         
     
-    
-    
-//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-//        myActivityIndicator.stopAnimating()
-//    }
-//
-//    // Present a view that prompts the user to sign in with Google
-//    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-//
-//        present(viewController, animated: true, completion: nil)
-//
-//    }
-   
-//
-//    // Dismiss the "Sign in with Google" view
-//    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
-//        viewController.dismiss(animated: true, completion: nil)
-//    }
+   // Facebook Login Ends
+
     
     
   
