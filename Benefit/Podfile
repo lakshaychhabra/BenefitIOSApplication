@@ -16,5 +16,8 @@ target 'Benefit' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'Google/SignIn'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
+  
 
 end

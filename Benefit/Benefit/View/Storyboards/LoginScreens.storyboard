@@ -57,6 +57,9 @@
                                                     </constraint>
                                                 </constraints>
                                                 <state key="normal" image="FB Login"/>
+                                                <connections>
+                                                    <action selector="fbSignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Nx-j2-qve"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3" translatesAutoresizingMaskIntoConstraints="NO" id="9M3-Uw-Ffq" userLabel="Separator">
                                                 <rect key="frame" x="20" y="279" width="335" height="3"/>

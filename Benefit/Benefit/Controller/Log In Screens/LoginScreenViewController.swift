@@ -11,6 +11,9 @@ import Alamofire
 import SwiftyJSON
 import GGLSignIn
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 
 
@@ -31,6 +34,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     @IBOutlet weak var incorrectPasswordLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
  
     var keyboardIsOnScreen = false
     var currentTextField: UITextField!
@@ -124,7 +128,106 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
         viewController.dismiss(animated: true, completion: nil)
     }
-
+    
+    //Mark: - Google SignIn Button
+    
+    @IBAction func googleSigninButtonPresses(_ sender: Any) {
+        //Calling the property directly on button
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
+    
+    //Mark: - Facebook SignIn
+    
+    
+    @IBAction func fbSignInButtonPressed(_ sender: Any) {
+    
+        let fbLoginManager = FBSDKLoginManager()
+        
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if (error == nil){
+                
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                let loginResult = fbloginresult.grantedPermissions
+                if(loginResult?.contains("email") != nil)
+                {
+                    self.getFBUserData()
+                }else{
+                    print("No email found, user canceled")
+                }
+            
+            }
+            else{
+                print("User pressed back button")
+            }
+          }
+        
+        }
+        
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+           // print(FBSDKAccessToken.current().tokenString)
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    //everything works print the user data
+                    print(result!)
+                    let info = result as! [String : AnyObject]
+                    let name = info["name"] as! String
+                    let email = info["email"] as! String
+                    let idToken = FBSDKAccessToken.current().tokenString
+                    
+                    let parameters : [String : String] = ["email" : email,"name" : name, "fbToken" : idToken!]
+                    let url = "http://13.59.14.56:5000/api/v1/auth/login/facebook"
+                    
+                    let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                    
+                    activityIndicator.center = self.view.center
+                    activityIndicator.hidesWhenStopped = true
+                    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                    self.view.addSubview(activityIndicator)
+                    activityIndicator.startAnimating()
+                    UIApplication.shared.beginIgnoringInteractionEvents()
+                    
+                    Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
+                        print(response)
+                        
+                        
+                        let data : JSON = JSON(response.result.value!)
+                        print(data)
+                        self.output = data["token"]["token"]
+                        if let  message = data["message"].rawString() {
+                            self.messageRecieved = message
+                        }
+                        if self.output != JSON.null  {
+                            
+                            if let token1 = self.output.rawString() {
+                                LoginScreenViewController.token = token1
+                                //        print(self.token)
+                            }
+                            self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                            
+                            activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                            print("See Token")
+                            print(LoginScreenViewController.token)
+                        }
+                        else {
+                            self.displayAlert(title: "Error Login Through Facebook", message: "Please try Custom login or try again after some time. ")
+                        }
+                    }
+                    
+                }
+                else{
+                    print("Cant fetch fb data")
+                }
+            })
+        }
+    }
+        
+    
+    
+    
 //    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
 //        myActivityIndicator.stopAnimating()
 //    }
@@ -143,10 +246,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
 //    }
     
     
-    @IBAction func googleSigninButtonPresses(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-        
-    }
+  
     
     //MARK: - Manage Content Hidden Under Keyboard
     
@@ -268,13 +368,12 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                         
                     }
                 }
-                
-                
-                
-            }
+           }
         }
         print("Login Button Pressed")
     }
+    
+    
     func noUserFound(){
         invalidUsernameLabel.text = "Invalid"
         invalidUsernameLabel.textColor = UIColor.red
@@ -289,6 +388,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
         addInitial(border, to: passwordTextField)
         runTransition(on: border, with: kCATransitionFade, to: UIColor.red.cgColor)
     }
+    
     
     @IBAction func loginButtonPressed(_ sender: UIButton)
     {
@@ -316,6 +416,14 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     }
     
 }
+
+
+
+
+
+
+
+
 
 //MARK: - Text Field Delegate Methods
 
@@ -364,6 +472,10 @@ extension LoginScreenViewController: UITextFieldDelegate
     }
     
 }
+
+
+
+
 
 extension UITextField
 {
