@@ -36,8 +36,19 @@ class ChooseGoalScreenViewController: UIViewController
     
     @IBAction func continueButtonPressed(_ sender: UIButton)
     {
+        let check = UserDefaults.standard.bool(forKey: "UserAlreadyLoggedIn")
+        print(check)
+        if check == true {
+            
+            
+            
+            self.performSegue(withIdentifier: "afterLogInFromStartUp", sender: self)
+        
+        }else{
         selectedGoal = goals[imageSlider.currentPage]
         print(selectedGoal)
+            self.performSegue(withIdentifier: "setUpProfile", sender: self)
+        }
     }
     
    

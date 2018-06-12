@@ -648,7 +648,7 @@
                 <viewControllerPlaceholder storyboardName="Dashboard" id="WPg-fi-vQl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nw-Fv-5Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-387"/>
+            <point key="canvasLocation" x="2416" y="-420"/>
         </scene>
     </scenes>
     <resources>

@@ -872,6 +872,14 @@ REACH MY GOAL</string>
             </objects>
             <point key="canvasLocation" x="862.5" y="92.957746478873247"/>
         </scene>
+        <!--Dashboard-->
+        <scene sceneID="g3s-Yw-6DA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="ZMQ-SP-pbJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axU-20-0mE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="-392"/>
+        </scene>
         <!--CHOOSE GOAL-->
         <scene sceneID="dqR-J3-Gbx">
             <objects>
@@ -931,7 +939,6 @@ REACH MY GOAL</string>
                                 </variation>
                                 <connections>
                                     <action selector="continueButtonPressed:" destination="bRN-iv-5lM" eventType="touchUpInside" id="LZJ-ff-V9K"/>
-                                    <segue destination="CyY-dn-978" kind="show" id="WgB-Kh-Pbt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -961,11 +968,13 @@ REACH MY GOAL</string>
                     </navigationItem>
                     <connections>
                         <outlet property="imageSlider" destination="jc2-Hn-VaD" id="ygk-My-UaJ"/>
+                        <segue destination="ZMQ-SP-pbJ" kind="show" identifier="afterLogInFromStartUp" id="kKG-Rl-2Xo"/>
+                        <segue destination="CyY-dn-978" kind="show" identifier="setUpProfile" id="vQd-Q7-F0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxd-9W-iEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-523" y="93"/>
+            <point key="canvasLocation" x="-705" y="40"/>
         </scene>
         <!--Startup Screen View Controller-->
         <scene sceneID="drt-Si-kJG">

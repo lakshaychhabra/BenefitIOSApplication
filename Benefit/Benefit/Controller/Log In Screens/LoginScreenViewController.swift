@@ -54,8 +54,13 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
         initialize(usernameTextField)
         initialize(passwordTextField)
         hideKeyboard()
+        
+       
+        
     }
 
+   
+    
     func activityIndicatorFunc() {
         
         activityIndicator.center = self.view.center
@@ -98,7 +103,13 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                         LoginScreenViewController.token = token1
                         //        print(self.token)
                     }
+                   
+                    
                     self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                     UserDefaults.standard.set(true, forKey: "UserAlreadyLoggedIn")
+                     UserDefaults.standard.set(LoginScreenViewController.token, forKey: "token")
+                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.synchronize()
                     
                     activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
@@ -207,10 +218,17 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                                 LoginScreenViewController.token = token1
                                 //        print(self.token)
                             }
+                            
                             self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                             UserDefaults.standard.set(true, forKey: "UserAlreadyLoggedIn")
+                             UserDefaults.standard.set(LoginScreenViewController.token, forKey: "token")
+                             UserDefaults.standard.set(email, forKey: "email")
+                             UserDefaults.standard.synchronize()
                             
                             activityIndicator.stopAnimating()
                             UIApplication.shared.endIgnoringInteractionEvents()
+                           
+                            
                             print("See Token")
                             print(LoginScreenViewController.token)
                         }
@@ -330,8 +348,14 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                                 LoginScreenViewController.token = token1
                                 //        print(self.token)
                             }
-                            self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
                             
+                            self.performSegue(withIdentifier: "afterLoginSegue", sender: nil)
+                             UserDefaults.standard.set(true, forKey: "UserAlreadyLoggedIn")
+                             UserDefaults.standard.set(LoginScreenViewController.token, forKey: "token")
+                            UserDefaults.standard.set(username, forKey: "email")
+                            UserDefaults.standard.synchronize()
+                            let ab = UserDefaults.standard.bool(forKey: "UserAlreadyLoggedIn")
+                            print(ab)
                             activityIndicator.stopAnimating()
                             UIApplication.shared.endIgnoringInteractionEvents()
                             print("See Token")
@@ -403,7 +427,7 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     
 }
 
-
+ 
 
 
 
