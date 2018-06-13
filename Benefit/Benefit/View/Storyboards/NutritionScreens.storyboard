@@ -431,7 +431,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC8-FS-wuq">
-                                <rect key="frame" x="152" y="570" width="70" height="67"/>
+                                <rect key="frame" x="152" y="580" width="70" height="67"/>
                                 <color key="backgroundColor" red="0.2657646253" green="0.049337303280000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="80k-nX-IgT"/>
@@ -450,7 +450,7 @@
                             <constraint firstItem="T3k-QN-Lwz" firstAttribute="trailing" secondItem="W8g-Fa-LFJ" secondAttribute="trailing" id="Llw-Mg-qwk"/>
                             <constraint firstItem="T3k-QN-Lwz" firstAttribute="bottom" secondItem="W8g-Fa-LFJ" secondAttribute="bottom" id="Mbj-dK-QTh"/>
                             <constraint firstItem="W8g-Fa-LFJ" firstAttribute="bottom" secondItem="6S6-vo-QJh" secondAttribute="bottom" constant="73" id="Mh4-J9-zoA"/>
-                            <constraint firstItem="LC8-FS-wuq" firstAttribute="top" secondItem="6S6-vo-QJh" secondAttribute="bottom" constant="-24" id="Nf5-y5-sn6"/>
+                            <constraint firstItem="LC8-FS-wuq" firstAttribute="top" secondItem="6S6-vo-QJh" secondAttribute="bottom" constant="-14" id="Nf5-y5-sn6"/>
                             <constraint firstItem="T3k-QN-Lwz" firstAttribute="bottom" secondItem="W8g-Fa-LFJ" secondAttribute="bottom" id="RKp-5b-jSG"/>
                             <constraint firstItem="6S6-vo-QJh" firstAttribute="top" secondItem="W8g-Fa-LFJ" secondAttribute="top" id="co3-4U-zde"/>
                             <constraint firstItem="T3k-QN-Lwz" firstAttribute="centerX" secondItem="LC8-FS-wuq" secondAttribute="centerX" id="fss-7f-M4E"/>

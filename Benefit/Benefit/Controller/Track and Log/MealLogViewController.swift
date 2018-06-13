@@ -1,76 +1,24 @@
 //
-//  MyNutritionViewController.swift
+//  MealLogViewController.swift
 //  Benefit
 //
-//  Created by Delta One on 14/02/18.
+//  Created by Lakshay Chhabra on 13/06/18.
 //  Copyright © 2018 IOSD. All rights reserved.
 //
+
 import UIKit
 
-class MyNutritionViewController: UIViewController, SegueProtocol{
-    func coachSegue() {
-        //performSegue(withIdentifier: "toCoachTab", sender: self)
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
-        
-        self.present(newViewController, animated: true, completion: nil)
-    }
-    func notificationSegue() {
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
-        
-        self.present(newViewController, animated: true, completion: nil)
-        
-    }
-    func menuSegue() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
-        
-        self.present(newViewController, animated: true, completion: nil)
-        
-    }
-    func homeSegue() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
-        
-        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
-        
-        self.present(navController, animated: true, completion: nil)
-        
-        
-    }
-
-    
-    @IBOutlet var chatButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet var tabBarView: TabBar!
-    
+class MealLogViewController: UIViewController {
     let rows = ["PremiumFeatureCell", "CalendarCell", "TodaysNutritionPlan", "NutritionDiet", "CommentCell", "SavedMealCell"]
     let mealBackgroundColors = [UIColor(hex: "E0A662"), UIColor(hex: "73C997"), UIColor(hex: "457B97"), UIColor(hex: "C64A4D"), UIColor(hex: "2A373E")]
     let meals = ["Breakfast", "Mid-morning", "Lunch", "Snacks", "Dinner"]
     var isMealSaved = [false, false, false, false, false]
     var currentSection = 0
-    override func viewDidLoad()
-    {
+    @IBOutlet var tableView: UITableView!
+    override func viewDidLoad() {
         super.viewDidLoad()
-        chatButton.layer.borderColor = UIColor.white.cgColor
-        chatButton.layer.borderWidth = 2
-        chatButton.layer.cornerRadius = chatButton.frame.size.width/2
-        chatButton.layer.masksToBounds = true
-        setupTableView()
-        tabBarView.delegate = self
-        tabBarView.buttonPressed(UIButton.self())
-    }
-
-    //display alerts
-    func displayAlert(title: String, message: String) {
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        setupTableView()
         
     }
 
@@ -90,7 +38,6 @@ class MyNutritionViewController: UIViewController, SegueProtocol{
         }
         hideKeyboard()
     }
-    
     @objc func keyboardWillShow(_ notification:Notification)
     {
         
@@ -108,13 +55,8 @@ class MyNutritionViewController: UIViewController, SegueProtocol{
             tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         }
     }
-    
-    @IBAction func chatButtonPressed(_ sender: Any) {
-         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
-    }
 }
-
-extension MyNutritionViewController: CalendarViewControllerDelegate
+extension MealLogViewController: CalendarViewControllerDelegate
 {
     func respondToChangeInSelectedDate(for dayNumber: Int, _ month: String, _ year: Int)
     {
@@ -132,7 +74,7 @@ extension MyNutritionViewController: CalendarViewControllerDelegate
     }
 }
 
-extension MyNutritionViewController: UITableViewDataSource, CommentMealDelegate
+extension MealLogViewController: UITableViewDataSource, CommentMealDelegate
 {
     func commentMealTextViewDidBeginEditing(on row: Int)
     {
@@ -182,11 +124,12 @@ extension MyNutritionViewController: UITableViewDataSource, CommentMealDelegate
         if indexPath.section == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PremiumFeatureCell", for: indexPath) as! PremiumFeatureCell
-            cell.leftLogoImageView.image = #imageLiteral(resourceName: "ic_my_nutrition_24dp")
+            cell.leftLogoImageView.image = #imageLiteral(resourceName: "ic_meal_log_24dp")
             cell.lockImageView.image = UIImage()
             cell.titleLabel.textColor = UIColor.black
-            cell.titleLabel.text = "Nutrition"
+            cell.titleLabel.text = "MEAL LOG"
             return cell
+            
         }
         else if indexPath.section == 1
         {

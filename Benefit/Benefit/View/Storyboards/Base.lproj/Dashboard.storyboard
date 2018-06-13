@@ -20,6 +20,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--TrackAndLog-->
+        <scene sceneID="5mw-qx-wIz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TrackAndLog" id="Tgw-Eb-IZn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HE0-3z-fRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936" y="-166"/>
+        </scene>
         <!--Home-->
         <scene sceneID="mKz-Jd-mpf">
             <objects>
@@ -58,6 +66,7 @@
                                 <state key="normal" backgroundImage="d3"/>
                                 <connections>
                                     <action selector="trackAndLogButtonPressed:" destination="mD5-t4-IWR" eventType="touchUpInside" id="PpI-0f-uxG"/>
+                                    <segue destination="Tgw-Eb-IZn" kind="show" id="tI0-xG-tUa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nL-n1-pjb">
@@ -74,6 +83,9 @@
                                     <constraint firstAttribute="width" constant="416" id="X0L-hF-Mkg"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="d5"/>
+                                <connections>
+                                    <segue destination="zQa-Sm-rID" kind="show" id="6sP-Ng-pvQ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5u-PU-FPr" customClass="TabBar" customModule="Benefit" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="552" width="375" height="51"/>
@@ -92,7 +104,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition guidance  and facts. Get your personalised plans" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ewt-dj-imT">
-                                <rect key="frame" x="192" y="108" width="167" height="51"/>
+                                <rect key="frame" x="192" y="110" width="167" height="49"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +113,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORKOUTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="QmX-eq-lfa">
-                                <rect key="frame" x="10" y="61" width="88.5" height="30"/>
+                                <rect key="frame" x="10" y="64.5" width="115" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +122,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free workout developed by professionals" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="d52-2D-Z5W">
-                                <rect key="frame" x="10" y="108" width="121" height="51"/>
+                                <rect key="frame" x="10" y="110" width="121" height="49"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -119,7 +131,7 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="36M-BY-ayV">
-                                <rect key="frame" x="67" y="-126" width="241" height="128"/>
+                                <rect key="frame" x="67" y="-123" width="241" height="128.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="7Jw-Rz-vKa"/>
                                 </constraints>
@@ -134,7 +146,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track running and steps Log meals and water intake" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="YGo-2i-zuC">
-                                <rect key="frame" x="0.0" y="327" width="170" height="51"/>
+                                <rect key="frame" x="9" y="262" width="170" height="51"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -143,7 +155,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEASUREMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.0099999997764825821" translatesAutoresizingMaskIntoConstraints="NO" id="Ek4-it-b9E">
-                                <rect key="frame" x="192" y="274" width="115.5" height="30"/>
+                                <rect key="frame" x="192" y="238" width="151.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -152,24 +164,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update body measurement and monitor your progress" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="S3c-WO-2HN">
-                                <rect key="frame" x="192" y="327" width="181" height="51"/>
+                                <rect key="frame" x="194" y="262" width="181" height="51"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="25"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRACK AND LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.0099999997764825821" translatesAutoresizingMaskIntoConstraints="NO" id="I70-sd-hwl">
-                                <rect key="frame" x="4" y="280" width="127" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="LZs-Ox-fMX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="46"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.0099999997764825821" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-f9-BNj">
@@ -185,7 +185,19 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NUTRITION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.0099999997764825821" translatesAutoresizingMaskIntoConstraints="NO" id="WCL-42-Cwp">
-                                <rect key="frame" x="192" y="61" width="84" height="30"/>
+                                <rect key="frame" x="192" y="64.5" width="106" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="46"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRACK AND LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.0099999997764825821" translatesAutoresizingMaskIntoConstraints="NO" id="I70-sd-hwl">
+                                <rect key="frame" x="10" y="230" width="127" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="LZs-Ox-fMX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -207,27 +219,27 @@
                             <constraint firstItem="mpQ-vk-Rhu" firstAttribute="top" secondItem="d52-2D-Z5W" secondAttribute="bottom" constant="37" id="5I0-yW-vum"/>
                             <constraint firstItem="Ewt-dj-imT" firstAttribute="leading" secondItem="VLp-fg-NqD" secondAttribute="trailing" constant="4" id="6M4-xF-Nlw"/>
                             <constraint firstItem="QmX-eq-lfa" firstAttribute="leading" secondItem="6oO-3d-T7g" secondAttribute="leading" constant="10" id="6Tc-qo-Oak"/>
-                            <constraint firstItem="I70-sd-hwl" firstAttribute="top" secondItem="VLp-fg-NqD" secondAttribute="bottom" constant="84" id="6aK-6P-Vem"/>
-                            <constraint firstItem="I70-sd-hwl" firstAttribute="baseline" secondItem="Ek4-it-b9E" secondAttribute="baseline" id="7gL-cU-KHJ"/>
+                            <constraint firstItem="I70-sd-hwl" firstAttribute="top" secondItem="VLp-fg-NqD" secondAttribute="bottom" constant="34" id="6aK-6P-Vem"/>
+                            <constraint firstItem="I70-sd-hwl" firstAttribute="baseline" secondItem="Ek4-it-b9E" secondAttribute="baseline" constant="-7.5" id="7gL-cU-KHJ"/>
                             <constraint firstItem="36M-BY-ayV" firstAttribute="leading" secondItem="Jac-0x-dBS" secondAttribute="leadingMargin" constant="51" id="87h-ub-WAY"/>
                             <constraint firstItem="C5u-PU-FPr" firstAttribute="trailing" secondItem="6oO-3d-T7g" secondAttribute="trailing" id="8af-XV-9oG"/>
                             <constraint firstItem="Ewt-dj-imT" firstAttribute="trailing" secondItem="Jac-0x-dBS" secondAttribute="trailingMargin" id="94S-q2-TYI"/>
                             <constraint firstItem="YGo-2i-zuC" firstAttribute="top" secondItem="S3c-WO-2HN" secondAttribute="top" id="Bin-ow-TYF"/>
                             <constraint firstItem="aUf-f9-BNj" firstAttribute="leading" secondItem="6oO-3d-T7g" secondAttribute="leading" constant="133" id="CLR-Iv-BHo"/>
-                            <constraint firstItem="d52-2D-Z5W" firstAttribute="trailing" secondItem="I70-sd-hwl" secondAttribute="trailing" id="Cs9-LO-nDZ"/>
+                            <constraint firstItem="d52-2D-Z5W" firstAttribute="trailing" secondItem="I70-sd-hwl" secondAttribute="trailing" constant="-6" id="Cs9-LO-nDZ"/>
                             <constraint firstItem="VLp-fg-NqD" firstAttribute="trailing" secondItem="mpQ-vk-Rhu" secondAttribute="trailing" id="Grs-vy-TDm"/>
-                            <constraint firstItem="S3c-WO-2HN" firstAttribute="centerX" secondItem="9nL-n1-pjb" secondAttribute="centerX" id="Hqe-9h-EEI"/>
-                            <constraint firstItem="YGo-2i-zuC" firstAttribute="top" secondItem="mpQ-vk-Rhu" secondAttribute="bottom" constant="-86" id="IZU-3c-zKU"/>
+                            <constraint firstItem="S3c-WO-2HN" firstAttribute="centerX" secondItem="9nL-n1-pjb" secondAttribute="centerX" constant="2.5" id="Hqe-9h-EEI"/>
+                            <constraint firstItem="YGo-2i-zuC" firstAttribute="top" secondItem="mpQ-vk-Rhu" secondAttribute="bottom" constant="-151" id="IZU-3c-zKU"/>
                             <constraint firstItem="QmX-eq-lfa" firstAttribute="top" secondItem="36M-BY-ayV" secondAttribute="bottom" constant="59" id="KaR-69-0if"/>
                             <constraint firstItem="X1A-Oo-UbP" firstAttribute="centerX" secondItem="aUf-f9-BNj" secondAttribute="centerX" id="MgQ-47-tsM"/>
                             <constraint firstItem="eKq-3d-t0V" firstAttribute="leading" secondItem="VLp-fg-NqD" secondAttribute="trailing" id="OEG-dU-5IN"/>
                             <constraint firstItem="aUf-f9-BNj" firstAttribute="top" secondItem="mpQ-vk-Rhu" secondAttribute="bottom" constant="53" id="Oqx-28-RCK"/>
-                            <constraint firstItem="AH7-IK-qW5" firstAttribute="top" secondItem="YGo-2i-zuC" secondAttribute="bottom" constant="35" id="Quu-IM-J3D"/>
+                            <constraint firstItem="AH7-IK-qW5" firstAttribute="top" secondItem="YGo-2i-zuC" secondAttribute="bottom" constant="100" id="Quu-IM-J3D"/>
                             <constraint firstItem="eKq-3d-t0V" firstAttribute="leading" secondItem="9nL-n1-pjb" secondAttribute="leading" id="SoY-j8-exi"/>
                             <constraint firstItem="X1A-Oo-UbP" firstAttribute="centerX" secondItem="zeK-SA-gBt" secondAttribute="centerX" id="TG3-Vm-FVu"/>
                             <constraint firstItem="6oO-3d-T7g" firstAttribute="bottom" secondItem="zeK-SA-gBt" secondAttribute="bottom" constant="15" id="UCI-qK-2nY"/>
-                            <constraint firstItem="9nL-n1-pjb" firstAttribute="leading" secondItem="YGo-2i-zuC" secondAttribute="trailing" constant="18" id="UER-7A-Jqt"/>
-                            <constraint firstItem="I70-sd-hwl" firstAttribute="leading" secondItem="6oO-3d-T7g" secondAttribute="leading" constant="4" id="UcY-f5-Jdm"/>
+                            <constraint firstItem="9nL-n1-pjb" firstAttribute="leading" secondItem="YGo-2i-zuC" secondAttribute="trailing" constant="9" id="UER-7A-Jqt"/>
+                            <constraint firstItem="I70-sd-hwl" firstAttribute="leading" secondItem="6oO-3d-T7g" secondAttribute="leading" constant="10" id="UcY-f5-Jdm"/>
                             <constraint firstItem="d52-2D-Z5W" firstAttribute="leading" secondItem="QmX-eq-lfa" secondAttribute="leading" id="bjo-ec-nju"/>
                             <constraint firstItem="eKq-3d-t0V" firstAttribute="centerX" secondItem="9nL-n1-pjb" secondAttribute="centerX" id="c6J-3E-KgN"/>
                             <constraint firstItem="zeK-SA-gBt" firstAttribute="top" secondItem="X1A-Oo-UbP" secondAttribute="bottom" constant="8" symbolic="YES" id="cgc-c8-VBs"/>
@@ -236,17 +248,17 @@
                             <constraint firstItem="WCL-42-Cwp" firstAttribute="centerY" secondItem="eKq-3d-t0V" secondAttribute="centerY" constant="-22" id="eEL-aO-U8c"/>
                             <constraint firstItem="WCL-42-Cwp" firstAttribute="top" secondItem="36M-BY-ayV" secondAttribute="bottom" constant="59" id="fgF-5I-5Ge"/>
                             <constraint firstItem="VLp-fg-NqD" firstAttribute="top" secondItem="eKq-3d-t0V" secondAttribute="top" id="foB-Oy-OpN"/>
-                            <constraint firstItem="S3c-WO-2HN" firstAttribute="top" secondItem="9nL-n1-pjb" secondAttribute="bottom" constant="-86" id="gd1-nf-Q28"/>
+                            <constraint firstItem="S3c-WO-2HN" firstAttribute="top" secondItem="9nL-n1-pjb" secondAttribute="bottom" constant="-151" id="gd1-nf-Q28"/>
                             <constraint firstItem="WCL-42-Cwp" firstAttribute="leading" secondItem="VLp-fg-NqD" secondAttribute="trailing" constant="4" id="ioi-Ez-giE"/>
-                            <constraint firstItem="Ek4-it-b9E" firstAttribute="leading" secondItem="S3c-WO-2HN" secondAttribute="leading" id="jFf-BE-KAT"/>
+                            <constraint firstItem="Ek4-it-b9E" firstAttribute="leading" secondItem="S3c-WO-2HN" secondAttribute="leading" constant="-2" id="jFf-BE-KAT"/>
                             <constraint firstItem="mpQ-vk-Rhu" firstAttribute="bottom" secondItem="9nL-n1-pjb" secondAttribute="bottom" id="l64-eG-bfA"/>
                             <constraint firstItem="C5u-PU-FPr" firstAttribute="top" secondItem="zeK-SA-gBt" secondAttribute="bottom" constant="-36" id="lqw-gB-MzH"/>
                             <constraint firstItem="VLp-fg-NqD" firstAttribute="bottom" secondItem="eKq-3d-t0V" secondAttribute="bottom" id="mov-pS-yaf"/>
                             <constraint firstItem="AH7-IK-qW5" firstAttribute="top" secondItem="Jac-0x-dBS" secondAttribute="top" constant="413" id="nwW-Rn-yqQ"/>
-                            <constraint firstItem="YGo-2i-zuC" firstAttribute="top" secondItem="I70-sd-hwl" secondAttribute="bottom" constant="23" id="ppK-a7-o8V"/>
+                            <constraint firstItem="YGo-2i-zuC" firstAttribute="top" secondItem="I70-sd-hwl" secondAttribute="bottom" constant="8" id="ppK-a7-o8V"/>
                             <constraint firstItem="mpQ-vk-Rhu" firstAttribute="top" secondItem="VLp-fg-NqD" secondAttribute="bottom" id="qIF-n6-1Uq"/>
                             <constraint firstItem="mpQ-vk-Rhu" firstAttribute="top" secondItem="9nL-n1-pjb" secondAttribute="top" id="qM2-zu-lkF"/>
-                            <constraint firstItem="YGo-2i-zuC" firstAttribute="leading" secondItem="mpQ-vk-Rhu" secondAttribute="leading" id="rrL-EU-kuu"/>
+                            <constraint firstItem="YGo-2i-zuC" firstAttribute="leading" secondItem="mpQ-vk-Rhu" secondAttribute="leading" constant="9" id="rrL-EU-kuu"/>
                             <constraint firstItem="eKq-3d-t0V" firstAttribute="leading" secondItem="d52-2D-Z5W" secondAttribute="trailing" constant="57" id="s09-W0-w4d"/>
                             <constraint firstItem="d52-2D-Z5W" firstAttribute="baseline" secondItem="Ewt-dj-imT" secondAttribute="baseline" id="tgV-jj-6q1"/>
                             <constraint firstItem="AH7-IK-qW5" firstAttribute="firstBaseline" secondItem="mpQ-vk-Rhu" secondAttribute="baseline" constant="235" id="uWv-cc-k1l"/>
@@ -447,7 +459,7 @@
                 <viewControllerPlaceholder storyboardName="NutritionScreens" id="3Va-Qu-ORf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Be-7a-KHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="-66"/>
+            <point key="canvasLocation" x="1937" y="-115"/>
         </scene>
         <!--MeasurementScreens-->
         <scene sceneID="k3u-eR-hen">
@@ -455,7 +467,15 @@
                 <viewControllerPlaceholder storyboardName="MeasurementScreens" id="Axk-Wt-X62" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbR-Ni-XdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2284" y="236"/>
+            <point key="canvasLocation" x="1960" y="-17"/>
+        </scene>
+        <!--Challenges-->
+        <scene sceneID="2SF-YZ-t9U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Challenges" id="zQa-Sm-rID" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93J-md-msI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="32"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OpX-1T-xmN">

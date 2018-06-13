@@ -870,7 +870,7 @@ REACH MY GOAL</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sF-IW-qji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862.5" y="92.957746478873247"/>
+            <point key="canvasLocation" x="1043" y="92"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="g3s-Yw-6DA">
@@ -878,7 +878,7 @@ REACH MY GOAL</string>
                 <viewControllerPlaceholder storyboardName="Dashboard" id="ZMQ-SP-pbJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axU-20-0mE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="-392"/>
+            <point key="canvasLocation" x="-161" y="-451"/>
         </scene>
         <!--CHOOSE GOAL-->
         <scene sceneID="dqR-J3-Gbx">
@@ -974,7 +974,7 @@ REACH MY GOAL</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxd-9W-iEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-705" y="40"/>
+            <point key="canvasLocation" x="-705" y="59"/>
         </scene>
         <!--Startup Screen View Controller-->
         <scene sceneID="drt-Si-kJG">
@@ -1220,7 +1220,7 @@ MEAN IT</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpV-Cn-QhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2018" y="92"/>
+            <point key="canvasLocation" x="-2175" y="59"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o6y-4J-qxe">
@@ -1238,7 +1238,7 @@ MEAN IT</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bE-RE-iGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1167" y="93"/>
+            <point key="canvasLocation" x="-1438" y="58"/>
         </scene>
         <!--LoginScreenViewController-->
         <scene sceneID="dvY-80-1EF">
@@ -1246,7 +1246,7 @@ MEAN IT</string>
                 <viewControllerPlaceholder storyboardName="LoginScreens" referencedIdentifier="LoginScreenViewController" id="au7-0H-yVB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeE-TK-7jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="92"/>
+            <point key="canvasLocation" x="1700" y="92"/>
         </scene>
     </scenes>
     <resources>
