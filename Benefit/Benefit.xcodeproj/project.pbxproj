@@ -269,8 +269,8 @@
 		595CE3AA203825970086CE39 /* Comment Cell */ = {
 			isa = PBXGroup;
 			children = (
-				592AF7102035B27A00B8AF53 /* CommentCell.xib */,
 				592AF7122035B33400B8AF53 /* CommentCell.swift */,
+				592AF7102035B27A00B8AF53 /* CommentCell.xib */,
 				59631B882038384B002653B9 /* SavedMealCell.xib */,
 			);
 			path = "Comment Cell";

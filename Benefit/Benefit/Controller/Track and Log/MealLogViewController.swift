@@ -8,7 +8,23 @@
 
 import UIKit
 
-class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelegate, UIPickerViewDataSource{
+class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelegate, UIPickerViewDataSource, MealView{
+    func callingTheView() {
+        self.view.addSubview(popUpView)
+        self.popUpView.center.x = self.view.center.x
+        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 8.0)
+    }
+    
+//    func gettingTheValue() -> String {
+//        print(" hey \(completedString)")
+//        return completedString
+//    }
+    
+    func finalValue() -> String {
+        return completedString
+    }
+   
+    
     func coachSegue() {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
@@ -42,12 +58,15 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     
     @IBOutlet var popUpView: UIView!
     
+   
+    
     @IBAction func saveFromPopUp(_ sender: UIButton) {
         
         self.popUpView.removeFromSuperview()
+       
         
     }
-    
+    var completedString = ""
     @IBOutlet var mealNumberTextField: UITextField!
     @IBOutlet var pickerViewDish: UIPickerView!
     @IBOutlet var mealsDishTextField: UITextField!
@@ -56,7 +75,7 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     var mealsDish = ["eggs", "Juice", "Rotis", "Bananas", "A Glass of Juice"]
     var mealNumber = ["1", "2", "3", "4", "5", "6", "7"]
     
-    
+    var state = 0
     let rows = ["PremiumFeatureCell", "CalendarCell", "TodaysNutritionPlan", "Meals", "CommentCell", "SavedMealCell"]
     let mealBackgroundColors = [UIColor(hex: "E0A662"), UIColor(hex: "73C997"), UIColor(hex: "457B97"), UIColor(hex: "C64A4D"), UIColor(hex: "2A373E")]
     let meals = ["Breakfast", "Mid-morning", "Lunch", "Snacks", "Dinner"]
@@ -66,6 +85,7 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     var currentSection = 0
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tabBar: TabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         chatButton.layer.borderColor = UIColor.white.cgColor
@@ -76,6 +96,8 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
         tabBar.delegate = self
         tabBar.buttonPressed(UIButton.self())
       
+        self.popUpView.center.x = self.view.center.x
+        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 8.0)
         
         mealsDishTextField.inputView = pickerViewDish
         mealsDishTextField.textAlignment = .center
@@ -120,10 +142,11 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
             mealNumberTextField.text = mealNumber[row]
             mealNumberTextField.resignFirstResponder()
         }
-      
-        
+      completedString =  mealNumberTextField.text! + " \(mealsDishTextField.text!)"
+        print(completedString)
     }
     
+   
     //display alerts
     func displayAlert(title: String, message: String) {
         
@@ -170,10 +193,8 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     
     @IBAction func chatButtonPressed(_ sender: Any) {
         
-//         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
-        self.view.addSubview(popUpView)
-        self.popUpView.center.x = self.view.center.x
-        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 8.0)
+         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+        
         
     }
 }
@@ -189,14 +210,19 @@ extension MealLogViewController: CalendarViewControllerDelegate
         let indexPath = IndexPath(row: 0, section: 1)
         if tableView.rectForRow(at: indexPath).contains(touch.location(in: tableView.cellForRow(at: indexPath)))
         {
+            print(indexPath)
             return false
         }
         return true
     }
 }
 
-extension MealLogViewController: UITableViewDataSource, CommentMealDelegate
+extension MealLogViewController: UITableViewDataSource, CommentMealDelegate, UITableViewDelegate
 {
+    
+    
+   
+    
     func commentMealTextViewDidBeginEditing(on row: Int)
     {
         tableView.scrollToRow(at: IndexPath(row: 1, section: row + 3), at: .middle, animated: true)
@@ -215,11 +241,10 @@ extension MealLogViewController: UITableViewDataSource, CommentMealDelegate
     func updateSaveSectionUI(for row: Int)
     {
         isMealSaved[row] = true
-        //let contentOffset = tableView.contentOffset
+  
         tableView.reloadData()
         tableView.scrollToRow(at: IndexPath(row: 1, section: row + 3), at: .middle, animated: false)
-        //tableView.setContentOffset(contentOffset, animated: true)
-        // tableView.contentOffset = contentOffset
+        
         
     }
     
@@ -239,7 +264,7 @@ extension MealLogViewController: UITableViewDataSource, CommentMealDelegate
             return 2
         }
     }
-    
+   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if indexPath.section == 0
@@ -269,10 +294,20 @@ extension MealLogViewController: UITableViewDataSource, CommentMealDelegate
             if indexPath.row == 0
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Meals", for: indexPath) as! Meals
+                
+            
+                
+                print(indexPath.row)
+                
+
              //   cell.mealName.text = meals[indexPath.section - 3]
                 cell.mealPlanBackgroundView.backgroundColor = mealBackgroundColors[indexPath.section - 3]
                 
+                
+               
              
+                cell.delegate = self
+              
                 cell.selectionStyle = .none
 
                 return cell

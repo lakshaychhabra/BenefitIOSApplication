@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol MealView {
+    func callingTheView()
+   // func gettingTheValue() -> String
+}
+
+
 class Meals: UITableViewCell, UITextViewDelegate
 {
 
+    var stringValue : String? = " "
+    var delegate: MealView?
     var state = 0
     @IBOutlet weak var mealName: UILabel!
     @IBOutlet weak var mealPlanBackgroundView: UIView!
@@ -32,22 +40,30 @@ class Meals: UITableViewCell, UITextViewDelegate
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func addMoreButtonPressed(_ sender: Any) {
+   
+    var meal : MealLogViewController = MealLogViewController()
+    @IBAction func addMoreButtonPressed(_ sender: UIButton) {
+        
+   
+    delegate?.callingTheView()
+        
+        //stringValue = delegate?.gettingTheValue()
+        stringValue = meal.finalValue()
         
         if state == 0 {
-            label1.text = "4 egssssss  sssss"
+            label1.text = stringValue
             state += 1
         }
         else if state == 1 {
-            label2.text = "4 egssssss  sssss"
+            label2.text = stringValue
             state += 1
         }
         else if state == 2 {
-            label3.text = "4 egssssss  sssss"
+            label3.text = stringValue
             state += 1
         }
         else if state == 3 {
-            label4.text = "4 egssssss  sssss"
+            label4.text = stringValue
             state += 1
         }
         else {
