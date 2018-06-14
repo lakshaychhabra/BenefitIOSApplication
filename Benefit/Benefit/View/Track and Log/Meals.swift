@@ -17,9 +17,13 @@ protocol MealView {
 class Meals: UITableViewCell, UITextViewDelegate
 {
 
-    var stringValue : String? = " "
+    
     var delegate: MealView?
     var state = 0
+    
+    var meal : MealLogViewController = MealLogViewController()
+    var stringValue : String? = " "
+   
     @IBOutlet weak var mealName: UILabel!
     @IBOutlet weak var mealPlanBackgroundView: UIView!
     
@@ -33,6 +37,32 @@ class Meals: UITableViewCell, UITextViewDelegate
     override func awakeFromNib()
     {
         super.awakeFromNib()
+       // stringValue = meal.finalValue()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLabel1(_:)), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLabel2(_:)), name: NSNotification.Name(rawValue: "refresh2"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLabel3(_:)), name: NSNotification.Name(rawValue: "refresh3"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshLabel4(_:)), name: NSNotification.Name(rawValue: "refresh4"), object: nil)
+        
+    }
+    @objc func refreshLabel1(_ notification: NSNotification) {
+        
+        print("Received Notification")
+        label1.text = notification.userInfo?["value"] as? String
+    }
+    @objc func refreshLabel2(_ notification: NSNotification) {
+        
+        print("Received Notification")
+        label2.text = notification.userInfo?["value"] as? String
+    }
+    @objc func refreshLabel3(_ notification: NSNotification) {
+        
+        print("Received Notification")
+        label3.text = notification.userInfo?["value"] as? String
+    }
+    @objc func refreshLabel4(_ notification: NSNotification) {
+        
+        print("Received Notification")
+        label4.text = notification.userInfo?["value"] as? String
     }
     
     override func setSelected(_ selected: Bool, animated: Bool)
@@ -40,35 +70,14 @@ class Meals: UITableViewCell, UITextViewDelegate
         super.setSelected(selected, animated: animated)
     }
     
-   
-    var meal : MealLogViewController = MealLogViewController()
+
+    
     @IBAction func addMoreButtonPressed(_ sender: UIButton) {
         
    
     delegate?.callingTheView()
         
         //stringValue = delegate?.gettingTheValue()
-        stringValue = meal.finalValue()
-        
-        if state == 0 {
-            label1.text = stringValue
-            state += 1
-        }
-        else if state == 1 {
-            label2.text = stringValue
-            state += 1
-        }
-        else if state == 2 {
-            label3.text = stringValue
-            state += 1
-        }
-        else if state == 3 {
-            label4.text = stringValue
-            state += 1
-        }
-        else {
-            print("Limit exceeded")
-        }
         
     }
     

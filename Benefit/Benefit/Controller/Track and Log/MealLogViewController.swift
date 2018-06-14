@@ -13,6 +13,7 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
         self.view.addSubview(popUpView)
         self.popUpView.center.x = self.view.center.x
         self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 8.0)
+        
     }
     
 //    func gettingTheValue() -> String {
@@ -58,13 +59,41 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     
     @IBOutlet var popUpView: UIView!
     
-   
     
     @IBAction func saveFromPopUp(_ sender: UIButton) {
         
         self.popUpView.removeFromSuperview()
-       
+        completedString =  mealNumberTextField.text! + " \(mealsDishTextField.text!)"
+        print(completedString)
         
+        let abcd : [String : String] = ["value" : completedString]
+        if mealNumberTextField.text == "" && mealsDishTextField.text == "" {
+            //do nothing
+            print("empty")
+        }
+        else{
+        if state == 0 {
+        
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: abcd)
+          
+            state += 1
+        }
+        else if state == 1 {
+           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh2"), object: nil, userInfo: abcd)
+            state += 1
+        }
+        else if state == 2 {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh3"), object: nil, userInfo: abcd)
+            state += 1
+        }
+        else if state == 3 {
+           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh4"), object: nil, userInfo: abcd)
+            state += 1
+        }
+        else {
+            print("Limit exceeded")
+        }
+        }
     }
     var completedString = ""
     @IBOutlet var mealNumberTextField: UITextField!
@@ -142,8 +171,7 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
             mealNumberTextField.text = mealNumber[row]
             mealNumberTextField.resignFirstResponder()
         }
-      completedString =  mealNumberTextField.text! + " \(mealsDishTextField.text!)"
-        print(completedString)
+     
     }
     
    
@@ -294,18 +322,10 @@ extension MealLogViewController: UITableViewDataSource, CommentMealDelegate, UIT
             if indexPath.row == 0
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Meals", for: indexPath) as! Meals
+               
                 
-            
-                
-                print(indexPath.row)
-                
-
-             //   cell.mealName.text = meals[indexPath.section - 3]
                 cell.mealPlanBackgroundView.backgroundColor = mealBackgroundColors[indexPath.section - 3]
                 
-                
-               
-             
                 cell.delegate = self
               
                 cell.selectionStyle = .none
