@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A1F4E1C20BF316900B2702E /* NotificationTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */; };
+		3A36917D20D19D5700F3CAD5 /* Meals.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A36917C20D19D5700F3CAD5 /* Meals.xib */; };
+		3A36918120D19D8B00F3CAD5 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36918020D19D8B00F3CAD5 /* Meals.swift */; };
 		3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EECDC20C081E500DD3D27 /* TabBar.xib */; };
 		3A7EECDF20C0856200DD3D27 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EECDE20C0856200DD3D27 /* TabBar.swift */; };
 		3AD898CAB9144CA542DECF5D /* Pods_Benefit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */; };
@@ -85,6 +87,8 @@
 /* Begin PBXFileReference section */
 		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTabViewController.swift; sourceTree = "<group>"; };
+		3A36917C20D19D5700F3CAD5 /* Meals.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meals.xib; sourceTree = "<group>"; };
+		3A36918020D19D8B00F3CAD5 /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		3A7EECDC20C081E500DD3D27 /* TabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
 		3A7EECDE20C0856200DD3D27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachTabViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A36917120D1943100F3CAD5 /* Track and Log */ = {
+			isa = PBXGroup;
+			children = (
+				3A36918020D19D8B00F3CAD5 /* Meals.swift */,
+				3A36917C20D19D5700F3CAD5 /* Meals.xib */,
+			);
+			path = "Track and Log";
+			sourceTree = "<group>";
+		};
 		3AE8B2A020D12DAE006D7D2C /* Track and Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				59C408942025DB6B004569C5 /* StartupScreens.storyboard */,
-				3A7EECDC20C081E500DD3D27 /* TabBar.xib */,
 				59647047200A26CF00F9357F /* Dashboard.storyboard */,
 				59C4089A2025E087004569C5 /* NutritionScreens.storyboard */,
 				3AE8B29820D12777006D7D2C /* TrackAndLog.storyboard */,
@@ -297,9 +309,12 @@
 		59647055200A26D500F9357F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A7EECDC20C081E500DD3D27 /* TabBar.xib */,
+				3A7EECDE20C0856200DD3D27 /* TabBar.swift */,
 				592E1B582030B50E006FFBF9 /* Storyboards */,
 				59C4088D2025D42C004569C5 /* Card View Cell */,
 				59C4088E2025D43D004569C5 /* Premium Feature Cell */,
+				3A36917120D1943100F3CAD5 /* Track and Log */,
 				592E1B5B2030B9BF006FFBF9 /* Nutrition */,
 				592AF70D20353E6C00B8AF53 /* MyCalendar */,
 				59C4088F2025D44C004569C5 /* Custom Navigation Bar */,
@@ -329,7 +344,6 @@
 				3AE8B2A020D12DAE006D7D2C /* Track and Log */,
 				591A299D20380509009454D4 /* Measurement Screens */,
 				5962D39D203A7F410081D4B2 /* SideBarViewController.swift */,
-				3A7EECDE20C0856200DD3D27 /* TabBar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -529,6 +543,7 @@
 				597DC8252024B00F00468960 /* NutritionArticleViewCell.xib in Resources */,
 				59647068200A982200F9357F /* Mark Simonson - Proxima Nova Alt Regular-webfont.ttf in Resources */,
 				59C408972025DBE9004569C5 /* LoginScreens.storyboard in Resources */,
+				3A36917D20D19D5700F3CAD5 /* Meals.xib in Resources */,
 				59647066200A97F900F9357F /* Mark Simonson - Proxima Nova Semibold-webfont.ttf in Resources */,
 				3AE8B29B20D128A5006D7D2C /* Challenges.storyboard in Resources */,
 				5947774C201C898F0003FD7F /* WorkoutInfo.xib in Resources */,
@@ -677,6 +692,7 @@
 				592AF70B20353E6800B8AF53 /* DayCell.swift in Sources */,
 				59F24B2520239BE4009DA20F /* NutritionScreenViewController.swift in Sources */,
 				59F24B1F20238567009DA20F /* CardViewCell.swift in Sources */,
+				3A36918120D19D8B00F3CAD5 /* Meals.swift in Sources */,
 				59647044200A26CF00F9357F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
