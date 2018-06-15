@@ -12,14 +12,11 @@ class MealLogViewController: UIViewController, SegueProtocol, UIPickerViewDelega
     func callingTheView() {
         self.view.addSubview(popUpView)
         self.popUpView.center.x = self.view.center.x
-        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 8.0)
+        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 10.0)
         
     }
     
-//    func gettingTheValue() -> String {
-//        print(" hey \(completedString)")
-//        return completedString
-//    }
+
     
     func finalValue() -> String {
         return completedString
