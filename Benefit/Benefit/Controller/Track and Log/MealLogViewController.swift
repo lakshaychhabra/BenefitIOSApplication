@@ -235,7 +235,7 @@ extension MealLogViewController: CalendarViewControllerDelegate
         let indexPath = IndexPath(row: 0, section: 1)
         if tableView.rectForRow(at: indexPath).contains(touch.location(in: tableView.cellForRow(at: indexPath)))
         {
-            print(indexPath)
+           
             return false
         }
         return true
