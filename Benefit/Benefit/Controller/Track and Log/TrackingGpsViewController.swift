@@ -82,6 +82,7 @@ class TrackingGpsViewController: UIViewController, CLLocationManagerDelegate {
             time.invalidate()
             initialTime = 0
             locationManager.stopUpdatingLocation()
+            locationManager.stopMonitoringSignificantLocationChanges()
             startButton.setTitle("START", for: .normal)
             isStart = true
             
