@@ -21,8 +21,7 @@
 		3AE8B29920D12777006D7D2C /* TrackAndLog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8B29820D12777006D7D2C /* TrackAndLog.storyboard */; };
 		3AE8B29B20D128A5006D7D2C /* Challenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE8B29A20D128A5006D7D2C /* Challenges.storyboard */; };
 		3AE8B29D20D12D87006D7D2C /* TrackAndLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8B29C20D12D87006D7D2C /* TrackAndLogViewController.swift */; };
-		3AE8B29F20D12D9F006D7D2C /* MealLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8B29E20D12D9F006D7D2C /* MealLogViewController.swift */; };
-		3AE8B2A220D12E5E006D7D2C /* WaterIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8B2A120D12E5E006D7D2C /* WaterIntakeViewController.swift */; };
+		3AE8B2A220D12E5E006D7D2C /* MealLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8B2A120D12E5E006D7D2C /* MealLogViewController.swift */; };
 		3AE8B2A420D12EB1006D7D2C /* TrackMyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE8B2A320D12EB1006D7D2C /* TrackMyActivityViewController.swift */; };
 		591A29982037F1C2009454D4 /* MeasurementScreens.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */; };
 		591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591A299E20380696009454D4 /* UpdateProfileViewController.swift */; };
@@ -102,8 +101,7 @@
 		3AE8B29820D12777006D7D2C /* TrackAndLog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackAndLog.storyboard; sourceTree = "<group>"; };
 		3AE8B29A20D128A5006D7D2C /* Challenges.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenges.storyboard; sourceTree = "<group>"; };
 		3AE8B29C20D12D87006D7D2C /* TrackAndLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackAndLogViewController.swift; sourceTree = "<group>"; };
-		3AE8B29E20D12D9F006D7D2C /* MealLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLogViewController.swift; sourceTree = "<group>"; };
-		3AE8B2A120D12E5E006D7D2C /* WaterIntakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeViewController.swift; sourceTree = "<group>"; };
+		3AE8B2A120D12E5E006D7D2C /* MealLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLogViewController.swift; sourceTree = "<group>"; };
 		3AE8B2A320D12EB1006D7D2C /* TrackMyActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMyActivityViewController.swift; sourceTree = "<group>"; };
 		591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MeasurementScreens.storyboard; sourceTree = "<group>"; };
 		591A299E20380696009454D4 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
@@ -200,8 +198,7 @@
 				3AE8B29C20D12D87006D7D2C /* TrackAndLogViewController.swift */,
 				3AE8B2A320D12EB1006D7D2C /* TrackMyActivityViewController.swift */,
 				3A9CF88C20D8FEC500313168 /* TrackingGpsViewController.swift */,
-				3AE8B29E20D12D9F006D7D2C /* MealLogViewController.swift */,
-				3AE8B2A120D12E5E006D7D2C /* WaterIntakeViewController.swift */,
+				3AE8B2A120D12E5E006D7D2C /* MealLogViewController.swift */,
 			);
 			path = "Track and Log";
 			sourceTree = "<group>";
@@ -663,7 +660,6 @@
 				59B24601201B6FE900A096CD /* HIITViewController.swift in Sources */,
 				3AE8B2A420D12EB1006D7D2C /* TrackMyActivityViewController.swift in Sources */,
 				5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */,
-				3AE8B29F20D12D9F006D7D2C /* MealLogViewController.swift in Sources */,
 				59AF8894201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift in Sources */,
 				592E1B4820301D42006FFBF9 /* MyDate.swift in Sources */,
 				591A299F20380696009454D4 /* UpdateProfileViewController.swift in Sources */,
@@ -676,7 +672,7 @@
 				3A1F4E1C20BF316900B2702E /* NotificationTabViewController.swift in Sources */,
 				59F24B232023956B009DA20F /* PremiumFeatureCell.swift in Sources */,
 				591A29A1203806A9009454D4 /* MeasurementViewController.swift in Sources */,
-				3AE8B2A220D12E5E006D7D2C /* WaterIntakeViewController.swift in Sources */,
+				3AE8B2A220D12E5E006D7D2C /* MealLogViewController.swift in Sources */,
 				3ADDDBDD20BFD45E0077CC7E /* SelectMenuViewController.swift in Sources */,
 				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
 				59AC648D2026D97700C139CE /* Triangle.swift in Sources */,
