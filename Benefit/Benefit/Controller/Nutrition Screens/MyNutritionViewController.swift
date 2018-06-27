@@ -63,6 +63,8 @@ class MyNutritionViewController: UIViewController, SegueProtocol{
         setupTableView()
         tabBarView.delegate = self
         tabBarView.buttonPressed(UIButton.self())
+        
+        
     }
 
     //display alerts

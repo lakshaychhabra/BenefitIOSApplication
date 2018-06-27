@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MealLogViewController: UIViewController, CalendarViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate
 {
+    
+
+    
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var dinnerTableView: UITableView!
@@ -26,10 +31,39 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     @IBOutlet var popUpView: UIView!
     @IBOutlet var searchTableView: UITableView!
     
-    // ~~~~~~~All Locally Defined Variables~~~~~~~~~
+    //~~~~~~~~All Attributes IBOUTLETS~~~~~~~~~~
+    //breakfast
+    @IBOutlet var breakfastCalorieLabel: UILabel!
+    @IBOutlet var breakfastCarbsLabel: UILabel!
+    @IBOutlet var breakfastFatLabel: UILabel!
+    @IBOutlet var breakfastProteinLabel: UILabel!
+     //Midbreakdfast
+    @IBOutlet var midbreakfastCalorieLabel: UILabel!
+    @IBOutlet var midbreakfastCarbsLabel: UILabel!
+    @IBOutlet var midbreakfastFatLabel: UILabel!
+    @IBOutlet var midbreakfastProteinLabel: UILabel!
+    //Lunch
+    @IBOutlet var lunchCalorieLabel: UILabel!
+    @IBOutlet var lunchCarbsLabel: UILabel!
+    @IBOutlet var lunchFatLabel: UILabel!
+    @IBOutlet var lunchProteinLabel: UILabel!
+    //Snacks
+    @IBOutlet var snacksCalorieLabel: UILabel!
+    @IBOutlet var snacksCarbsLabel: UILabel!
+    @IBOutlet var snacksFatLabel: UILabel!
+    @IBOutlet var snacksProteinLabel: UILabel!
+    //Dinner
+    @IBOutlet var dinnerCalorieLabel: UILabel!
+    @IBOutlet var dinnerCarbsLabel: UILabel!
+    @IBOutlet var dinnerFatLabel: UILabel!
+    @IBOutlet var dinnerProteinLabel: UILabel!
     
-    var mealsDish = ["eggs", "Juice", "Rotis", "Bananas", "Glass of Juice", "Samosa", "Chappatis", "Oats", "Chicken Wings", "Mix Veg", "Salad Plate", "Fruit Salad"]
+    // ~~~~~~~All Locally Defined Variables~~~~~~~~~
+
+    var dateSelected : String = ""
+    var mealsDish = [""]
     var mealNumber = ["1", "2", "3", "4", "5", "6", "7"]
+    let dateFormatter = DateFormatter()
     var completedString = ""
     var filteredData = [String]()
     var isSearching = false
@@ -39,9 +73,23 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     var snacks = [String]()
     var dinner = [String]()
     var tag = 0
+    var token : String = ""
+    var itemNumber : String = "5b239c55c1487836d4076548"
+    var calorie : String = "0"
+    var carbs : String = "0"
+    var protein : String = "0"
+    var fats : String = "0"
+    let url = "http://13.59.14.56:5000/api/v1/mealLog/details"
+    let tok = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzIxYzBhOWM0MWZmM2UyMWE5Y2Q5ZiIsIm5hbWUiOiJhYWEiLCJlbWFpbCI6ImFAYS5hIiwiaWF0IjoxNTMwMDMzNjk3LCJleHAiOjE1MzA2Mzg0OTd9.jpUeZRjlHAFIYFY_LcsTkjG7rxPZHCgoR4uNNpWpD-g"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let abc = LoginScreenViewController.self
+        token = abc.token
+        
+        print(token)
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -52,10 +100,28 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         popUpView.layer.cornerRadius = 10
         self.searchTableView.backgroundColor = UIColor(hex: "EEEEEE")
         searchBar.returnKeyType = .done
-       //here
+       
+          initialTableViews()
         
+        
+        let todaysDate = Date()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateSelected = dateFormatter.string(from: todaysDate)
+        configuringTableViews()
+        print(dateSelected)
+        
+        
+        
+        
+        
+         NotificationCenter.default.addObserver(self, selector: #selector(self.printAccordingToDate(_:)), name: NSNotification.Name(rawValue: "newDate"), object: nil)
         
     }
+    
+  
+    
+    
+    
     
     func popUpSetup(){
         self.view.addSubview(popUpView)
@@ -68,6 +134,9 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         popUpSetup()
         tag = sender.tag
     }
+    
+ 
+    
     //~~~~~~~~~~Picker View Configuration~~~~~~~~~~~~~~~
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -95,6 +164,8 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     
     @IBAction func saveFromPopUp(_ sender: UIButton) {
         
+      
+      
         completedString =  mealsNumberLabel.text! + " \(mealsDishLabel.text!)"
         print(completedString)
         
@@ -103,31 +174,97 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             //do nothing
             print("empty")
         }
+            
         else{
-        
+            let quantity = Int(mealsNumberLabel.text!)
+            let item = mealsDishLabel.text!.components(separatedBy: "+")[1]
+            let delimiter = " "
+            let carbs1 = mealsDishLabel.text!.components(separatedBy: "carbs: ")[1]
+            let fats1 = mealsDishLabel.text!.components(separatedBy: "fats: ")[1]
+            let protein1 = mealsDishLabel.text!.components(separatedBy: "protein: ")[1]
+            let finalString = mealsDishLabel.text!.components(separatedBy: "+")[0]
+            calorie = mealsDishLabel.text!.components(separatedBy: "calories: ")[1]
+            carbs = carbs1.components(separatedBy: delimiter)[0]
+            fats = fats1.components(separatedBy: delimiter)[0]
+            protein = protein1.components(separatedBy: delimiter)[0]
+            itemNumber = item.components(separatedBy: delimiter)[0]
+            
+            
             if tag == 0{
-                breakfast.append(completedString)
+                breakfast.append(finalString)
                 print(breakfast)
+                settingUpDataBreakfast(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 breakfastTableView.reloadData()
+                let parameters : [String : AnyObject] = ["type" : "Breakfast" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: tok).responseJSON { response  in
+                    
+                        print(response)
+                 
+                }
+                
+                
+                 print("\(carbs, fats, protein)")
+                print(parameters)
             }
             if tag == 1{
-                midBreakfast.append(completedString)
+                midBreakfast.append(finalString)
                 print(midBreakfast)
+                settingUpDataMidbreakfast(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 midbreakfastTableView.reloadData()
+                
+                let parameters : [String : AnyObject] = ["type" : "MidBreakfast" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: tok).responseJSON { response  in
+                    
+                    print(response)
+                    
+                }
+                
+                print("\(carbs, fats, protein)")
+                print(parameters)
+                
             }
             if tag == 2{
-                lunch.append(completedString)
+                lunch.append(finalString)
+                settingUpDataLunch(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 lunchTableView.reloadData()
+                
+                let parameters : [String : AnyObject] = ["type" : "Lunch" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: tok).responseJSON { response  in
+                    
+                    print(response)
+                    
+                }
+                
+                print("\(carbs, fats, protein)")
+                print(parameters)
             }
             if tag == 3{
-                snacks.append(completedString)
+                snacks.append(finalString)
+                settingUpDataSnacks(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 snacksTableView.reloadData()
+                
+                let parameters : [String : AnyObject] = ["type" : "Snacks" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: tok).responseJSON { response  in
+                    
+                    print(response)
+                    
+                }
+                
+                print("\(carbs, fats, protein)")
+                print(parameters)
                 
             }
             if tag == 4{
                 dinner.append(completedString)
+                settingUpDataDinner(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 dinnerTableView.reloadData()
+                let parameters : [String : AnyObject] = ["type" : "Dinner" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: tok).responseJSON { response  in
+                    print(response)
+                }
                 
+                print("\(carbs, fats, protein)")
+                print(parameters)
                 }
         }
         mealsDishLabel.text = ""
@@ -141,6 +278,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         self.popUpView.removeFromSuperview()
         
     }
+    
     // ~~~~~~~Search BAR~~~~~~~~~~
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -151,21 +289,97 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         }
         else{
             isSearching = true
-            filteredData = mealsDish.filter{name in
+            
+           
+            
+
+            let url1 = "http://13.59.14.56:5000/api/v1/mealLog/food/search/\(searchText.uppercased())"
+            let url2 = url1.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+            let tok = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzIxYzBhOWM0MWZmM2UyMWE5Y2Q5ZiIsIm5hbWUiOiJhYWEiLCJlbWFpbCI6ImFAYS5hIiwiaWF0IjoxNTMwMDMzNjk3LCJleHAiOjE1MzA2Mzg0OTd9.jpUeZRjlHAFIYFY_LcsTkjG7rxPZHCgoR4uNNpWpD-g"]
+            
+            
+            Alamofire.request(url2!, method: .get, headers: tok).responseJSON { response in
+               
+                print(response)
                 
-                return   name.lowercased().contains(searchText.lowercased())}
-            searchTableView.reloadData()
+                if let response = response.result.value {
+                    let data : JSON = JSON(response)
+                    print(data)
+                    print(data["data"].count)
+                    var dat : String
+                   
+                    var i = 0
+                        while i < data["data"].count {
+                            
+                            dat = "\(data["data"][i]["name"].rawString() ?? " ")                                                                                                                          +\(data["data"][i]["_id"].rawString() ?? " ") carbs: \(data["data"][i]["carbs"].rawString() ?? " ") fats: \(data["data"][i]["fats"].rawString() ?? " ") protein: \(data["data"][i]["proteins"].rawString() ?? " ") calories: \(data["data"][i]["calories"].rawString() ?? " ")"
+                        print(dat)
+                            if dat == ""{
+                                print("No Data")
+                                
+                            }
+                            else {
+                                
+                                self.filteredData.append(dat)
+                            }
+                             self.searchTableView.reloadData()
+                              i += 1
+                          
+                    }
+                }
+                
+            }
+
         }
+        
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 
-    
+    var monthNumber : String = "00"
     // ~~~~~~~ Setting Up Calendar ~~~~~~~~~
     func respondToChangeInSelectedDate(for dayNumber: Int, _ month: String, _ year: Int)
     {
         print(dayNumber, month, year)
+        
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+        
+        switch month {
+        case months[0]:
+            monthNumber = "01"
+        case months[1]:
+            monthNumber = "02"
+        case months[2]:
+            monthNumber = "03"
+        case months[3]:
+            monthNumber = "04"
+        case months[4]:
+            monthNumber = "05"
+        case months[5]:
+            monthNumber = "06"
+        case months[6]:
+            monthNumber = "07"
+        case months[7]:
+            monthNumber = "08"
+        case months[8]:
+            monthNumber = "09"
+        case months[9]:
+            monthNumber = "10"
+        case months[10]:
+            monthNumber = "11"
+        case months[11]:
+            monthNumber = "12"
+        default:
+            print("Nooo")
+        }
+        dateSelected = "\(dayNumber)-\(monthNumber)-\(year)"
+        let dateNotif : [String : String] = ["date" : dateSelected]
+        
+         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDate"), object: nil, userInfo: dateNotif)
+        
+        print(dateSelected)
+        
         
     }
     
@@ -178,6 +392,91 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             return false
         }
         return true
+    }
+    
+    //~~~~~~~~~Setting up calories~~~~~~~~~
+    func settingUpDataBreakfast(calories : String, carbs : String, proteins : String, fats : String){
+      
+        breakfastCalorieLabel.text = String(Int(breakfastCalorieLabel.text!)! + Int(calories)!)
+        breakfastFatLabel.text = String(Int(breakfastFatLabel.text!)! + Int(fats)!)
+        breakfastCarbsLabel.text = String(Int(breakfastFatLabel.text!)! + Int(carbs)!)
+        breakfastProteinLabel.text = String(Int(breakfastProteinLabel.text!)! + Int(proteins)!)
+       
+    }
+    func settingUpDataMidbreakfast(calories : String, carbs : String, proteins : String, fats : String){
+        
+        midbreakfastCalorieLabel.text = String(Int(midbreakfastCalorieLabel.text!)! + Int(calories)!)
+        midbreakfastFatLabel.text = String(Int(midbreakfastFatLabel.text!)! + Int(fats)!)
+        midbreakfastCarbsLabel.text = String(Int(midbreakfastFatLabel.text!)! + Int(carbs)!)
+        midbreakfastProteinLabel.text = String(Int(midbreakfastProteinLabel.text!)! + Int(proteins)!)
+        
+    }
+    func settingUpDataLunch(calories : String, carbs : String, proteins : String, fats : String){
+        
+         lunchCalorieLabel.text = String(Int(lunchCalorieLabel.text!)! + Int(calories)!)
+        lunchFatLabel.text = String(Int(lunchFatLabel.text!)! + Int(fats)!)
+        lunchCarbsLabel.text = String(Int(lunchFatLabel.text!)! + Int(carbs)!)
+        lunchProteinLabel.text = String(Int(lunchProteinLabel.text!)! + Int(proteins)!)
+        
+    }
+    func settingUpDataSnacks(calories : String, carbs : String, proteins : String, fats : String){
+        
+        snacksCalorieLabel.text = String(Int(snacksCalorieLabel.text!)! + Int(calories)!)
+        snacksFatLabel.text = String(Int(snacksFatLabel.text!)! + Int(fats)!)
+        snacksCarbsLabel.text = String(Int(snacksCarbsLabel.text!)! + Int(carbs)!)
+        snacksProteinLabel.text = String(Int(snacksProteinLabel.text!)! + Int(proteins)!)
+        
+        
+    }
+    func settingUpDataDinner(calories : String, carbs : String, proteins : String, fats : String){
+        
+        dinnerCalorieLabel.text = String(Int(dinnerCalorieLabel.text!)! + Int(calories)!)
+        dinnerFatLabel.text = String(Int(dinnerFatLabel.text!)! + Int(fats)!)
+        dinnerCarbsLabel.text = String(Int(dinnerCarbsLabel.text!)! + Int(carbs)!)
+        dinnerProteinLabel.text = String(Int(dinnerProteinLabel.text!)! + Int(proteins)!)
+        
+    }
+    
+    
+    
+    func initialTableViews(){
+        
+        //Setting up initial looks
+        if breakfast.count == 0 {
+            breakfastCalorieLabel.text = "0"
+            breakfastFatLabel.text = "0"
+            breakfastCarbsLabel.text = "0"
+            breakfastProteinLabel.text = "0"
+            
+        }
+        if midBreakfast.count == 0 {
+            midbreakfastCalorieLabel.text = "0"
+            midbreakfastFatLabel.text = "0"
+            midbreakfastCarbsLabel.text = "0"
+            midbreakfastProteinLabel.text = "0"
+        }
+        if lunch.count == 0 {
+            
+            lunchCalorieLabel.text = "0"
+            lunchFatLabel.text = "0"
+            lunchCarbsLabel.text = "0"
+            lunchProteinLabel.text = "0"
+            
+        }
+        if snacks.count == 0 {
+            snacksCalorieLabel.text = "0"
+            snacksFatLabel.text = "0"
+            snacksCarbsLabel.text = "0"
+            snacksProteinLabel.text = "0"
+            
+        }
+        if dinner.count == 0 {
+            dinnerCalorieLabel.text = "0"
+            dinnerFatLabel.text = "0"
+            dinnerCarbsLabel.text = "0"
+            dinnerProteinLabel.text = "0"
+            
+        }
     }
     
     // ~~~~~~~~~ Setting Up Table View ~~~~~~~~~
@@ -327,13 +626,13 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.searchTableView {
             
-            print(mealsDish[indexPath.row])
+           // print(mealsDish[indexPath.row])
             if isSearching {
                 mealsDishLabel.text = filteredData[indexPath.row]
             }
             else {
                 
-                mealsDishLabel.text = mealsDish[indexPath.row]
+                mealsDishLabel.text = ""
             }
             
         }
@@ -346,5 +645,205 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         }
     }
 
-   
+    //Mark: -  ~~~~~Configuring Tableview At Selected Date~~~~~~~~~~~
+    @objc func printAccordingToDate(_ notification: NSNotification){
+        
+             configuringTableViews()
+        
+      }
+
+    func configuringTableViews(){
+        let urlB = "http://13.59.14.56:5000/api/v1/mealLog/details/?type=Breakfast&date=\(dateSelected)"
+        print(urlB)
+        let urlM = "http://13.59.14.56:5000/api/v1/mealLog/details/?type=MidBreakfast&date=\(dateSelected)"
+        let urlL = "http://13.59.14.56:5000/api/v1/mealLog/details/?type=Lunch&date=\(dateSelected)"
+        let urlS = "http://13.59.14.56:5000/api/v1/mealLog/details/?type=Snacks&date=\(dateSelected)"
+        let urlD = "http://13.59.14.56:5000/api/v1/mealLog/details/?type=Dinner&date=\(dateSelected)"
+        
+        Alamofire.request(urlB, method: .get, headers: tok).responseJSON { response in
+            
+            print(response)
+            if let response = response.result.value {
+                let data : JSON = JSON(response)
+                print(data["success"])
+                if data["success"].rawString() == "false"{
+                    print("No data")
+                    self.breakfast.removeAll()
+                    self.breakfastTableView.reloadData()
+                }
+                else {
+                    let food = data["data"]["food"]
+                    print(food.count)
+                    var i = 0
+                    var foodValue : String! = " "
+                    
+                    while i<food.count{
+                        foodValue = food[i]["item"]["name"].rawString()!
+                        print(foodValue)
+                        
+                        if foodValue == nil {
+                            print("Nothing for that day")
+                            self.breakfast.removeAll()
+                            self.breakfastTableView.reloadData()
+                        }
+                        else{
+                            self.breakfast.append(foodValue)
+                            self.breakfastTableView.reloadData()
+                        }
+                        i += 1
+                    }
+                }
+            }
+        }
+        //Response for MidBreakFast
+        
+        Alamofire.request(urlM, method: .get, headers: tok).responseJSON { response in
+            
+            print(response)
+            if let response = response.result.value {
+                let data : JSON = JSON(response)
+                print(data["success"])
+                if data["success"].rawString() == "false"{
+                    print("No data")
+                    self.midBreakfast.removeAll()
+                    self.midbreakfastTableView.reloadData()
+                }
+                else {
+                    let food = data["data"]["food"]
+                    print(food.count)
+                    var i = 0
+                    var foodValue : String! = " "
+                    
+                    while i<food.count{
+                        foodValue = food[i]["item"]["name"].rawString()!
+                        print(foodValue)
+                        
+                        if foodValue == nil {
+                            print("Nothing for that day")
+                            self.midBreakfast.removeAll()
+                            self.midbreakfastTableView.reloadData()
+                        }
+                        else{
+                            self.midBreakfast.append(foodValue)
+                            self.midbreakfastTableView.reloadData()
+                        }
+                        i += 1
+                    }
+                }
+            }
+        }
+        
+        //~~~~~~~~~Lunch~~~~~~~~`
+        Alamofire.request(urlL, method: .get, headers: tok).responseJSON { response in
+            
+            print(response)
+            if let response = response.result.value {
+                let data : JSON = JSON(response)
+                print(data["success"])
+                if data["success"].rawString() == "false"{
+                    print("No data")
+                    self.lunch.removeAll()
+                    self.lunchTableView.reloadData()
+                }
+                else {
+                    let food = data["data"]["food"]
+                    print(food.count)
+                    var i = 0
+                    var foodValue : String! = " "
+                    
+                    while i<food.count{
+                        foodValue = food[i]["item"]["name"].rawString()!
+                        print(foodValue)
+                        
+                        if foodValue == nil {
+                            print("Nothing for that day")
+                            self.lunch.removeAll()
+                            self.lunchTableView.reloadData()
+                        }
+                        else{
+                            self.lunch.append(foodValue)
+                            self.lunchTableView.reloadData()
+                        }
+                        i += 1
+                    }
+                }
+            }
+        }
+        
+        //~~~~~~~~~Snacks~~~~~~~~~~~
+        Alamofire.request(urlS, method: .get, headers: tok).responseJSON { response in
+            
+            print(response)
+            if let response = response.result.value {
+                let data : JSON = JSON(response)
+                print(data["success"])
+                if data["success"].rawString() == "false"{
+                    print("No data")
+                    self.snacks.removeAll()
+                    self.snacksTableView.reloadData()
+                }
+                else {
+                    let food = data["data"]["food"]
+                    print(food.count)
+                    var i = 0
+                    var foodValue : String! = " "
+                    
+                    while i<food.count{
+                        foodValue = food[i]["item"]["name"].rawString()!
+                        print(foodValue)
+                        
+                        if foodValue == nil {
+                            print("Nothing for that day")
+                            self.snacks.removeAll()
+                            self.snacksTableView.reloadData()
+                        }
+                        else{
+                            self.snacks.append(foodValue)
+                            self.snacksTableView.reloadData()
+                        }
+                        i += 1
+                    }
+                }
+            }
+        }
+        //~~~~~~~~~Dinner~~~~~~~~~~~
+        Alamofire.request(urlD, method: .get, headers: tok).responseJSON { response in
+            
+            print(response)
+            if let response = response.result.value {
+                let data : JSON = JSON(response)
+                print(data["success"])
+                if data["success"].rawString() == "false"{
+                    print("No data")
+                    self.dinner.removeAll()
+                    self.dinnerTableView.reloadData()
+                }
+                else {
+                    let food = data["data"]["food"]
+                    print(food.count)
+                    var i = 0
+                    var foodValue : String! = " "
+                    
+                    while i<food.count{
+                        foodValue = food[i]["item"]["name"].rawString()!
+                        print(foodValue)
+                        
+                        if foodValue == nil {
+                            print("Nothing for that day")
+                            self.dinner.removeAll()
+                            self.dinnerTableView.reloadData()
+                        }
+                        else{
+                            self.dinner.append(foodValue)
+                            self.dinnerTableView.reloadData()
+                        }
+                        i += 1
+                    }
+                }
+            }
+        }
+        
+     
+    }
+
 }
