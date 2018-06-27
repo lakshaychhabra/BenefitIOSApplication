@@ -10,10 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MealLogViewController: UIViewController, CalendarViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UISearchBarDelegate
+class MealLogViewController: UIViewController, CalendarViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate,  UISearchBarDelegate
 {
     
-
+//UIPickerViewDelegate
     
     
     @IBOutlet var tableView: UITableView!
@@ -27,7 +27,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mealsDishLabel: UILabel!
     @IBOutlet var mealsNumberLabel: UILabel!
-    @IBOutlet var pickerViewNumber: UIPickerView!
+   // @IBOutlet var pickerViewNumber: UIPickerView!
     @IBOutlet var popUpView: UIView!
     @IBOutlet var searchTableView: UITableView!
     
@@ -58,6 +58,14 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     @IBOutlet var dinnerFatLabel: UILabel!
     @IBOutlet var dinnerProteinLabel: UILabel!
     
+    
+    
+    
+    @IBOutlet var butt1: UIButton!
+    @IBOutlet var butt3: UIButton!
+    @IBOutlet var butt2: UIButton!
+    @IBOutlet var butt5: UIButton!
+    @IBOutlet var butt4: UIButton!
     // ~~~~~~~All Locally Defined Variables~~~~~~~~~
 
     var dateSelected : String = ""
@@ -82,6 +90,17 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     let url = "http://13.59.14.56:5000/api/v1/mealLog/details"
     let tok = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzIxYzBhOWM0MWZmM2UyMWE5Y2Q5ZiIsIm5hbWUiOiJhYWEiLCJlbWFpbCI6ImFAYS5hIiwiaWF0IjoxNTMwMDMzNjk3LCJleHAiOjE1MzA2Mzg0OTd9.jpUeZRjlHAFIYFY_LcsTkjG7rxPZHCgoR4uNNpWpD-g"]
     
+    func setupButtons(){
+       
+        butt1.layer.shadowOpacity = 0.5
+        butt2.layer.shadowOpacity = 0.5
+        butt3.layer.shadowOpacity = 0.5
+        butt4.layer.shadowOpacity = 0.5
+        butt5.layer.shadowOpacity = 0.5
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,8 +112,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.popUpView.center.x = self.view.center.x
-        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 2.0)
+       
         searchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
         mealsNumberLabel.textAlignment = .center
         popUpView.layer.cornerRadius = 10
@@ -102,7 +120,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         searchBar.returnKeyType = .done
        
           initialTableViews()
-        
+        setupButtons()
         
         let todaysDate = Date()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -125,8 +143,8 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     
     func popUpSetup(){
         self.view.addSubview(popUpView)
-        self.popUpView.center.x = self.view.center.x
-        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 20.0)
+//        self.popUpView.center.x = self.view.center.x
+//        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 20.0)
     }
     
     
@@ -138,40 +156,41 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
  
     
     //~~~~~~~~~~Picker View Configuration~~~~~~~~~~~~~~~
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return mealNumber.count
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return mealNumber[row]
-        
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        mealsNumberLabel.text = mealNumber[row]
-        
-    }
+//    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//
+//
+//    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//
+//        return mealNumber.count
+//
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        return mealNumber[row]
+//
+//    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//
+//        mealsNumberLabel.text = mealNumber[row]
+//
+//    }
     // ~~~~~~~~~~~PickerView ENDS~~~~~~~~~~~~~~
     
     @IBAction func saveFromPopUp(_ sender: UIButton) {
         
       
       
-        completedString =  mealsNumberLabel.text! + " \(mealsDishLabel.text!)"
+        completedString = mealsDishLabel.text!  //mealsNumberLabel.text! + " \()"
         print(completedString)
         
        
-        if mealsNumberLabel.text == "" || mealsDishLabel.text == "" {
-            //do nothing
+      //  if mealsNumberLabel.text == "" || mealsDishLabel.text == "" {
+        if mealsDishLabel.text == "" {
+        //do nothing
             print("empty")
         }
             
