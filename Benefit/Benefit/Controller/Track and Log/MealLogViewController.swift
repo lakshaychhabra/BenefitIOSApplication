@@ -10,8 +10,40 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MealLogViewController: UIViewController, CalendarViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate,  UISearchBarDelegate
-{
+class MealLogViewController: UIViewController, CalendarViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate,  UISearchBarDelegate, SegueProtocol{
+    func coachSegue() {
+        //performSegue(withIdentifier: "toCoachTab", sender: self)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    func notificationSegue() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func menuSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+        
+    }
+    func homeSegue() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyDashboard") as! HomeScreenViewController
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
+        
+        
+    }
     
 //UIPickerViewDelegate
     
@@ -58,7 +90,8 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     @IBOutlet var dinnerFatLabel: UILabel!
     @IBOutlet var dinnerProteinLabel: UILabel!
     
-    
+    @IBOutlet var tabBarView: TabBar!
+    @IBOutlet var chatButton: UIButton!
     
     
     @IBOutlet var butt1: UIButton!
@@ -99,7 +132,18 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         butt5.layer.shadowOpacity = 0.5
         
     }
-    
+    @IBAction func chatButtonPressed(_ sender: Any) {
+        displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+    }
+    //display alerts
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +152,14 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         token = abc.token
         
         print(token)
+        
+        //TabBar Methods
+        tabBarView.delegate = self
+        tabBarView.buttonPressed(UIButton.self())
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        chatButton.layer.borderWidth = 2
+        chatButton.layer.cornerRadius = chatButton.frame.size.width/2
+        chatButton.layer.masksToBounds = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -520,6 +572,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             }
             
             cell?.textLabel?.text = text
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
             
         }
@@ -535,6 +588,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = breakfastTableView.dequeueReusableCell(withIdentifier: "breakfastCell")
             cell?.textLabel?.text = breakfast[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
             
         
@@ -543,6 +597,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = midbreakfastTableView.dequeueReusableCell(withIdentifier: "midbreakfastCell")
             cell?.textLabel?.text = midBreakfast[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
             
         }
@@ -557,6 +612,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = lunchTableView.dequeueReusableCell(withIdentifier: "lunchCell")
             cell?.textLabel?.text = lunch[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
         
         }
@@ -571,6 +627,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = snacksTableView.dequeueReusableCell(withIdentifier: "snacksCell")
             cell?.textLabel?.text = snacks[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
             
         }
@@ -585,6 +642,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = dinnerTableView.dequeueReusableCell(withIdentifier: "dinnerCell")
             cell?.textLabel?.text = dinner[indexPath.row]
+            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
             return cell!
             
         }
@@ -599,6 +657,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath)
             let calendarView = cell.contentView.viewWithTag(13) as! MyCalendar
             calendarView.delegateForHandlingDates = self
+            
             return cell
         }
         

@@ -315,9 +315,9 @@
 		59647055200A26D500F9357F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				592E1B582030B50E006FFBF9 /* Storyboards */,
 				3A7EECDC20C081E500DD3D27 /* TabBar.xib */,
 				3A7EECDE20C0856200DD3D27 /* TabBar.swift */,
-				592E1B582030B50E006FFBF9 /* Storyboards */,
 				59C4088D2025D42C004569C5 /* Card View Cell */,
 				59C4088E2025D43D004569C5 /* Premium Feature Cell */,
 				3A36917120D1943100F3CAD5 /* Track and Log */,
