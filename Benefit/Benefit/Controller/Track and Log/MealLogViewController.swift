@@ -144,6 +144,17 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         
     }
 
+    func addNavBarImage() {
+      
+        
+        let image = UIImage(named: "benefit_logo") //Your logo url here
+        let imageView : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
+         imageView.image = image
+
+            imageView.contentMode = .scaleAspectFit
+            navigationItem.titleView = imageView
+            navigationController?.navigationBar.barTintColor = UIColor.init(hex: "f2f2f2")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -172,7 +183,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         searchBar.returnKeyType = .done
        
           initialTableViews()
-        setupButtons()
+        //setupButtons()
         
         let todaysDate = Date()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -180,6 +191,13 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         configuringTableViews()
         print(dateSelected)
         
+//        let logo = UIImage(named: "benefit_logo")
+//        let imageView = UIImageView(image:logo)
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        self.navigationItem.titleView = imageView
+//
+        addNavBarImage()
         
         
         
@@ -259,10 +277,10 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             fats = fats1.components(separatedBy: delimiter)[0]
             protein = protein1.components(separatedBy: delimiter)[0]
             itemNumber = item.components(separatedBy: delimiter)[0]
-            
+            let final = finalString.capitalized
             
             if tag == 0{
-                breakfast.append(finalString)
+                breakfast.append(final)
                 print(breakfast)
                 settingUpDataBreakfast(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 breakfastTableView.reloadData()
@@ -278,7 +296,8 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
                 print(parameters)
             }
             if tag == 1{
-                midBreakfast.append(finalString)
+                
+                midBreakfast.append(final)
                 print(midBreakfast)
                 settingUpDataMidbreakfast(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 midbreakfastTableView.reloadData()
@@ -295,7 +314,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
                 
             }
             if tag == 2{
-                lunch.append(finalString)
+                lunch.append(final)
                 settingUpDataLunch(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 lunchTableView.reloadData()
                 
@@ -310,7 +329,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
                 print(parameters)
             }
             if tag == 3{
-                snacks.append(finalString)
+                snacks.append(final)
                 settingUpDataSnacks(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 snacksTableView.reloadData()
                 
@@ -326,7 +345,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
                 
             }
             if tag == 4{
-                dinner.append(completedString)
+                dinner.append(final)
                 settingUpDataDinner(calories: calorie, carbs: carbs, proteins: protein, fats: fats)
                 dinnerTableView.reloadData()
                 let parameters : [String : AnyObject] = ["type" : "Dinner" as AnyObject, "date" : dateSelected as AnyObject, "food" : [["item" : itemNumber],["quantity" : quantity ?? 1]] as AnyObject]
@@ -555,6 +574,9 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         return 1
         
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -572,7 +594,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             }
             
             cell?.textLabel?.text = text
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
             
         }
@@ -588,7 +610,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = breakfastTableView.dequeueReusableCell(withIdentifier: "breakfastCell")
             cell?.textLabel?.text = breakfast[indexPath.row]
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
             
         
@@ -597,7 +619,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = midbreakfastTableView.dequeueReusableCell(withIdentifier: "midbreakfastCell")
             cell?.textLabel?.text = midBreakfast[indexPath.row]
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
             
         }
@@ -612,7 +634,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = lunchTableView.dequeueReusableCell(withIdentifier: "lunchCell")
             cell?.textLabel?.text = lunch[indexPath.row]
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
         
         }
@@ -627,7 +649,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = snacksTableView.dequeueReusableCell(withIdentifier: "snacksCell")
             cell?.textLabel?.text = snacks[indexPath.row]
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
             
         }
@@ -642,7 +664,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
             
             let cell = dinnerTableView.dequeueReusableCell(withIdentifier: "dinnerCell")
             cell?.textLabel?.text = dinner[indexPath.row]
-            cell?.textLabel?.textColor = UIColor.init(hex: "404143")
+            cell?.textLabel?.textColor = UIColor.init(hex: "222222")
             return cell!
             
         }
