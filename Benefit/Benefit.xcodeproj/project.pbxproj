@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A150D6E20F9F55400C6D70C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A150D6D20F9F55400C6D70C /* ChatViewController.swift */; };
+		3A150D7020F9F93F00C6D70C /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A150D6F20F9F93F00C6D70C /* SocketIOManager.swift */; };
 		3A1F4E1C20BF316900B2702E /* NotificationTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */; };
 		3A36917D20D19D5700F3CAD5 /* Meals.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A36917C20D19D5700F3CAD5 /* Meals.xib */; };
 		3A36918120D19D8B00F3CAD5 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36918020D19D8B00F3CAD5 /* Meals.swift */; };
 		3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7EECDC20C081E500DD3D27 /* TabBar.xib */; };
 		3A7EECDF20C0856200DD3D27 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EECDE20C0856200DD3D27 /* TabBar.swift */; };
+		3A84B2E420FA75850077EE40 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A84B2E220FA75840077EE40 /* MessageCell.xib */; };
+		3A84B2E520FA75850077EE40 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84B2E320FA75850077EE40 /* CustomMessageCell.swift */; };
 		3A9CF88D20D8FEC600313168 /* TrackingGpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CF88C20D8FEC500313168 /* TrackingGpsViewController.swift */; };
 		3A9CF88F20D91E4B00313168 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9CF88E20D91E4B00313168 /* CoreLocation.framework */; };
 		3ACD9D2720E238CB00529EC7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD9D2620E238CB00529EC7 /* Food.swift */; };
@@ -88,11 +92,15 @@
 
 /* Begin PBXFileReference section */
 		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A150D6D20F9F55400C6D70C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3A150D6F20F9F93F00C6D70C /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTabViewController.swift; sourceTree = "<group>"; };
 		3A36917C20D19D5700F3CAD5 /* Meals.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meals.xib; sourceTree = "<group>"; };
 		3A36918020D19D8B00F3CAD5 /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		3A7EECDC20C081E500DD3D27 /* TabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
 		3A7EECDE20C0856200DD3D27 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		3A84B2E220FA75840077EE40 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		3A84B2E320FA75850077EE40 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		3A9CF88C20D8FEC500313168 /* TrackingGpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingGpsViewController.swift; sourceTree = "<group>"; };
 		3A9CF88E20D91E4B00313168 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3ACD9D2620E238CB00529EC7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -192,6 +200,15 @@
 				3A36917C20D19D5700F3CAD5 /* Meals.xib */,
 			);
 			path = "Track and Log";
+			sourceTree = "<group>";
+		};
+		3A84B2E120FA75620077EE40 /* Chat Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A84B2E320FA75850077EE40 /* CustomMessageCell.swift */,
+				3A84B2E220FA75840077EE40 /* MessageCell.xib */,
+			);
+			path = "Chat Cell";
 			sourceTree = "<group>";
 		};
 		3AE8B2A020D12DAE006D7D2C /* Track and Log */ = {
@@ -315,6 +332,7 @@
 		59647055200A26D500F9357F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A84B2E120FA75620077EE40 /* Chat Cell */,
 				592E1B582030B50E006FFBF9 /* Storyboards */,
 				3A7EECDC20C081E500DD3D27 /* TabBar.xib */,
 				3A7EECDE20C0856200DD3D27 /* TabBar.swift */,
@@ -345,6 +363,8 @@
 				3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */,
 				3ADDDBDA20BFD4500077CC7E /* CoachTabViewController.swift */,
 				3ADDDBDC20BFD45E0077CC7E /* SelectMenuViewController.swift */,
+				3A150D6D20F9F55400C6D70C /* ChatViewController.swift */,
+				3A150D6F20F9F93F00C6D70C /* SocketIOManager.swift */,
 				59C4088B2025D3E3004569C5 /* Workout Screens */,
 				59C4088C2025D3F3004569C5 /* Nutrition Screens */,
 				3AE8B2A020D12DAE006D7D2C /* Track and Log */,
@@ -538,6 +558,7 @@
 				592AF7112035B27A00B8AF53 /* CommentCell.xib in Resources */,
 				59647064200A97BA00F9357F /* Oswald-Medium.ttf in Resources */,
 				3A7EECDD20C081E500DD3D27 /* TabBar.xib in Resources */,
+				3A84B2E420FA75850077EE40 /* MessageCell.xib in Resources */,
 				3AE7B5DF20C6F88200D5B96B /* GoogleService-Info.plist in Resources */,
 				59C408952025DB6B004569C5 /* StartupScreens.storyboard in Resources */,
 				592AF70720353E6800B8AF53 /* MyCalendar.xib in Resources */,
@@ -627,7 +648,9 @@
 				"${BUILT_PRODUCTS_DIR}/JTHamburgerButton/JTHamburgerButton.framework",
 				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -644,7 +667,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTHamburgerButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +686,7 @@
 			files = (
 				592AF70A20353E6800B8AF53 /* MonthCell.swift in Sources */,
 				59B24601201B6FE900A096CD /* HIITViewController.swift in Sources */,
+				3A150D6E20F9F55400C6D70C /* ChatViewController.swift in Sources */,
 				3AE8B2A420D12EB1006D7D2C /* TrackMyActivityViewController.swift in Sources */,
 				5957ED802017CC9A00870A02 /* WorkoutsSectionViewController.swift in Sources */,
 				59AF8894201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift in Sources */,
@@ -689,6 +715,8 @@
 				597DC8272024B03300468960 /* NutritionArticleViewCell.swift in Sources */,
 				597DC8232024ABE200468960 /* FullSizedImageViewCell.swift in Sources */,
 				3A9CF88D20D8FEC600313168 /* TrackingGpsViewController.swift in Sources */,
+				3A150D7020F9F93F00C6D70C /* SocketIOManager.swift in Sources */,
+				3A84B2E520FA75850077EE40 /* CustomMessageCell.swift in Sources */,
 				592AF70F203548B100B8AF53 /* NutritionDiet.swift in Sources */,
 				591E18AD20394C7D00FD167F /* SecondaryCell.swift in Sources */,
 				5978612D2011C32B00C2B5D4 /* StartupScreenViewController.swift in Sources */,
@@ -837,13 +865,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				DEVELOPMENT_TEAM = S9MM62BW22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Benefit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -861,13 +889,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7RY94XSR4N;
+				DEVELOPMENT_TEAM = S9MM62BW22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Benefit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.iosd.Benefit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

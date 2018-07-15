@@ -114,14 +114,15 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     var snacks = [String]()
     var dinner = [String]()
     var tag = 0
-    var token : String = ""
+    var token : String = " "
     var itemNumber : String = "5b239c55c1487836d4076548"
     var calorie : String = "0"
     var carbs : String = "0"
     var protein : String = "0"
     var fats : String = "0"
     let url = "http://13.59.14.56:5000/api/v1/mealLog/details"
-    let tok = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzIxYzBhOWM0MWZmM2UyMWE5Y2Q5ZiIsIm5hbWUiOiJhYWEiLCJlbWFpbCI6ImFAYS5hIiwiaWF0IjoxNTMwMDMzNjk3LCJleHAiOjE1MzA2Mzg0OTd9.jpUeZRjlHAFIYFY_LcsTkjG7rxPZHCgoR4uNNpWpD-g"]
+//    let tok = ["Authorization" : "yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViMzIxYzBhOWM0MWZmM2UyMWE5Y2Q5ZiIsIm5hbWUiOiJhYWEiLCJlbWFpbCI6ImFAYS5hIiwiaWF0IjoxNTMxNTU3Mjc5LCJleHAiOjE1MzIxNjIwNzl9.9hAdG6gR0ECw0hBCoWawGdyWiOTBuTpfRLtw3N_vlr4"]
+    let tok = ["Authorization" : LoginScreenViewController.token]
     
     func setupButtons(){
        
@@ -159,10 +160,10 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let abc = LoginScreenViewController.self
-        token = abc.token
         
-        print(token)
+        token = LoginScreenViewController.token
+        
+        print("Token\(token)")
         
         //TabBar Methods
         tabBarView.delegate = self
@@ -478,9 +479,10 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         let indexPath = IndexPath(row: 0, section: 1)
         if tableView.rectForRow(at: indexPath).contains(touch.location(in: tableView.cellForRow(at: indexPath)))
         {
-            
+            print("False")
             return false
         }
+        print("true")
         return true
     }
     

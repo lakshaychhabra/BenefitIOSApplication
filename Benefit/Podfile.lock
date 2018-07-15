@@ -54,7 +54,10 @@ PODS:
   - JTHamburgerButton (1.0.5)
   - MIBadgeButton-Swift (0.5)
   - SideMenu (3.1.5)
+  - Socket.IO-Client-Swift (13.2.1):
+    - Starscream (~> 3.0.2)
   - Spring (1.0.5)
+  - Starscream (3.0.5)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -67,6 +70,7 @@ DEPENDENCIES:
   - JTHamburgerButton (~> 1.0)
   - MIBadgeButton-Swift (from `https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git`, branch `master`)
   - SideMenu
+  - Socket.IO-Client-Swift
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftyJSON
 
@@ -88,6 +92,8 @@ SPEC REPOS:
     - ImageSlideshow
     - JTHamburgerButton
     - SideMenu
+    - Socket.IO-Client-Swift
+    - Starscream
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -123,9 +129,11 @@ SPEC CHECKSUMS:
   JTHamburgerButton: 9a41c7d051c72590a9d2c18416d84d1b912f12e3
   MIBadgeButton-Swift: 9e57309b00b168d75ca8fecb45bc75124a8ffddf
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
+  Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
   Spring: 48aad470f3ead043b2da98b64e0bf0630b7ebc42
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: fb68efaf0f413da44119d14c01b3024af5b4eaec
+PODFILE CHECKSUM: d5beb8490e4813cea3117323e30930b8880da105
 
 COCOAPODS: 1.5.0

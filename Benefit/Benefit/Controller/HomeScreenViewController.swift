@@ -136,7 +136,14 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
 
     @IBAction func chatButtonPressed(_ sender: Any) {
         
-        displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+//        displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "chats") as! ChatViewController
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
     }
     
 }

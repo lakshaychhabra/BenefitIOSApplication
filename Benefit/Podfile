@@ -18,6 +18,6 @@ target 'Benefit' do
   pod 'Google/SignIn'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
-  
+  pod 'Socket.IO-Client-Swift'
 
 end

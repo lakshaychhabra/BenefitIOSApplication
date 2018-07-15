@@ -87,6 +87,7 @@ class MyNutritionViewController: UIViewController, SegueProtocol{
         {
             if row != "CalendarCell" && row != "TodaysNutritionPlan"
             {
+               
                 registerCellNib(named: row, with: tableView)
             }
         }

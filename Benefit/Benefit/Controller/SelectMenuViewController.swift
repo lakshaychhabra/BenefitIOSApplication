@@ -78,6 +78,9 @@ class SelectMenuViewController: UIViewController, SegueProtocol{
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
+        
+        
+        
     }
     
     @IBAction func chatButtonPressed(_ sender: Any) {

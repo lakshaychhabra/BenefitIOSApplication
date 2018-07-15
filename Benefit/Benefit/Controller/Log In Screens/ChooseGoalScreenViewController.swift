@@ -40,7 +40,7 @@ class ChooseGoalScreenViewController: UIViewController
         print(check)
         if check == true {
             
-            
+            LoginScreenViewController.token = UserDefaults.standard.object(forKey: "token") as! String
             
             self.performSegue(withIdentifier: "afterLogInFromStartUp", sender: self)
         
