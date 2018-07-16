@@ -90,8 +90,9 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
             Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
                 print(response)
                 
+                if let response = response.result.value {
+                    let data : JSON = JSON(response)
                 
-                let data : JSON = JSON(response.result.value!)
                 print(data)
                 self.output = data["token"]["token"]
                 if let  message = data["message"].rawString() {
@@ -119,7 +120,10 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                 else {
                     self.displayAlert(title: "Error Login Through Google", message: "Please try Custom login or try again after some time. ")
                 }
-            }
+             }
+                activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+          }
        
         } else {
            print(error)
@@ -205,8 +209,9 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                     Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.httpBody).responseJSON { response in
                         print(response)
                         
-                        
-                        let data : JSON = JSON(response.result.value!)
+                        if let response = response.result.value {
+                            
+                            let data : JSON = JSON(response)
                         print(data)
                         self.output = data["token"]["token"]
                         if let  message = data["message"].rawString() {
@@ -235,6 +240,9 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                         else {
                             self.displayAlert(title: "Error Login Through Facebook", message: "Please try Custom login or try again after some time. ")
                         }
+                     }
+                        activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
                     }
                     
                 }
@@ -336,7 +344,8 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                         
                         print(response)
                         
-                        let data : JSON = JSON(response.result.value!)
+                        if let response = response.result.value {
+                            let data : JSON = JSON(response)
                         print(data)
                         self.output = data["token"]["token"]
                         if let  message = data["message"].rawString() {
@@ -375,7 +384,9 @@ class LoginScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
                             }
                             
                         }
-                        
+                        }
+                        activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
                     }
                 }
            }

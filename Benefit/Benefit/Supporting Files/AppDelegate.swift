@@ -12,6 +12,7 @@ import GGLSignIn
 import FBSDKCoreKit
 
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
 
@@ -24,15 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
        
             // Initialize Google sign-in
             GIDSignIn.sharedInstance().clientID = "352356064520-5qtenuib63i9ukps3o6s50m97scg8050.apps.googleusercontent.com"
-            
-            var configureError: NSError?
-            GGLContext.sharedInstance().configureWithError(&configureError)
-            
-            
-            assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
-            
+        if let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
+            let googleInfo = NSDictionary(contentsOfFile: path),
+            let clientId = googleInfo["CLIENT_ID"] as? String {
+            GIDSignIn.sharedInstance().clientID = clientId
+        }
+        
+//        GIDSignIn.sharedInstance().delegate = self
+//            var configureError: NSError?
+//            GGLContext.sharedInstance().configureWithError(&configureError)
+//
+//
+//            assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
+        
             // Facebook Configuration
-            
+        
+        
             FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
@@ -50,8 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return googleHandled || fbHandled
     }
     
-  
-   
+    func applicationDidEnterBackground(_ application: UIApplication) {
+                     SocketIOManager.sharedInstance.closeConnection()
+    }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        SocketIOManager.sharedInstance.establishConnection()
+
+    }
 
 }
 
