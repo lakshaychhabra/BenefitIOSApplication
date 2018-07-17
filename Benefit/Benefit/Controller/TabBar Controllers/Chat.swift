@@ -33,14 +33,20 @@ class SocketIOManager: NSObject {
         
     }
     
-    func receivedMessage (){
+    func receivedMessage (completionHandler: @escaping ([String : AnyObject]) -> Void) {
         
         socket.on("new message") { (data, ack) in
             
-            print("New messagessss")
-            print(data[0])
-            print("data1")
-            print("everything", data)
+//            print("New messagessss")
+//            print(data)
+//            print("data1")
+//            print("everything", data[0] as! [String: AnyObject])
+            var output = [String: AnyObject]()
+            output = data[0] as! [String: AnyObject]
+           // print(output["message"]!)
+            
+           completionHandler(output)
+            
         }
         
     }
