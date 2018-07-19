@@ -272,11 +272,11 @@
 			isa = PBXGroup;
 			children = (
 				59C408942025DB6B004569C5 /* StartupScreens.storyboard */,
+				59C408962025DBE9004569C5 /* LoginScreens.storyboard */,
 				59647047200A26CF00F9357F /* Dashboard.storyboard */,
 				59C4089A2025E087004569C5 /* NutritionScreens.storyboard */,
 				3AE8B29820D12777006D7D2C /* TrackAndLog.storyboard */,
 				3AE8B29A20D128A5006D7D2C /* Challenges.storyboard */,
-				59C408962025DBE9004569C5 /* LoginScreens.storyboard */,
 				59C408982025E00C004569C5 /* WorkoutScreens.storyboard */,
 				591A29972037F1C2009454D4 /* MeasurementScreens.storyboard */,
 			);

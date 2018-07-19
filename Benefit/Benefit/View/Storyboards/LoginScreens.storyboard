@@ -120,7 +120,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="Skk-lO-eQs" secondAttribute="bottom" constant="5" id="vNS-sr-9qH"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@a.a" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AJL-iC-qLg">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dhruv@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AJL-iC-qLg">
                                                 <rect key="frame" x="69" y="327" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -176,7 +176,7 @@
                                                     <constraint firstItem="sXE-4U-Kbd" firstAttribute="top" secondItem="rax-gh-rgo" secondAttribute="top" constant="5" id="yl7-qw-aZF"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="aaa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-dm-yZo">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-dm-yZo">
                                                 <rect key="frame" x="69" y="429" width="237" height="57"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
