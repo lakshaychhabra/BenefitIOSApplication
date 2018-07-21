@@ -19,5 +19,6 @@ target 'Benefit' do
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod 'Socket.IO-Client-Swift'
+  # pod 'MZDownloadManager'
 
 end

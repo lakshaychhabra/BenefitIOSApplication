@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AVKit
 
 
 
@@ -16,6 +17,11 @@ class MyWorkoutsScreenViewController: UIViewController
 {
 
 
+    @IBOutlet var videoView: UIView!
+    @IBOutlet var progressPercent: UILabel!
+    @IBOutlet var progressView: UIView!
+    @IBOutlet var progressBar: UIProgressView!
+    @IBOutlet var downloadButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let itemsList = ["PremiumFeatureCell", "CalendarCell", "TodaysWorkout", "TotalWorkout", "WorkoutDescription", "WorkoutInfo", "Exercise"]
     var numberOfExercises = 0
@@ -24,7 +30,7 @@ class MyWorkoutsScreenViewController: UIViewController
     let scrollViewContentWidth = UIScreen.main.bounds.width
     var isRestDay = false
     
-    
+     let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
     var exerciseNameArray = [String]()
     var exerciseID = [String]()
     var timeTaken = [String]()
@@ -33,6 +39,15 @@ class MyWorkoutsScreenViewController: UIViewController
     let dateFormatter = DateFormatter()
     var dateSelected : String = ""
     let tok = ["Authorization" : LoginScreenViewController.token]
+    var isDownloading : Bool = false
+    var player : AVPlayer!
+    var playerLayer : AVPlayerLayer!
+    let controller = AVPlayerViewController()
+    var showVideo = false
+    var exerciseVideoArray = [String]() //aws links
+    var urlArray = [String]() // to get aws links
+    var storedVideoUrl = [URL]()
+    var isInfoDownloaded = false
     
     override func viewDidLoad()
     {
@@ -47,9 +62,14 @@ class MyWorkoutsScreenViewController: UIViewController
         registerCellNib(named: "Exercise", with: tableView)
         registerCellNib(named: "RestDayCell", with: tableView)
         
+        progressView.isHidden = true
         
         navigationBarLogo()
         
+        self.videoView.isHidden = true
+        if isDownloading {
+            self.progressView.isHidden = false
+        }
         
         let todaysDate = Date()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -57,6 +77,10 @@ class MyWorkoutsScreenViewController: UIViewController
         print(dateSelected)
         configuringTableViews()
         NotificationCenter.default.addObserver(self, selector: #selector(self.changeInDate(_:)), name: NSNotification.Name(rawValue: "newDate"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.downloading(notification:)), name: Notification.Name("url"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showVideoPlayer(notification:)), name: Notification.Name("videos"), object: nil)
         
     }
     
@@ -79,6 +103,9 @@ class MyWorkoutsScreenViewController: UIViewController
         
         let exerciseUrl = "http://13.59.14.56:5000/api/v1/workout/user/get?date=\(dateSelected)"
         
+        
+        activityIndicatorFunc()
+        activityIndicator.startAnimating()
         Alamofire.request(exerciseUrl, method: .get, headers: tok).responseJSON { (response) in
             
             print(response)
@@ -99,10 +126,15 @@ class MyWorkoutsScreenViewController: UIViewController
                     
                     print(data["data"]["workout"]["exercises"], exercises.count)
                     
+                    self.exerciseID.removeAll()
+                    self.reps.removeAll()
+                    self.timeTaken.removeAll()
+                    self.exerciseNameArray.removeAll()
+                    
                     while i < exercises.count {
                         
                         exerciseId = exercises[i]["exercise"]["_id"].rawString()!
-                        reps = exercises[i]["exercise"]["reps"].rawString()!
+                        reps = exercises[i]["reps"].rawString()!
                         timeTaken = exercises[i]["exercise"]["timeTaken"].rawString()!
                         exerciseName = exercises[i]["exercise"]["name"].rawString()!
                         
@@ -118,11 +150,288 @@ class MyWorkoutsScreenViewController: UIViewController
                     self.numberOfExercises = self.exerciseID.count
                     self.tableView.reloadData()
                 }
+                 self.activityIndicator.stopAnimating()
+               
             }
         }
         
     }
+    
+    func activityIndicatorFunc() {
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+    }
+    
+    @IBAction func downloadButtonPressed(_ sender: UIButton) {
+        
+        if numberOfExercises == 0 {
+            
+            print("No Exercise for Today")
+            displayAlert(title: "No Exercise For The Day", message: "Your Exercise the day is not yet Updated")
+            
+        }
+        else {
+            print("Downloading Videos")
+            
+       
+           
+            gettingUrlForDownload()
+           
+            
+            
+                    print("info is downloaded")
+            
+            
+            
+            
+           
+           print("Reached end of download")
+            
+        }
+       
+        
+        
+    }
+    
+    
+    
+    func gettingUrlForDownload(){
+             print("getting URRl")
+        
+            var i = 0
+            while i < self.exerciseID.count {
+                print(self.exerciseID[i])
+                self.urlArray.append("http://13.59.14.56:5000/api/v1/workout/exercise/\(self.exerciseID[i])/url/?type=tutorial")
+                
+                Alamofire.request(self.urlArray[i], method: .get, headers: self.tok).responseJSON { (response) in
+                    
+                    print(response)
+                    if let response = response.result.value {
+                        let data : JSON = JSON(response)
+                        if data["data"] == JSON.null {
+                            print("Cannot find data")
+                        }
+                        else{
+                            print("Appending")
+                            let dat = data["data"].rawString()!
+                            self.exerciseVideoArray.append(dat)
+                            print("array inside", self.exerciseVideoArray)
+                            print(self.exerciseID.count, self.exerciseVideoArray.count)
+                            if self.exerciseID.count == self.exerciseVideoArray.count {
+                                print("sending flag")
+                                NotificationCenter.default.post(name: Notification.Name("url"), object: nil)
 
+                                self.isInfoDownloaded = true
+                            }
+                        }
+                    }
+                }
+                
+                i += 1
+            }
+
+        
+        
+   
+        
+        
+    }
+    
+    @objc func downloading(notification: Notification){
+        
+         print("The video Array is ", self.exerciseVideoArray)
+        
+        let requestGroup =  DispatchGroup()
+        
+        print("Downloading videos function")
+        var j = 0
+        
+        for i in exerciseID {
+            
+             requestGroup.enter()
+            Alamofire.request(self.exerciseVideoArray[j]).downloadProgress { (progress) in
+                self.progressView.isHidden = false
+                print(progress.fractionCompleted)
+                self.progressBar.progress = Float(progress.fractionCompleted)
+                self.progressPercent.text = "\(round(progress.fractionCompleted * 100))%"
+                self.isDownloading = true
+                if progress.fractionCompleted == 1 {
+                    self.isDownloading = false
+                    self.progressView.isHidden = true
+                    
+                }
+                }.responseData { (response) in
+                   
+                    self.progressView.isHidden = true
+                    print("helloJi Chai peelo")
+                    print(response)
+                    //print(response.result.value!)
+                    print(response.result.description)
+                    
+                    if let data = response.result.value {
+                     //   name = self.exerciseID[i]
+                        
+                        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                        let videoURL = documentsURL.appendingPathComponent("\(i).mp4")
+                        print(videoURL)
+                        
+                        do {
+                            try data.write(to: videoURL)
+                            self.storedVideoUrl.append(videoURL)
+                            print(data)
+                        } catch {
+                            print("Something went wrong!")
+                        }
+                        
+                        print(videoURL)
+                        print(self.storedVideoUrl.count)
+                        print("The Stored Videos Address", self.storedVideoUrl)
+                        
+                        
+                        if self.storedVideoUrl.count == self.exerciseID.count {
+                            self.showVideo = true
+                            
+                            print("all videos downloaded", self.storedVideoUrl)
+                            NotificationCenter.default.post(name: Notification.Name("videos"), object: nil)
+                            
+                            self.downloadButton.setTitle("Play Videos", for: .normal)
+                        }
+                        
+                    }
+            }
+            print(j)
+            j += 1
+            requestGroup.leave()
+        }
+        
+        
+        
+    }
+    
+    
+    @objc func downloadingVideos (notification: Notification){
+        
+        let requestGroup =  DispatchGroup()
+        
+        print("Downloading videos function")
+        
+        var name : String!
+            var i = 0
+        
+            while i < self.exerciseID.count {
+                
+                
+                print("The video Array is ", self.exerciseVideoArray)
+               
+                
+                
+
+                Alamofire.request(self.exerciseVideoArray[i]).downloadProgress { (progress) in
+                    self.progressView.isHidden = false
+                    print(progress.fractionCompleted)
+                    self.progressBar.progress = Float(progress.fractionCompleted)
+                    self.progressPercent.text = "\(round(progress.fractionCompleted * 100))%"
+                    self.isDownloading = true
+                    if progress.fractionCompleted == 1 {
+                        self.isDownloading = false
+                        self.progressView.isHidden = true
+                        
+                      }
+                    }.responseData { (response) in
+                        requestGroup.enter()
+                        self.progressView.isHidden = true
+                        print("helloJi Chai peelo")
+                        print(response)
+                        //print(response.result.value!)
+                        print(response.result.description)
+                        
+                        if let data = response.result.value {
+                            name = self.exerciseID[i]
+                            
+                            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                            let videoURL = documentsURL.appendingPathComponent("\(name!).mp4")
+                            print(videoURL)
+                            
+                            do {
+                                try data.write(to: videoURL)
+                                self.storedVideoUrl.append(videoURL)
+                                print(data)
+                            } catch {
+                                print("Something went wrong!")
+                            }
+                            
+                            print(videoURL)
+                            print(self.storedVideoUrl.count)
+                            print("The Stored Videos Address", self.storedVideoUrl)
+                            
+                            
+                            if self.storedVideoUrl.count == self.exerciseID.count {
+                            self.showVideo = true
+                                
+                                print("all videos downloaded", self.storedVideoUrl)
+                                 NotificationCenter.default.post(name: Notification.Name("videos"), object: nil)
+                                
+                            self.downloadButton.setTitle("Play Videos", for: .normal)
+                            }
+                            
+                        }
+                }
+                
+                
+                print("cycle : ", i)
+                i += 1
+                requestGroup.leave()
+               
+                
+                print("The Stored Videos Address after leaving", self.videosURL)
+            }
+
+        
+       
+    }
+
+    var videosURL = [AVPlayerItem]()
+    
+    func convertToPlayerItem() {
+        
+        var i = 0
+        while i < exerciseVideoArray.count {
+            videosURL.append(AVPlayerItem(url: storedVideoUrl[i]))
+          
+          i += 1
+        }
+        
+    }
+
+  
+   @objc func showVideoPlayer(notification: Notification){
+        
+        DispatchQueue.main.async {
+        
+            self.convertToPlayerItem()
+            
+            self.videoView.isHidden = false
+            self.player = AVQueuePlayer(items: self.videosURL)
+            self.playerLayer = AVPlayerLayer(player: self.player)
+            self.playerLayer.frame = self.videoView.bounds
+            self.videoView.layer.addSublayer(self.playerLayer)
+            print("Doing Stuff")
+            self.player.play()
+            
+        }
+    }
+    
+
+    
+    func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension MyWorkoutsScreenViewController: CalendarViewControllerDelegate
@@ -194,7 +503,7 @@ extension MyWorkoutsScreenViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        var cell = UITableViewCell()
+        
         
         if indexPath.section == 0
         {
@@ -206,30 +515,42 @@ extension MyWorkoutsScreenViewController: UITableViewDataSource
         }
         else if indexPath.section == 1
         {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath)
             let calendarView = cell.contentView.viewWithTag(13) as! MyCalendar
             calendarView.delegateForHandlingDates = self
             cell.selectionStyle = .none
+            return cell
         }
         else if indexPath.section <= 5
         {
             if isRestDay
             {
-                cell = tableView.dequeueReusableCell(withIdentifier: "RestDayCell", for: indexPath)
+               let cell = tableView.dequeueReusableCell(withIdentifier: "RestDayCell", for: indexPath)
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = false
+                return cell
             }
             else
             {
-                cell = tableView.dequeueReusableCell(withIdentifier: itemsList[indexPath.section], for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: itemsList[indexPath.section], for: indexPath)
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = false
+                return cell
             }
             
-            cell.selectionStyle = .none
-            cell.isUserInteractionEnabled = false
+            
+            
         }
         else
         {
-            cell = tableView.dequeueReusableCell(withIdentifier: itemsList.last!, for: indexPath)
+           let cell = tableView.dequeueReusableCell(withIdentifier: "Exercise", for: indexPath) as! ExerciseTableViewCell
+            cell.name.text = exerciseNameArray[indexPath.row]
+            cell.reps.text = reps[indexPath.row]
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = false
+            return cell
         }
-        return cell
+       
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
@@ -240,7 +561,7 @@ extension MyWorkoutsScreenViewController: UITableViewDataSource
         }
         else
         {
-            return itemsList.count + numberOfExercises - 1
+            return 7
         }
     }
     

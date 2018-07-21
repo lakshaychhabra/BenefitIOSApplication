@@ -61,10 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func applicationDidEnterBackground(_ application: UIApplication) {
                      SocketIOManager.sharedInstance.closeConnection()
     }
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        SocketIOManager.sharedInstance.establishConnection()
-
-    }
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        SocketIOManager.sharedInstance.establishConnection()
+//
+//    }
 
 }
 
