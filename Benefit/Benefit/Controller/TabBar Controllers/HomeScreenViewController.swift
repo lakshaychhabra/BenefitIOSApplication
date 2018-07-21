@@ -17,21 +17,26 @@ class HomeScreenViewController: UIViewController, SegueProtocol{
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
         
-        self.present(newViewController, animated: true, completion: nil)
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
     }
     func notificationSegue() {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
         
-        self.present(newViewController, animated: true, completion: nil)
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
         
     }
     func menuSegue() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
         
-        self.present(newViewController, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
         
     }
     func homeSegue() {

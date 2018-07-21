@@ -191,13 +191,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
         dateSelected = dateFormatter.string(from: todaysDate)
         configuringTableViews()
         print(dateSelected)
-        
-//        let logo = UIImage(named: "benefit_logo")
-//        let imageView = UIImageView(image:logo)
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        self.navigationItem.titleView = imageView
-//
+  
         addNavBarImage()
         
         
@@ -214,8 +208,7 @@ class MealLogViewController: UIViewController, CalendarViewControllerDelegate, U
     
     func popUpSetup(){
         self.view.addSubview(popUpView)
-//        self.popUpView.center.x = self.view.center.x
-//        self.popUpView.center.y = self.view.center.y - (self.view.frame.height / 20.0)
+
     }
     
     

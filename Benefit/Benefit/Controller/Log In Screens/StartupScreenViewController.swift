@@ -32,6 +32,21 @@ class StartupScreenViewController: UIViewController
 
     @IBAction func getStartedButtonPressed(_ sender: SpringButton)
     {
-        //performSegue(withIdentifier: "goToChooseGoalScreen", sender: self)
+        
+        let check = UserDefaults.standard.bool(forKey: "UserAlreadyLoggedIn")
+        print(check)
+        if check == true {
+            
+            LoginScreenViewController.token = UserDefaults.standard.object(forKey: "token") as! String
+            
+            self.performSegue(withIdentifier: "afterLogInFromStartUp", sender: self)
+            
+        }
+        else {
+            performSegue(withIdentifier: "goToChooseGoalScreen", sender: self)
+            
+        }
+        
+        
     }
 }

@@ -17,12 +17,12 @@ class MyWorkoutsScreenViewController: UIViewController
 {
 
 
-    @IBOutlet var videoView: UIView!
-    @IBOutlet var progressPercent: UILabel!
-    @IBOutlet var progressView: UIView!
-    @IBOutlet var progressBar: UIProgressView!
+
     @IBOutlet var downloadButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     let itemsList = ["PremiumFeatureCell", "CalendarCell", "TodaysWorkout", "TotalWorkout", "WorkoutDescription", "WorkoutInfo", "Exercise"]
     var numberOfExercises = 0
     let screenHeight = UIScreen.main.bounds.height
@@ -48,6 +48,8 @@ class MyWorkoutsScreenViewController: UIViewController
     var urlArray = [String]() // to get aws links
     var storedVideoUrl = [URL]()
     var isInfoDownloaded = false
+    var videosURL = [AVPlayerItem]() // to store video list for the queue
+    var toShowPlayButton = false
     
     override func viewDidLoad()
     {
@@ -61,15 +63,12 @@ class MyWorkoutsScreenViewController: UIViewController
         registerCellNib(named: "WorkoutInfo", with: tableView)
         registerCellNib(named: "Exercise", with: tableView)
         registerCellNib(named: "RestDayCell", with: tableView)
-        
-        progressView.isHidden = true
+
         
         navigationBarLogo()
         
-        self.videoView.isHidden = true
-        if isDownloading {
-            self.progressView.isHidden = false
-        }
+      //  self.videoView.isHidden = true
+        
         
         let todaysDate = Date()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -80,7 +79,11 @@ class MyWorkoutsScreenViewController: UIViewController
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.downloading(notification:)), name: Notification.Name("url"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.showVideoPlayer(notification:)), name: Notification.Name("videos"), object: nil)
+       
+        
+        
+       // playerButtonView.isHidden = true
+        
         
     }
     
@@ -167,30 +170,29 @@ class MyWorkoutsScreenViewController: UIViewController
     
     @IBAction func downloadButtonPressed(_ sender: UIButton) {
         
-        if numberOfExercises == 0 {
+        if !toShowPlayButton{
             
-            print("No Exercise for Today")
-            displayAlert(title: "No Exercise For The Day", message: "Your Exercise the day is not yet Updated")
+               if numberOfExercises == 0 {
+                
+                print("No Exercise for Today")
+                displayAlert(title: "No Exercise For The Day", message: "Your Exercise the day is not yet Updated")
+                
+               }
+            else {
+                print("Downloading Videos")
+                
+                gettingUrlForDownload()
+                print("Reached end of download")
+                
+            }
             
         }
         else {
-            print("Downloading Videos")
             
-       
-           
-            gettingUrlForDownload()
-           
-            
-            
-                    print("info is downloaded")
-            
-            
-            
-            
-           
-           print("Reached end of download")
+            performSegue(withIdentifier: "toVideoPlayer", sender: nil)
             
         }
+        
        
         
         
@@ -244,6 +246,10 @@ class MyWorkoutsScreenViewController: UIViewController
         
          print("The video Array is ", self.exerciseVideoArray)
         
+            activityIndicatorFunc()
+            activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         let requestGroup =  DispatchGroup()
         
         print("Downloading videos function")
@@ -253,19 +259,14 @@ class MyWorkoutsScreenViewController: UIViewController
             
              requestGroup.enter()
             Alamofire.request(self.exerciseVideoArray[j]).downloadProgress { (progress) in
-                self.progressView.isHidden = false
+                
+                
                 print(progress.fractionCompleted)
-                self.progressBar.progress = Float(progress.fractionCompleted)
-                self.progressPercent.text = "\(round(progress.fractionCompleted * 100))%"
-                self.isDownloading = true
-                if progress.fractionCompleted == 1 {
-                    self.isDownloading = false
-                    self.progressView.isHidden = true
-                    
-                }
+             
                 }.responseData { (response) in
                    
-                    self.progressView.isHidden = true
+                    
+                  //  self.progressView.isHidden = true
                     print("helloJi Chai peelo")
                     print(response)
                     //print(response.result.value!)
@@ -279,9 +280,11 @@ class MyWorkoutsScreenViewController: UIViewController
                         print(videoURL)
                         
                         do {
+                            
                             try data.write(to: videoURL)
                             self.storedVideoUrl.append(videoURL)
                             print(data)
+                            
                         } catch {
                             print("Something went wrong!")
                         }
@@ -295,9 +298,13 @@ class MyWorkoutsScreenViewController: UIViewController
                             self.showVideo = true
                             
                             print("all videos downloaded", self.storedVideoUrl)
+                            self.convertToPlayerItem()
                             NotificationCenter.default.post(name: Notification.Name("videos"), object: nil)
                             
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
                             self.downloadButton.setTitle("Play Videos", for: .normal)
+                            self.toShowPlayButton = true
                         }
                         
                     }
@@ -311,89 +318,13 @@ class MyWorkoutsScreenViewController: UIViewController
         
     }
     
-    
-    @objc func downloadingVideos (notification: Notification){
-        
-        let requestGroup =  DispatchGroup()
-        
-        print("Downloading videos function")
-        
-        var name : String!
-            var i = 0
-        
-            while i < self.exerciseID.count {
-                
-                
-                print("The video Array is ", self.exerciseVideoArray)
-               
-                
-                
-
-                Alamofire.request(self.exerciseVideoArray[i]).downloadProgress { (progress) in
-                    self.progressView.isHidden = false
-                    print(progress.fractionCompleted)
-                    self.progressBar.progress = Float(progress.fractionCompleted)
-                    self.progressPercent.text = "\(round(progress.fractionCompleted * 100))%"
-                    self.isDownloading = true
-                    if progress.fractionCompleted == 1 {
-                        self.isDownloading = false
-                        self.progressView.isHidden = true
-                        
-                      }
-                    }.responseData { (response) in
-                        requestGroup.enter()
-                        self.progressView.isHidden = true
-                        print("helloJi Chai peelo")
-                        print(response)
-                        //print(response.result.value!)
-                        print(response.result.description)
-                        
-                        if let data = response.result.value {
-                            name = self.exerciseID[i]
-                            
-                            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                            let videoURL = documentsURL.appendingPathComponent("\(name!).mp4")
-                            print(videoURL)
-                            
-                            do {
-                                try data.write(to: videoURL)
-                                self.storedVideoUrl.append(videoURL)
-                                print(data)
-                            } catch {
-                                print("Something went wrong!")
-                            }
-                            
-                            print(videoURL)
-                            print(self.storedVideoUrl.count)
-                            print("The Stored Videos Address", self.storedVideoUrl)
-                            
-                            
-                            if self.storedVideoUrl.count == self.exerciseID.count {
-                            self.showVideo = true
-                                
-                                print("all videos downloaded", self.storedVideoUrl)
-                                 NotificationCenter.default.post(name: Notification.Name("videos"), object: nil)
-                                
-                            self.downloadButton.setTitle("Play Videos", for: .normal)
-                            }
-                            
-                        }
-                }
-                
-                
-                print("cycle : ", i)
-                i += 1
-                requestGroup.leave()
-               
-                
-                print("The Stored Videos Address after leaving", self.videosURL)
-            }
-
-        
-       
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toVideoPlayer"{
+            let newDest = segue.destination as! PlayVideosViewController
+            newDest.videosURL = self.videosURL
+        }
     }
 
-    var videosURL = [AVPlayerItem]()
     
     func convertToPlayerItem() {
         
@@ -407,22 +338,7 @@ class MyWorkoutsScreenViewController: UIViewController
     }
 
   
-   @objc func showVideoPlayer(notification: Notification){
-        
-        DispatchQueue.main.async {
-        
-            self.convertToPlayerItem()
-            
-            self.videoView.isHidden = false
-            self.player = AVQueuePlayer(items: self.videosURL)
-            self.playerLayer = AVPlayerLayer(player: self.player)
-            self.playerLayer.frame = self.videoView.bounds
-            self.videoView.layer.addSublayer(self.playerLayer)
-            print("Doing Stuff")
-            self.player.play()
-            
-        }
-    }
+   
     
 
     

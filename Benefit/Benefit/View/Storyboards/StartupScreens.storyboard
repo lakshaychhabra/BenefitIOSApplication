@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Gs-GL-ImI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Gs-GL-ImI">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -878,7 +878,7 @@ REACH MY GOAL</string>
                 <viewControllerPlaceholder storyboardName="Dashboard" id="ZMQ-SP-pbJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axU-20-0mE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="-451"/>
+            <point key="canvasLocation" x="-1883" y="-440"/>
         </scene>
         <!--CHOOSE GOAL-->
         <scene sceneID="dqR-J3-Gbx">
@@ -968,7 +968,6 @@ REACH MY GOAL</string>
                     </navigationItem>
                     <connections>
                         <outlet property="imageSlider" destination="jc2-Hn-VaD" id="ygk-My-UaJ"/>
-                        <segue destination="ZMQ-SP-pbJ" kind="show" identifier="afterLogInFromStartUp" id="kKG-Rl-2Xo"/>
                         <segue destination="CyY-dn-978" kind="show" identifier="setUpProfile" id="vQd-Q7-F0U"/>
                     </connections>
                 </viewController>
@@ -979,7 +978,7 @@ REACH MY GOAL</string>
         <!--Startup Screen View Controller-->
         <scene sceneID="drt-Si-kJG">
             <objects>
-                <viewController id="1Gs-GL-ImI" customClass="StartupScreenViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Gs-GL-ImI" customClass="StartupScreenViewController" customModule="Benefit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iLf-xV-PUc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1145,7 +1144,6 @@ MEAN IT</string>
                                                 </variation>
                                                 <connections>
                                                     <action selector="getStartedButtonPressed:" destination="1Gs-GL-ImI" eventType="touchUpInside" id="eIb-x7-N8E"/>
-                                                    <segue destination="gXu-uA-clJ" kind="presentation" id="A07-w0-9Qf"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="benefit_logo" translatesAutoresizingMaskIntoConstraints="NO" id="dBK-jL-wjK">
@@ -1216,11 +1214,13 @@ MEAN IT</string>
                         <outlet property="topHalfView" destination="JJ6-eB-XY3" id="g8J-3m-ewS"/>
                         <outlet property="topView" destination="XXT-fy-thA" id="KbN-29-XTM"/>
                         <outlet property="triangularView" destination="wF1-Cr-NeB" id="VoK-cL-vHg"/>
+                        <segue destination="gXu-uA-clJ" kind="show" identifier="goToChooseGoalScreen" id="uxH-Hw-cxE"/>
+                        <segue destination="ZMQ-SP-pbJ" kind="show" identifier="afterLogInFromStartUp" id="DLe-iu-Tw8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpV-Cn-QhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2175" y="59"/>
+            <point key="canvasLocation" x="-2486" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o6y-4J-qxe">

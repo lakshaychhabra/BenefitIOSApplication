@@ -18,15 +18,18 @@ class CoachTabViewController: UIViewController, SegueProtocol{
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "notifiViewController") as! NotificationTabViewController
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
         
-        self.present(newViewController, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
         
     }
     func menuSegue() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
         
-        self.present(newViewController, animated: true, completion: nil)
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
         
     }
     func homeSegue() {
@@ -57,6 +60,7 @@ class CoachTabViewController: UIViewController, SegueProtocol{
        // tabBarView.coachButtonPressed((Any).self)
         tabBarView.buttonPressed(UIButton.self())
         tabBarView.coachButtonPressed()
+        addNavBarImage()
         
 
     }
@@ -69,21 +73,28 @@ class CoachTabViewController: UIViewController, SegueProtocol{
         
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Hide the navigation bar for current view controller
-        self.navigationController?.isNavigationBarHidden = true;
+    func addNavBarImage() {
+        
+        
+        let image = UIImage(named: "benefit_logo") //Your logo url here
+        let imageView : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
+        imageView.image = image
+        
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        navigationController?.navigationBar.barTintColor = UIColor.init(hex: "f2f2f2")
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
 
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
 
     @IBAction func chatButtonPressed(_ sender: Any) {
         displayAlert(title: "Premium Feature", message: "Chat is a Paid Feature, Be The premium user")
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "chats") as! ChatViewController
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
     }
     
     

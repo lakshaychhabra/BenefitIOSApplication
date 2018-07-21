@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A11269F20FBCB5B002F44A4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11269E20FBCB5B002F44A4 /* Chat.swift */; };
 		3A150D6E20F9F55400C6D70C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A150D6D20F9F55400C6D70C /* ChatViewController.swift */; };
+		3A1B72882103623200156D70 /* PlayVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B72872103623200156D70 /* PlayVideosViewController.swift */; };
 		3A1F4E1C20BF316900B2702E /* NotificationTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */; };
 		3A36917D20D19D5700F3CAD5 /* Meals.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A36917C20D19D5700F3CAD5 /* Meals.xib */; };
 		3A36918120D19D8B00F3CAD5 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36918020D19D8B00F3CAD5 /* Meals.swift */; };
@@ -95,6 +96,7 @@
 		322D8DA0A84036F3B256F6D5 /* Pods_Benefit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Benefit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A11269E20FBCB5B002F44A4 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		3A150D6D20F9F55400C6D70C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3A1B72872103623200156D70 /* PlayVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideosViewController.swift; sourceTree = "<group>"; };
 		3A1F4E1B20BF316900B2702E /* NotificationTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTabViewController.swift; sourceTree = "<group>"; };
 		3A36917C20D19D5700F3CAD5 /* Meals.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Meals.xib; sourceTree = "<group>"; };
 		3A36918020D19D8B00F3CAD5 /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				59477745201C58E80003FD7F /* HIITSingleWorkoutViewController.swift */,
 				59AF8891201DA48A0051F5F9 /* MyWorkoutsLockedScreenViewController.swift */,
 				59AF8893201DA4C00051F5F9 /* MyWorkoutsScreenViewController.swift */,
+				3A1B72872103623200156D70 /* PlayVideosViewController.swift */,
 			);
 			path = "Workout Screens";
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				3ADDDBDD20BFD45E0077CC7E /* SelectMenuViewController.swift in Sources */,
 				59FC7D20201484F900C89D3C /* HomeScreenViewController.swift in Sources */,
 				59AC648D2026D97700C139CE /* Triangle.swift in Sources */,
+				3A1B72882103623200156D70 /* PlayVideosViewController.swift in Sources */,
 				5957ED7A20178A1600870A02 /* NavBar.swift in Sources */,
 				5962D39E203A7F410081D4B2 /* SideBarViewController.swift in Sources */,
 				59354BFB200D363500BFBE7D /* RegistrationScreenViewController.swift in Sources */,

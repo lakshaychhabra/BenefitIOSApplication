@@ -15,7 +15,9 @@ class NotificationTabViewController: UIViewController, SegueProtocol{
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "coachViewController") as! CoachTabViewController
         
-        self.present(newViewController, animated: true, completion: nil)
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
     }
     func notificationSegue() {
         
@@ -26,7 +28,9 @@ class NotificationTabViewController: UIViewController, SegueProtocol{
         let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuViewController") as! SelectMenuViewController
         
-        self.present(newViewController, animated: true, completion: nil)
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
         
     }
     func homeSegue() {
@@ -54,25 +58,22 @@ class NotificationTabViewController: UIViewController, SegueProtocol{
       //  tabBarView.notificationButtonPressed((Any).self)
         tabBarView.buttonPressed(UIButton.self())
         tabBarView.notificationButtonPressed()
+        addNavBarImage()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Hide the navigation bar for current view controller
-        self.navigationController?.isNavigationBarHidden = true;
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Show the navigation bar on other view controllers
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func addNavBarImage() {
+        
+        
+        let image = UIImage(named: "benefit_logo") //Your logo url here
+        let imageView : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 20))
+        imageView.image = image
+        
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        navigationController?.navigationBar.barTintColor = UIColor.init(hex: "f2f2f2")
     }
+
     
     //display alerts
     func displayAlert(title: String, message: String) {
@@ -80,6 +81,13 @@ class NotificationTabViewController: UIViewController, SegueProtocol{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "chats") as! ChatViewController
+        
+        let navController : UINavigationController = UINavigationController(rootViewController: newViewController)
+        
+        self.present(navController, animated: true, completion: nil)
         
     }
     
